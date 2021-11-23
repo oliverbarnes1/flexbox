@@ -5,7 +5,7 @@ class CompletedWorkoutsController < ApplicationController
   end
 
   def show
-    @completed_workout = CompletedWorkout.find_by(params[:id])
+    @completed_workout = CompletedWorkout.find_by(id: params[:id])
     @workout = CompletedWorkout.find_by(@completedworkout.workout_id)
   end
 
