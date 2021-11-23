@@ -12,7 +12,7 @@ class WorkoutsController < ApplicationController
     @user = current_user
     @workout.user = @user
     if @workout.save
-      redirect_to @workout
+      redirect_to workouts_path
     else
       render :new
     end

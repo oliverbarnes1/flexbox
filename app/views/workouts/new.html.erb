@@ -1,0 +1,18 @@
+  <div class="booking-form-div">
+    <%= simple_form_for @workout, url: workouts_path, html: { class: "booking-form"} do |f|%>
+      <%= f.input :name, label: "Name of workout (15 Characters Max)", :input_html => { class: 'field' } %>
+      <%= f.input :category, collection: ["warmup", "weights", "arobic", "cardio"], label: "Category", :input_html => { class: 'field' } %>
+      <%= f.input :sport, label: "Sport", :input_html => { class: 'field' } %>
+      <%= f.input :difficulty, label: "Difficulty", collection: ["😴", "😀", "🥵", "🤮", "💀"], label: "Difficulty", :input_html => { class: 'field' } %>
+      <%= f.input :workout_duration, label: "Workout duration", :input_html => { class: 'field' } %>
+      <%= f.input :equipment, label: "equipment", :input_html => { class: 'field' } %>
+      <%= f.input :muscle_group, label: "Muscle Group", :input_html => { class: 'field' } %>
+      <%= f.input :description, label: "Description", :input_html => { class: 'field' } %>
+      <%# <%= f.input :photo, as: :file %>
+
+        <%= f.button :submit, "Save",  class: "submit-button booking-submit"  %>
+
+    <% end %>
+  </div>
+
+  <%= link_to "Back", workouts_path %>
