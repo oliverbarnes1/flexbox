@@ -1,0 +1,9 @@
+<div class = cw_list_container>
+  <ul>
+    <% @completed_workouts do |completed_workout|%>
+      <% workout = Workout.find_by(completed_workout_id: completed_workout.id)%>
+        <li><%= workout.title%></li>
+      <% end %>
+    <%end %>
+  </ul>
+</div>
