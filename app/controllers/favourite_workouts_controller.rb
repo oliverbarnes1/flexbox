@@ -1,0 +1,2 @@
+class FavouriteWorkoutsController < ApplicationController
+end
