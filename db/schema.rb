@@ -10,10 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_22_142033) do
+ActiveRecord::Schema.define(version: 2021_11_23_144130) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "exercises", force: :cascade do |t|
+    t.string "name"
+    t.string "category"
+    t.string "sport"
+    t.string "difficulty"
+    t.string "description"
+    t.string "muscle_group"
+    t.string "exercise_image"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "favourite_workouts", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "workout_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.boolean "favourite", default: false
+    t.index ["user_id"], name: "index_favourite_workouts_on_user_id"
+    t.index ["workout_id"], name: "index_favourite_workouts_on_workout_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +49,38 @@ ActiveRecord::Schema.define(version: 2021_11_22_142033) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "workout_exercises", force: :cascade do |t|
+    t.bigint "exercise_id", null: false
+    t.bigint "workout_id", null: false
+    t.integer "reps"
+    t.integer "exercise_duration"
+    t.integer "sets"
+    t.integer "weight"
+    t.integer "sets_rests"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["exercise_id"], name: "index_workout_exercises_on_exercise_id"
+    t.index ["workout_id"], name: "index_workout_exercises_on_workout_id"
+  end
+
+  create_table "workouts", force: :cascade do |t|
+    t.string "name"
+    t.string "category"
+    t.string "sport"
+    t.string "difficulty"
+    t.integer "workout_duration"
+    t.bigint "user_id", null: false
+    t.string "equipment"
+    t.string "muscle_group"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_workouts_on_user_id"
+  end
+
+  add_foreign_key "favourite_workouts", "users"
+  add_foreign_key "favourite_workouts", "workouts"
+  add_foreign_key "workout_exercises", "exercises"
+  add_foreign_key "workout_exercises", "workouts"
+  add_foreign_key "workouts", "users"
 end
