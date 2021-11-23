@@ -12,8 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2021_11_23_135953) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
 
   create_table "favourite_workouts", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -23,6 +25,19 @@ ActiveRecord::Schema.define(version: 2021_11_23_135953) do
     t.boolean "favourite", default: false
     t.index ["user_id"], name: "index_favourite_workouts_on_user_id"
     t.index ["workout_id"], name: "index_favourite_workouts_on_workout_id"
+
+    
+  create_table "exercises", force: :cascade do |t|
+    t.string "name"
+    t.string "category"
+    t.string "sport"
+    t.string "difficulty"
+    t.string "description"
+    t.string "muscle_group"
+    t.string "exercise_image"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+
   end
 
   create_table "users", force: :cascade do |t|
