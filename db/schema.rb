@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_23_124519) do
+ActiveRecord::Schema.define(version: 2021_11_23_135953) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "favourite_workouts", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "workout_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.boolean "favourite", default: false
+    t.index ["user_id"], name: "index_favourite_workouts_on_user_id"
+    t.index ["workout_id"], name: "index_favourite_workouts_on_workout_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -42,5 +52,7 @@ ActiveRecord::Schema.define(version: 2021_11_23_124519) do
     t.index ["user_id"], name: "index_workouts_on_user_id"
   end
 
+  add_foreign_key "favourite_workouts", "users"
+  add_foreign_key "favourite_workouts", "workouts"
   add_foreign_key "workouts", "users"
 end
