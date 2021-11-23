@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'pages#home'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root to: 'pages#homepage'
+  resources :workouts, only: [:index, :new, :create, :show, :edit, :update]
+  resources :completed_workouts, only: [:index, :new, :create, :show]
+  # get '/homepage', to: 'pages#homepage', as: 'homepage'
+  # get '/workouts/:id/inprogress', to: 'pages#inprogress', as: 'inprogress'
 end
