@@ -1,0 +1,30 @@
+
+.nw-container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nw-title {
+  justify-content: center;
+}
+
+.nw-form-container {
+  width: 100%;
+}
+.nw-form {
+  width: 100%;
+}
+
+.nw-exercises {
+  width: 100%;
+  margin: 50px;
+}
+
+.nw-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 50px;
+}

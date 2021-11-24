@@ -1,5 +1,12 @@
-  <div class="booking-form-div">
-    <%= simple_form_for @workout, url: workouts_path, html: { class: "booking-form"} do |f|%>
+ <%= link_to "Back", workouts_path %>
+
+ <div class="nw-container">
+  <div class="nw-title">
+    <h2><strong>Create a new workout</strong></h2>
+  </div>
+  <div class="nw-form-container">
+    <h2>Workout details</h2>
+    <%= simple_form_for @workout, url: workouts_path, html: { class: "nw-form"} do |f|%>
       <%= f.input :name, label: "Name of workout (15 Characters Max)", :input_html => { class: 'field' } %>
       <%= f.input :category, collection: ["warmup", "weights", "arobic", "cardio"], label: "Category", :input_html => { class: 'field' } %>
       <%= f.input :sport, label: "Sport", :input_html => { class: 'field' } %>
@@ -9,10 +16,37 @@
       <%= f.input :muscle_group, label: "Muscle Group", :input_html => { class: 'field' } %>
       <%= f.input :description, label: "Description", :input_html => { class: 'field' } %>
       <%# <%= f.input :photo, as: :file %>
-
-        <%= f.button :submit, "Save",  class: "submit-button booking-submit"  %>
-
+        <%= f.button :submit, "Save workout details",  class: "submit-button booking-submit"  %>
     <% end %>
   </div>
 
-  <%= link_to "Back", workouts_path %>
+  <div class="nw-exercises">
+  <h2>Exercises</h2>
+    <% @workout_exercises = WorkoutExercise.where(workout_id: @workout.id ).to_a %>
+    <% @workout_exercises.each do |workout_exercise| %>
+        <div class="ws-excercise-card">
+          <% exercise = Exercise.find(workout_exercise.exercise_id) %>
+          <div>
+            <ul>
+              <li><strong><%= exercise.name %></strong></li>
+              <li><strong><%= exercise.description %></strong></li>
+              <li><strong><%= exercise.category %></strong></li>
+              <li><strong><%= exercise.sport %></strong></li>
+              <li><strong><%= exercise.difficulty %></strong></li>
+              <li><strong><%= exercise.muscle_group %></strong></li>
+            </ul>
+          </div>
+        </div>
+    <% end %>
+    <div>
+      <a href="#" class="add-exercise-button"><i class="fas fa-plus" id="add-icon"></i>Add Exercise</a>
+    </div>
+  </div>
+
+
+  <div class="nw-buttons">
+    <a href="#" class="button-secondary">Discard Workout</a>
+    <a href="#" class="button-primary">Add Excercise</a>
+  </div>
+
+ </div>
