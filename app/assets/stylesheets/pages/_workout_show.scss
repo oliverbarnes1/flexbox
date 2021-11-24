@@ -1,21 +1,70 @@
 .ws-container {
   display: flex;
-  align-items: center;
+  // align-items: center;
   width: 80%;
   flex-direction: column;
   border: 1px solid black;
   justify-content: space-between;
 }
 
+.ws-exercises {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
 .ws-details {
   display: flex;
   flex-direction: column;
   padding-left: 50px;
+
 }
 
 .ws-excercise-card {
-  border: 1px solid black;
+  border-radius: 7px;
+  margin-bottom: 8px;
+  background: white;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: 1px solid rgb(235,235,235);
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  margin: 16px 16px;
+}
+
+
+.ws-few-content {
+  display: flex;
+  justify-content: space-between;
+
+
+}
+
+.ws-exercise-name  {
+  flex: 3;
+  display: flex;
+  padding-left: 24px;
+  align-items: center;
+}
+
+.ws-few-content-right {
+  display: flex;
+  align-items: center;
+  width: 74px;
+  // flex: 1;
+}
+
+
+
+.ws-excercise-card img {
+  height: 80px;
+  object-fit: cover;
+  border-radius: 7px 0px 0px 7px;
+}
+
+.ws-excercises {
+  width: 100%;
+}
+
+.ws-image-div {
+  width: 122px;
+
 }
