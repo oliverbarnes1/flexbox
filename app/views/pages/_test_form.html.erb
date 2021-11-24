@@ -1,0 +1,10 @@
+<div class="form-div">
+  <%= simple_form_for @workout, :html => { class: 'form' } do |f| %>
+      <%= f.input :name, title: "name", input_html: { id: 'field'}%>
+      <%= f.input :category, title: "category", input_html: { id: 'field'}%>
+      <%= f.input :sport, title: "sport", input_html: { id: 'field'}%>
+    <div class="submit-div">
+      <%= f.submit "test!", class: "btn btn-primary form-button" %>
+    </div>
+  <%end%>
+</div>
