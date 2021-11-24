@@ -20,16 +20,16 @@
     <% @workout_exercises.each do |workout_exercise| %>
         <div class="ws-excercise-card">
           <% exercise = Exercise.find(workout_exercise.exercise_id) %>
-          <div>
-            <ul>
-              <li><strong><%= exercise.name %></strong></li>
-              <li><strong><%= exercise.description %></strong></li>
-              <li><strong><%= exercise.category %></strong></li>
-              <li><strong><%= exercise.sport %></strong></li>
-              <li><strong><%= exercise.difficulty %></strong></li>
-              <li><strong><%= exercise.muscle_group %></strong></li>
-            </ul>
+          <div class="ws-image-div">
+            <%= image_tag(exercise.exercise_image) %>
           </div>
+            <div class="ws-exercise-name">
+              <h3><strong><%= exercise.name %></strong></h3>
+            </div>
+            <div class ="ws-few-content-right">
+              <div><strong><%= exercise.difficulty %></strong></div>
+              <div><%= workout_exercise.reps %> reps</div>
+            </div>
         </div>
     <% end %>
   </div>
