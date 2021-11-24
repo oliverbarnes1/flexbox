@@ -3,6 +3,10 @@ class WorkoutsController < ApplicationController
     @workouts = Workout.all
   end
 
+  def show
+    @workout = Workout.find(params[:id])
+  end
+
   def new
     @workout = Workout.new
   end
