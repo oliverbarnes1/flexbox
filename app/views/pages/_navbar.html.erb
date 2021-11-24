@@ -4,6 +4,10 @@
     <li class="navbar-item">Linkyboi</li>
     <li class="logo-placeholder">Flexboooox</li>
     <li class="navbar-item">Linkyboi</li>
-    <li class="navbar-item">Linkyboi</li>
+      <% if user_signed_in? %>
+        <li class="navbar-item"><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %></li>
+      <% else %>
+        <li class="nav-item"></li>
+      <% end %>
   </ul>
 </div>
