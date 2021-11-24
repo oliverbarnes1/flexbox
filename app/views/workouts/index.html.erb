@@ -1,13 +1,15 @@
 <%= link_to "New Workout", new_workout_path %>
 <div>
   <% @workouts.each do |workout|%>
-    <h1><%= workout.name %></h1>
-    <p>Category:<%= workout.category %></p>
-    <p>Sport: <%= workout.sport %></p>
-    <p>Difficulty: <%= workout.difficulty %></p>
-    <p>Workout duration: <%= workout.workout_duration %></p>
-    <p>Equipment: <%= workout.equipment %></p>
-    <p>Targeted muscle group:<%= workout.muscle_group %></p>
-    <p>Description: <%= workout.description %></p>
+    <%= link_to workout_path(workout) do %>
+      <h1><%= workout.name %></h1>
+      <p>Category:<%= workout.category %></p>
+      <p>Sport: <%= workout.sport %></p>
+      <p>Difficulty: <%= workout.difficulty %></p>
+      <p>Workout duration: <%= workout.workout_duration %></p>
+      <p>Equipment: <%= workout.equipment %></p>
+      <p>Targeted muscle group:<%= workout.muscle_group %></p>
+      <p>Description: <%= workout.description %></p>
+    <% end %>
   <% end %>
 </div>
