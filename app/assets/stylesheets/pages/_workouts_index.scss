@@ -1,0 +1,62 @@
+.workout-card-index {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.workout-name {
+  margin-top: 20px;
+
+}
+
+img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px 10px 0px 0px;
+}
+
+
+.workout-card-info-index {
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-bottom: 20px;
+  background-color: white;
+  width: 550px;
+
+}
+
+.workout-card-text {
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
+}
+
+.workout-card-time {
+  position: absolute;
+  right: 20px;
+  top: 59px;
+}
+.workout-card-emoji {
+  position: absolute;
+  right: 16px;
+  top: -11px;
+}
+.workout-card-category {
+  position: absolute;
+  right: 16px;
+  top: 23px;
+}
+
+.workout-card-sport {
+  padding-bottom: 10px;
+  padding-left: 10px;
+}
+
+
+.workout-card-index {
+  a {
+    text-decoration: none;
+    color: black;
+  }
+}
