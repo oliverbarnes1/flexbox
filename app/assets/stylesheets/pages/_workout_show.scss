@@ -1,0 +1,21 @@
+.ws-container {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  flex-direction: column;
+  border: 1px solid black;
+  justify-content: space-between;
+}
+
+.ws-details {
+  display: flex;
+  flex-direction: column;
+  padding-left: 50px;
+}
+
+.ws-excercise-card {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  margin: 16px 16px;
+}

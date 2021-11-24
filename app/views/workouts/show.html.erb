@@ -1,0 +1,54 @@
+<%= link_to "Back", workouts_path %>
+
+<div class="ws-container">
+  <div class="ws-details">
+    <h2><strong><%= @workout.name %></strong></h2>
+    <p><strong><%= @workout.description %></strong></p>
+    <p><strong><%= @workout.category %></strong></p>
+    <p><strong><%= @workout.sport %></strong></p>
+    <p><strong><%= @workout.difficulty %></strong></p>
+    <p><strong><%= @workout.workout_duration %></strong></p>
+    <p><strong><%= @workout.muscle_group %></strong></p>
+    <p><strong><%= @workout.equipment %></strong></p>
+  </div>
+
+  <div class="ws-exercises">
+
+
+
+    <% @workout_exercises = WorkoutExercise.where(workout_id: @workout.id ).to_a %>
+    <% @workout_exercises.each do |workout_exercise| %>
+        <div class="ws-excercise-card">
+          <% exercise = Exercise.find(workout_exercise.exercise_id) %>
+          <div>
+            <ul>
+              <li><strong><%= exercise.name %></strong></li>
+              <li><strong><%= exercise.description %></strong></li>
+              <li><strong><%= exercise.category %></strong></li>
+              <li><strong><%= exercise.sport %></strong></li>
+              <li><strong><%= exercise.difficulty %></strong></li>
+              <li><strong><%= exercise.muscle_group %></strong></li>
+            </ul>
+          </div>
+        </div>
+    <% end %>
+  </div>
+
+  <div class="ws-buttons">
+    <a href="#">Copy Workout</a>
+    <a href="#">Edit Workout</a>
+    <a href="#">Start Workout</a>
+  </div>
+
+
+
+</div>
+
+
+<%# Workout details %>
+
+<%# list of workout exercises %>
+
+<%# copy button %>
+<%# edit button %>
+<%# start button %>
