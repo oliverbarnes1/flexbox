@@ -4,6 +4,7 @@
   grid-gap: 16px;
 }
 
+
 .workout-name {
 font-size: 30px;
 width: 50%;
@@ -29,7 +30,7 @@ margin-left: 10px
 }
 
 .workout-card-info-index:hover {
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
   transition-duration: 0.5s;
 }
 
@@ -76,4 +77,12 @@ margin-left: 10px
 .workouts-heading {
   align-self: flex-start;
   margin: 30px 0 30px 100px;
+}
+
+.workout-index-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 30px 0;
 }
