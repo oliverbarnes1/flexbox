@@ -1,21 +1,17 @@
 .ws-container {
-  display: flex;
-  // align-items: center;
-  width: 80%;
-  flex-direction: column;
-  border: 1px solid black;
-  justify-content: space-between;
+  width: 65%;
 }
 
 .ws-exercises {
   padding-right: 20px;
   padding-left: 20px;
+  overflow-y: auto;
+
+  height: 550px;
 }
 
 .ws-details {
-  display: flex;
-  flex-direction: column;
-  padding-left: 50px;
+  text-align: center;
 
 }
 
@@ -23,13 +19,20 @@
   border-radius: 7px;
   margin-bottom: 8px;
   background: white;
-  margin-left: 10px;
-  margin-right: 10px;
   border: 1px solid rgb(235,235,235);
   width: 100%;
   display: flex;
+  transition-duration: 0.5s;
+  height:80px;
+  align-items: center;
 }
 
+.ws-excercise-card:hover {
+  height: 374px;
+  width: 100%;
+  transition-duration: 0.5s;
+  justify-self: center;
+}
 
 .ws-few-content {
   display: flex;
@@ -49,6 +52,7 @@
   display: flex;
   align-items: center;
   width: 74px;
+  font-size: 30px;
   // flex: 1;
 }
 
@@ -67,4 +71,15 @@
 .ws-image-div {
   width: 122px;
 
+}
+
+.ws-icons {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  margin-top: 15px;
+  margin-left: 240px;
+  margin-right: 240px;
+  margin-bottom: 20px;
+  text-align: left;
 }
