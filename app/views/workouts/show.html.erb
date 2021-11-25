@@ -1,60 +1,69 @@
-<%= link_to "Back", workouts_path %>
-
-<div class="ws-container">
 
 
-  <div class="ws-details">
+<div class="ws-container" data-controller="workouttitle">
 
-    <h1><strong><%= @workout.name %></strong></h1>
-    <div><strong><%= @workout.description %></strong></div>
+  <div class="ws-header">
+    <div class="ws-details" data-workouttitle-target="wsdetails">
 
-    <div class="ws-icons">
-
-      <div class="ws-icons-left">
-        <div><strong>Category: </strong><%= @workout.category %></div>
-        <div><strong><i class="fas fa-running"></i> Sport: </strong><%= @workout.sport %></div>
-        <div><strong><i class="fas fa-bullseye"></i> Muscle Group: </strong><%= @workout.muscle_group %></div>
-      </div>
-      <div class="ws-icons-right">
-        <div><strong><i class="fas fa-signal"></i>  Difficulty: </strong><%= @workout.difficulty %></div>
-        <div><strong><i class="far fa-clock"></i> Duration: </strong><%= @workout.workout_duration %></div>
-        <div><strong><i class="fas fa-dumbbell"></i> Equipment: </strong><%= @workout.equipment %></div>
+      <h1><strong><%= @workout.name %></strong></h1>
+      <div>
+        <strong><%= @workout.description %></strong>
       </div>
 
+        <div class="ws-icons">
+
+          <div class="ws-icons-left">
+            <div><strong>Category: </strong><%= @workout.category %></div>
+            <div><strong><i class="fas fa-running"></i> Sport: </strong><%= @workout.sport %></div>
+            <div><strong><i class="fas fa-bullseye"></i> Muscle Group: </strong><%= @workout.muscle_group %></div>
+          </div>
+
+          <div class="ws-icons-right">
+            <div><strong><i class="fas fa-signal"></i>  Difficulty: </strong><%= @workout.difficulty %></div>
+            <div><strong><i class="far fa-clock"></i> Duration: </strong><%= @workout.workout_duration %></div>
+            <div><strong><i class="fas fa-dumbbell"></i> Equipment: </strong><%= @workout.equipment %></div>
+          </div>
+
+        </div>
+    </div>
+
+    <div class='ws-start-workout' >
+        <a href="#" class="start-workout-button" data-action="click->workouttitle#buttontest" data-workouttitle-target="button"><strong>Start<br>Workout!</strong></a>
     </div>
   </div>
 
 
-
-
-
-  <div class="ws-exercises">
+  <div class="ws-exercises" data-action="keyup@window->workouttitle#nextExercise">
     <% @workout_exercises = WorkoutExercise.where(workout_id: @workout.id ).to_a %>
     <% @workout_exercises.each do |workout_exercise| %>
-        <div class="ws-excercise-card">
-          <% exercise = Exercise.find(workout_exercise.exercise_id) %>
-          <div class="ws-image-div">
-            <%= image_tag(exercise.exercise_image) %>
-          </div>
-            <div class="ws-exercise-name">
-              <h3><strong><%= exercise.name %></strong></h3>
-            </div>
-            <div class ="ws-few-content-right">
-              <div><strong><%= exercise.difficulty %></strong></div>
+      <% exercise = Exercise.find(workout_exercise.exercise_id) %>
+      <div class="ws-excercise-card" data-workouttitle-target="exercises">
 
-            </div>
+        <div class="ws-image-div">
+          <%= image_tag(exercise.exercise_image) %>
         </div>
+
+        <div class="ws-exercise-name">
+          <h3><strong><%= exercise.name %></strong></h3>
+        </div>
+
+        <div class ="ws-few-content-right">
+          <div>
+            <strong><%= exercise.difficulty %></strong>
+          </div>
+        </div>
+
+      </div>
     <% end %>
   </div>
 
 
-  <div class="ws-buttons">
-    <a href="#">Copy Workout</a>
-    <a href="#">Edit Workout</a>
-    <a href="#">Start Workout</a>
+  <div class="ws-buttons" data-workouttitle-target="bottombuttons">
+    <a href="#" class="button-primary">Copy Workout</a>
+    <a href="#" class="button-primary">Edit Workout</a>
   </div>
 
-
+  <%= link_to "Back", workouts_path %>
 
 </div>
 

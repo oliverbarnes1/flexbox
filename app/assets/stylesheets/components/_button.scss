@@ -60,19 +60,31 @@
 
 .add-workout-button:hover {
   background-color: #cf6348 !important;
-
   transition-duration: 0.5s;
-
 }
 
 .add-workout-button-text {
   font-size: 100px;
 }
 
-.workout-index-buttons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin: 30px 0;
+.start-workout-button {
+  background-color: #EE6C4D;
+  border: none;
+  color: #293241;
+  padding: 30px 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  transition-duration: 0.5s;
+  font-size: 30px;
+  border-radius: 8px
+}
+
+.start-workout-button:hover {
+  background-color: #db5635 !important;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  transition-duration: 0.5s;
 }
