@@ -1,2 +1,52 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+<div class="container-div">
+
+  <div class='home-h1'>
+    <h1>HOME</h1>
+  </div>
+
+  <div class="home-cards-container">
+    <p>New Workout</p>
+
+    <div class="fav-workouts-grid">
+      <div class="card-add-new-workout-top">
+        <h2>+ New Workout</h2>
+      </div>
+      <div class="card-add-new-workout-top">
+        <h2>+ Random Workout</h2>
+      </div>
+      <div class="card-add-new-workout-top">
+        <h2>Find Workout</h2>
+      </div>
+    </div>
+
+    <p>Favourite Workouts</p>
+
+    <div class="fav-workouts-grid-down">
+      <% @workouts.each do |workout|%>
+        <%= link_to workout_path(workout) do %>
+          <div class="workout-card">
+            <img src="https://color-hex.org/colors/3d5a80.png">
+            <div class="workout-card-info">
+              <div>
+                <h1 class="workout-name"><%= workout.name %></h1>
+                <p class="workout-card-sport"><em>Sport:</em> <%= workout.sport %></p>
+                <p class="workout-card-category"><em><%= workout.category %></em></p>
+                <h3 class="workout-card-emoji"><%= workout.difficulty %></h3>
+                <p class="workout-card-time"><strong>Time:</strong> <%= workout.workout_duration %> mins</p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+      <div class="card-all-workouts-down">
+        <h2>See All Workouts</h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="home-cards-container-down">
+
+  </div>
+
+</div>
