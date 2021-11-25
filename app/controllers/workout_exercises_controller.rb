@@ -1,17 +1,18 @@
 class WorkoutExercisesController < ApplicationController
-  before_action :set_workoutexercise, only: [:show, :update]
+  before_action :set_workoutexercise, only: [:show, :update, :edit]
 
   def new
-    @workoutexercise = WorkoutExercise.new
+    @workout_exercise = WorkoutExercise.new
+    @workout = Workout.find(params[:workout_id])
   end
 
   def create
-    @workoutexercise = WorkoutExercise.new(workoutexercise_params)
-    @user = current_user
-    @workoutexercise.user = @user
+    @workout_exercise = WorkoutExercise.new(workoutexercise_params)
+    @workout = Workout.find(params[:workout_id])
+    @workout_exercise.workout = @workout
 
-    if @workoutexercise.save
-      redirect_to @workoutexercise, notice: 'Workout Exercise was successfully created.'
+    if @workout_exercise.save
+      redirect_to workout_path(@workout), notice: 'Workout Exercise was successfully created.'
     else
       render :new
     end
@@ -20,9 +21,12 @@ class WorkoutExercisesController < ApplicationController
   def show
   end
 
+  def edit
+  end
+
   def update
-    if @workoutexercise.update(workoutexercise_params)
-      redirect_to @workoutexercise, notice: 'Workout Exercise was successfully updated.'
+    if @workout_exercise.update(workout_exercise_params)
+      redirect_to @workout_exercise, notice: 'Workout Exercise was successfully updated.'
     else
       render notice: 'Workout Exercise already exists'
     end
@@ -31,10 +35,10 @@ class WorkoutExercisesController < ApplicationController
   private
 
   def set_workoutexercise
-    @workoutexercise = WorkoutExercise.find(params[:id])
+    @workout_exercise = WorkoutExercise.find(params[:id])
   end
 
   def workoutexercise_params
-    params.require(:workoutexercise).permit(:reps, :exercise_duration, :sets, :weight, :sets_rests, :image_url, :photo)
+    params.require(:workout_exercise).permit(:exercise_id, :reps, :exercise_duration, :sets, :weight, :sets_rests, :image_url, :photo)
   end
 end
