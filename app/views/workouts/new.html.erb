@@ -38,15 +38,16 @@
           </div>
         </div>
     <% end %>
-    <div>
-      <a href="#" class="add-exercise-button"><i class="fas fa-plus" id="add-icon"></i>Add Exercise</a>
-    </div>
+
   </div>
 
+  <div class="add-exercise-button">
+    <<%= link_to "Add Exercise", new_workout_workout_exercise_path(@workout.id ) %>
+  </div>
 
   <div class="nw-buttons">
     <a href="#" class="button-secondary">Discard Workout</a>
-    <a href="#" class="button-primary">Add Excercise</a>
+    <a href="#" class="button-primary">Create Workout and add exercises</a>
   </div>
 
  </div>
