@@ -1,10 +1,13 @@
- <%= link_to "Back", workouts_path %>
+Hello
+<%= link_to "Back", workouts_path %>
 
- <div class="nw-container">
+<div class="nw-container">
   <div class="nw-title">
-    <h2><strong>Create a new workout</strong></h2>
+    <h2><strong>Edit your workout</strong></h2>
   </div>
   <div class="nw-form-container">
+
+<div class="nw-form-container">
     <h2>Workout details</h2>
     <%= simple_form_for @workout, url: workouts_path, html: { class: "nw-form"} do |f|%>
       <%= f.input :name, label: "Name of workout (15 Characters Max)", :input_html => { class: 'field' } %>
@@ -21,4 +24,32 @@
   </div>
 
 
- </div>
+<div class="nw-exercises">
+  <h2>Exercises</h2>
+    <% @workout_exercises = WorkoutExercise.where(workout_id: @workout.id ).to_a %>
+    <% @workout_exercises.each do |workout_exercise| %>
+        <div class="ws-excercise-card">
+          <% exercise = Exercise.find(workout_exercise.exercise_id) %>
+          <div>
+            <ul>
+              <li><strong><%= workout_exercise.reps %></strong></li>
+              <li><strong><%= workout_exercise.sets %></strong></li>
+              <li><strong><%= workout_exercise.weight %></strong></li>
+              <li><strong><%= workout_exercise.exercise_duration %></strong></li>
+            </ul>
+          </div>
+        </div>
+    <% end %>
+    <div>
+
+
+  <%= link_to "Add a new exercise to this workout", new_workout_workout_exercise_path(@workout.id) %>
+
+  </div>
+
+
+  <div class="ws-buttons">
+    <a href="#">Copy Workout</a>
+    <a href="#">Edit Workout</a>
+    <a href="#">Start Workout</a>
+  </div>
