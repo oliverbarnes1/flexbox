@@ -58,7 +58,7 @@ exercise1 = Exercise.new(
   difficulty: "😀",
   muscle_group: "Legs",
   description: "Lunges increaseyour balance also increasing strength in your legs and glutes.",
-  exercise_image: "https://i0.wp.com/thumbs.gfycat.com/AltruisticFantasticCub-size_restricted.gif?w=1155&h=840"
+  exercise_image: "https://thumbs.gfycat.com/InferiorFalseGalago-max-1mb.gif"
 )
 puts "saving"
 exercise1.save!
@@ -69,9 +69,9 @@ exercise2 = Exercise.new(
   category: "Weights",
   sport: "Gymnastics",
   difficulty: "🥵",
-  muscle_group: "Quadriceps femoris",
+  muscle_group: "Quads",
   description: "A squat is a strength exercise in which the trainee lowers their hips from a standing position and then stands back up",
-  exercise_image: "https://upload.wikimedia.org/wikipedia/commons/6/6a/Kniebeuge.jpg"
+  exercise_image: "https://www.verywellfit.com/thmb/NF55yRjCpuEMUVtibfSepA_F9l8=/3000x2000/filters:fill(FFDB5D,1)/79--Sumo-SquatGIF-a10fc1d5c41f4b3cbb9ab82dca25936b.gif"
 )
 puts "saving"
 exercise2.save!
@@ -85,7 +85,7 @@ exercise3 = Exercise.new(
   difficulty: "🥵",
   muscle_group: "Abs",
   description: "The plank is an isometric core strength exercise that involves maintaining a position similar to a push-up for the maximum possible time",
-  exercise_image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/A_U.S._Coast_Guard_recruit%2C_assigned_to_Company_Oscar_188%2C_performs_a_plank_during_incentive_training_at_Coast_Guard_Training_Center_Cape_May_in_Cape_May%2C_N.J.%2C_July_31%2C_2013_130731-G-WA946-943.jpg/440px-thumbnail.jpg"
+  exercise_image: "https://hips.hearstapps.com/ame-prod-menshealth-assets.s3.amazonaws.com/main/assets/plank.gif?resize=480:*"
 )
 puts "saving"
 exercise3.save!
@@ -99,7 +99,7 @@ exercise4 = Exercise.new(
   difficulty: "🤮",
   muscle_group: "Abs",
   description: "Traditional pushups are beneficial for building upper body strength",
-  exercise_image: "https://us.123rf.com/450wm/lioputra/lioputra2010/lioputra201000171/157886721-man-character-doing-push-ups-flat-vector-illustration-isolated-on-different-layers.jpg?ver=6"
+  exercise_image: "https://i.imgur.com/zLoQVoA.gif"
 )
 puts "saving"
 exercise4.save!
@@ -113,7 +113,7 @@ exercise5 = Exercise.new(
   difficulty: "😀",
   muscle_group: "Legs",
   description: "jumping exercise performed by jumping to a position with the legs spread wide and the hands going overhead, and then returning to a position with the feet together and the arms at the sides.",
-  exercise_image: "https://blogscdn.thehut.net/wp-content/uploads/sites/505/2018/01/18225846/JumpingJack-StarJump_2.jpg"
+  exercise_image: "https://cdn.dribbble.com/users/2931468/screenshots/5720362/jumping-jack.gif"
 )
 puts "saving"
 exercise5.save!
@@ -127,12 +127,65 @@ exercise6 = Exercise.new(
   difficulty: "🥵",
   muscle_group: "Legs",
   description: "Mountain climbers is an explosive bodyweight exercise which engages multiple muscle groups at once helping to improve your balance, agility, coordination, strength, flexibility and blood circulation",
-  exercise_image: "https://media1.popsugar-assets.com/files/thumbor/Iu8waoj6rmL6c7B8gZUdS1ZIa3I/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2017/06/08/791/n/1922729/c4943793a2ba2dd5_SlowerClimbers.gif"
+  exercise_image: "https://kaizenminutes.com/wp-content/uploads/2020/04/mountain-climbers.gif"
 )
 puts "saving"
 exercise6.save!
 puts "saved"
 
+
+exercise7 = Exercise.new(
+  name: "Flutter kicks",
+  category: "Warmup",
+  sport: "Fitness",
+  difficulty: "😀",
+  muscle_group: "Abs",
+  description: "Although they target your core, flutter kicks also zero in on the hips",
+  exercise_image: "https://i.pinimg.com/originals/04/e4/42/04e4425ceaf57c8d34b37837762044b5.gif"
+)
+puts "saving"
+exercise7.save!
+puts "saved"
+
+
+exercise8 = Exercise.new(
+  name: "Burpees",
+  category: "Warmup",
+  sport: "Fitness",
+  difficulty: "🥵",
+  muscle_group: "Full-body",
+  description: "Burpees are a type of high-impact plyometric exercise",
+  exercise_image: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/workouts/2016/03/burpee-1457045324.gif"
+)
+puts "saving"
+exercise8.save!
+puts "saved"
+
+exercise9 = Exercise.new(
+  name: "Bicycle crunch",
+  category: "Warmup",
+  sport: "Fitness",
+  difficulty: "🤮",
+  muscle_group: "Abs",
+  description: "Bicycle crunchs are a highly intense abdominal exercise",
+  exercise_image: "https://177d01fbswx3jjl1t20gdr8j-wpengine.netdna-ssl.com/wp-content/uploads/2019/06/Bicycle-Crunch.gif"
+)
+puts "saving"
+exercise9.save!
+puts "saved"
+
+exercise10 = Exercise.new(
+  name: "Superman",
+  category: "Warmup",
+  sport: "Fitness",
+  difficulty: "🥵",
+  muscle_group: "Abs",
+  description: "Work your abs with this intense excercise",
+  exercise_image: "https://hips.hearstapps.com/ame-prod-menshealth-assets.s3.amazonaws.com/main/assets/superman.gif?resize=480:*"
+)
+puts "saving"
+exercise10.save!
+puts "saved"
 
 # exercise = Exercise.new(
 #   name: "",
@@ -146,7 +199,6 @@ puts "saved"
 # puts "saving"
 # exercise.save!
 # puts "saved"
-
 
 
 ##################################################################################################
@@ -220,8 +272,129 @@ puts "saved"
 
 
 workout_exercise = WorkoutExercise.new(
+  workout_id: workout1.id,
+  exercise_id: exercise7.id,
+  reps: 10,
+  exercise_duration: 10,
+  sets: 3,
+)
+puts "saving"
+workout_exercise.save!
+puts "saved"
+
+workout_exercise = WorkoutExercise.new(
+  workout_id: workout1.id,
+  exercise_id: exercise8.id,
+  reps: 10,
+  exercise_duration: 10,
+  sets: 3,
+)
+puts "saving"
+workout_exercise.save!
+puts "saved"
+
+workout_exercise = WorkoutExercise.new(
+  workout_id: workout1.id,
+  exercise_id: exercise9.id,
+  reps: 10,
+  exercise_duration: 10,
+  sets: 3,
+)
+puts "saving"
+workout_exercise.save!
+puts "saved"
+
+workout_exercise = WorkoutExercise.new(
+  workout_id: workout1.id,
+  exercise_id: exercise10.id,
+  reps: 10,
+  exercise_duration: 10,
+  sets: 3,
+)
+puts "saving"
+workout_exercise.save!
+puts "saved"
+
+
+
+
+
+
+
+#######################################################################################
+
+
+workout_exercise = WorkoutExercise.new(
   workout_id: workout2.id,
-  exercise_id: exercise2.id,
+  exercise_id: exercise4.id,
+  reps: 20,
+  exercise_duration: 30,
+  sets: 3,
+)
+puts "saving"
+workout_exercise.save!
+puts "saved"
+
+workout_exercise = WorkoutExercise.new(
+  workout_id: workout2.id,
+  exercise_id: exercise5.id,
+  reps: 50,
+  exercise_duration: 10,
+  sets: 2,
+)
+puts "saving"
+workout_exercise.save!
+puts "saved"
+
+workout_exercise = WorkoutExercise.new(
+  workout_id: workout2.id,
+  exercise_id: exercise6.id,
+  reps: 50,
+  exercise_duration: 10,
+  sets: 3,
+)
+puts "saving"
+workout_exercise.save!
+puts "saved"
+
+
+
+workout_exercise = WorkoutExercise.new(
+  workout_id: workout2.id,
+  exercise_id: exercise7.id,
+  reps: 10,
+  exercise_duration: 10,
+  sets: 3,
+)
+puts "saving"
+workout_exercise.save!
+puts "saved"
+
+workout_exercise = WorkoutExercise.new(
+  workout_id: workout2.id,
+  exercise_id: exercise8.id,
+  reps: 10,
+  exercise_duration: 10,
+  sets: 3,
+)
+puts "saving"
+workout_exercise.save!
+puts "saved"
+
+workout_exercise = WorkoutExercise.new(
+  workout_id: workout2.id,
+  exercise_id: exercise9.id,
+  reps: 10,
+  exercise_duration: 10,
+  sets: 3,
+)
+puts "saving"
+workout_exercise.save!
+puts "saved"
+
+workout_exercise = WorkoutExercise.new(
+  workout_id: workout2.id,
+  exercise_id: exercise10.id,
   reps: 10,
   exercise_duration: 10,
   sets: 3,
