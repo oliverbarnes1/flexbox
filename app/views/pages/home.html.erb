@@ -1,2 +1,83 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<%# <h1>Pages#home</h1>
+<p>Find me in app/views/pages/home.html.erb</p> %>
+
+<div class="container-div">
+
+  <div class='home-h1'>
+    <h1>HOME</h1>
+  </div>
+
+  <div class="home-cards-container">
+    <div class="nw-text-h1">
+      <h1>New Workout:</h1>
+    </div>
+    <div class="fav-workouts-grid">
+      <%= link_to new_workout_path do %>
+        <div class="card-add-new-workout-top">
+          <h2>+ New Workout</h2>
+        </div>
+      <%end%>
+      <div class="card-add-new-workout-top">
+        <h2>+ Random Workout</h2>
+      </div>
+      <%= link_to workouts_path do %>
+      <div class="card-add-new-workout-top">
+          <h2>Find Workout</h2>
+      </div>
+      <% end %>
+    </div>
+
+    <div class="nw-text-h1">
+      <h1>Favourite Workouts:</h1>
+    </div>
+
+
+    <div class="fav-workouts-grid-down">
+      <% @workouts.each do |workout|%>
+        <%= link_to workout_path(workout) do %>
+          <div class="workout-card">
+            <%= image_tag("https://static.onecms.io/wp-content/uploads/sites/35/2020/04/13/GettyImages-1175207081-2000.jpg") %>
+            <div class="workout-card-info">
+              <div>
+                <h1 class="workout-name"><%= workout.name %></h1>
+                <p class="workout-card-sport"><em>Sport:</em> <%= workout.sport %></p>
+                <p class="workout-card-category"><em><%= workout.category %></em></p>
+                <h3 class="workout-card-emoji"><%= workout.difficulty %></h3>
+                <p class="workout-card-time"><strong>Time:</strong> <%= workout.workout_duration %> mins</p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+      <%= link_to workouts_path do %>
+        <div class="card-all-workouts-down">
+          <h2>See All Workouts</h2>
+        </div>
+      <%end%>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="home-cards-container-down">
+    <div class="nw-text-h1">
+      <h1>Recent Workouts</h1>
+    </div>
+    <% @workouts.each do |workout|%>
+        <%= link_to workout_path(workout) do %>
+          <div class="recent-workouts-grid">
+            <div class="recent-workout-list-card-left">
+              <img src='https://static.onecms.io/wp-content/uploads/sites/35/2020/04/13/GettyImages-1175207081-2000.jpg'>
+            </div>
+            <div class="recent-workout-list-card-right">
+              <p><strong><%= workout.name %></strong></p>
+              <p>Info</p>
+              <p>Edit</p>
+              <p>Delete</p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+  </div>
+
+</div>

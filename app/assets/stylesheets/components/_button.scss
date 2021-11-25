@@ -38,6 +38,95 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  border-radius: 4px;
+}
+
+.add-workout-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #EE6C4D !important;
+  width: 150px;
+  border: none;
+  color: #293241;
+  height: 50px;
+  text-decoration: none;
+  font-size: 72px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
   border-radius: 4px;
+  font-size: 50px;
+  transition-duration: 0.5s;
+}
+
+.add-workout-button:hover {
+  background-color: #cf6348 !important;
+  transition-duration: 0.5s;
+}
+
+.add-workout-button-text {
+  font-size: 100px;
+}
+
+.start-workout-button {
+  background-color: #EE6C4D;
+  border: none;
+  color: #293241;
+  padding: 30px 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  transition-duration: 0.5s;
+  font-size: 30px;
+  border-radius: 8px
+}
+
+.start-workout-button:hover {
+  background-color: #db5635 !important;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  transition-duration: 0.5s;
+}
+
+.wn-btn {
+  background-color: #EE6C4D;
+  border: none;
+  color: #293241;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  margin: 16px 16px;
+  transition-duration: 0.3s;
+}
+
+.wn-btn:hover {
+  background-color: #cc5a3e;
+  transition-duration: 0.3s;
+}
+
+.wn-btn-back {
+  background-color: #EE6C4D;
+  border: none;
+  color: #293241;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  margin: 16px 16px;
+  transition-duration: 0.3s;
+  align-self: flex-start;
+  margin: 30px 0 30px 100px;
+}
+
+.wn-btn-back:hover {
+  background-color: #cc5a3e;
+  transition-duration: 0.3s;
 }

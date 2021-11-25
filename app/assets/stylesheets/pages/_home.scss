@@ -1,1 +1,174 @@
 // Specific CSS for your home-page
+
+.home-h1 h1 {
+  // display: flex;
+  margin-top: 100px;
+  align-self: flex-start;
+  width: 1240px;
+  font-size: 60px;
+}
+
+.home-cards-container {
+  display: flex;
+  flex-direction: column;
+  width: 1240px;
+  // height: 750px;
+  padding-left: 70px;
+  padding-right: 70px;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px 10px 10px 10px;
+  margin-top: 25px;
+}
+
+.fav-workouts-grid {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 70%;
+}
+
+.fav-workouts-grid-down {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 12px;
+  // justify-content: space-evenly;
+}
+
+.home-cards-container-down {
+  display: flex;
+  width: 1240px;
+  flex-direction: column;
+  // height: 258px;
+  padding-left: 70px;
+  padding-right: 70px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px 10px 10px 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.recent-workouts-grid {
+  display: flex;
+  flex-direction: row;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-bottom: 5px;
+  // justify-content: space-evenly;
+}
+
+.card-add-new-workout-top {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #EE6C4D;
+  color: black;
+  margin-top: -5px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 250px;
+  height: 180px;
+  transition-duration: 0.5s;
+}
+
+.card-add-new-workout-top:hover {
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  transition-duration: 0.5s;
+}
+
+.card-all-workouts-down {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #EE6C4D;
+  color: black;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 350px;
+  height: 300px;
+  transition-duration: 0.5s;
+}
+
+.card-all-workouts-down:hover {
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  transition-duration: 0.5s;
+}
+
+.workout-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background-color: white;
+  width: 350px;
+  height: 300px;
+  transition-duration: 0.5s;
+}
+
+.workout-card:hover {
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  transition-duration: 0.5s;
+}
+
+.workout-card > img {
+  height: 50%;
+  width: 100%;
+  border-radius: 10px 0px 0px 0px;
+  object-fit: cover;
+  border-radius: 10px 10px 0px 0px;
+}
+
+
+.workout-card .workout-card-info {
+  // padding: 16px;
+  // display: flex;
+  // justify-content: space-between;
+  // align-items: flex-end;
+  // position: relative;
+  // background-color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
+  height: calc(50% - 10px);
+  margin-top: 10px;
+}
+
+.recent-workout-list-card-left {
+  width: 112px;
+}
+
+.recent-workout-list-card-left > img {
+  // width: 112px;
+  // object-fit: cover;
+    height: 80px;
+  object-fit: cover;
+  border-radius: 7px 0px 0px 7px;
+}
+
+.recent-workout-list-card-right {
+  width: 1200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.recent-workout-list-card-right-most {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.nw-text-h1 {
+  margin-left: -15px;
+  margin-bottom: 10px;
+}

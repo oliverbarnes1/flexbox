@@ -1,5 +1,6 @@
- <%= link_to "Back", workouts_path %>
-
+<div class="wn-btn-back">
+  <%= link_to "Back", workouts_path %>
+</div>
  <div class="nw-container">
   <div class="nw-title">
     <h2><strong>Create a new workout</strong></h2>
@@ -16,9 +17,9 @@
       <%= f.input :muscle_group, label: "Muscle Group", :input_html => { class: 'field' } %>
       <%= f.input :description, label: "Description", :input_html => { class: 'field' } %>
       <%# <%= f.input :photo, as: :file %>
-        <%= f.button :submit, "Save workout details",  class: "submit-button booking-submit"  %>
+        <%= f.button :submit, "Save workout details",  class: "wn-btn"  %>
     <% end %>
   </div>
 
-
  </div>
+
