@@ -8,8 +8,9 @@
   </div>
 
   <div class="home-cards-container">
-    <p>New Workout</p>
-
+    <div class="nw-text-h1">
+      <h1>New Workout:</h1>
+    </div>
     <div class="fav-workouts-grid">
       <%= link_to new_workout_path do %>
         <div class="card-add-new-workout-top">
@@ -19,12 +20,17 @@
       <div class="card-add-new-workout-top">
         <h2>+ Random Workout</h2>
       </div>
+      <%= link_to workouts_path do %>
       <div class="card-add-new-workout-top">
-        <h2>Find Workout</h2>
+          <h2>Find Workout</h2>
       </div>
+      <% end %>
     </div>
 
-    <p>Favourite Workouts</p>
+    <div class="nw-text-h1">
+      <h1>Favourite Workouts:</h1>
+    </div>
+
 
     <div class="fav-workouts-grid-down">
       <% @workouts.each do |workout|%>
@@ -54,12 +60,14 @@
   <br>
 
   <div class="home-cards-container-down">
-    <p>Recent Workouts</p>
+    <div class="nw-text-h1">
+      <h1>Recent Workouts</h1>
+    </div>
     <% @workouts.each do |workout|%>
         <%= link_to workout_path(workout) do %>
           <div class="recent-workouts-grid">
             <div class="recent-workout-list-card-left">
-              <img src='https://www.icolorpalette.com/wp-content/themes/icolorpalette-child/solid.php?c=293241'>
+              <img src='https://static.onecms.io/wp-content/uploads/sites/35/2020/04/13/GettyImages-1175207081-2000.jpg'>
             </div>
             <div class="recent-workout-list-card-right">
               <p><strong><%= workout.name %></strong></p>
