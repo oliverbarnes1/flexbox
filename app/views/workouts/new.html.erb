@@ -1,5 +1,6 @@
- <%= link_to "Back", workouts_path %>
-
+<div class="wn-btn-back">
+  <%= link_to "Back", workouts_path %>
+</div>
  <div class="nw-container">
   <div class="nw-title">
     <h2><strong>Create a new workout</strong></h2>
@@ -20,6 +21,7 @@
     <% end %>
   </div>
 
+ </div>
   <div class="nw-exercises">
   <h2>Exercises</h2>
     <% @workout_exercises = WorkoutExercise.where(workout_id: @workout.id ).to_a %>
@@ -41,13 +43,11 @@
 
   </div>
 
-  <div class="add-exercise-button">
+  <%# <div class="add-exercise-button">
     <<%= link_to "Add Exercise", new_workout_workout_exercise_path(@workout.id ) %>
-  </div>
+  <%# </div> %>
 
   <div class="nw-buttons">
     <a href="#" class="button-secondary">Discard Workout</a>
     <a href="#" class="button-primary">Create Workout and add exercises</a>
   </div>
-
- </div>
