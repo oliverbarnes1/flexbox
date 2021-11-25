@@ -1,1 +1,129 @@
 // Specific CSS for your home-page
+
+.home-h1 {
+  // display: flex;
+  margin-top: 100px;
+  align-self: flex-start;
+  width: 1240px;
+}
+
+.home-cards-container {
+  display: flex;
+  flex-direction: column;
+  width: 1240px;
+  height: 372px;
+  padding-left: 70px;
+  padding-right: 70px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px 10px 10px 10px;
+  margin-top: 25px;
+}
+
+.fav-workouts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 24px;
+  justify-content: space-evenly;
+}
+
+.fav-workouts-grid-down {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 24px;
+  justify-content: space-evenly;
+}
+
+.home-cards-container-down {
+  display: flex;
+  width: 1240px;
+  height: 258px;
+  padding-left: 70px;
+  padding-right: 70px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px 10px 10px 10px;
+  margin-top: 10px;
+}
+
+.recent-workouts-grid-down {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 6px;
+  // justify-content: space-evenly;
+}
+
+.card-add-new-workout-top {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 194px;
+  height: 124px;
+  background-color: #EE6C4D;
+  color: black;
+  margin-top: -15px;
+  margin-bottom: 15px;
+}
+
+.card-all-workouts-down {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 194px;
+  height: 124px;
+  background-color: #EE6C4D;
+  color: black;
+}
+
+.workout-card {
+  display: flex;
+  flex-direction: column;
+  width: 194px;
+  height: 124px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 0px 0px 10px 0px;
+}
+
+.workout-card > img {
+  height: 144px;
+  border-radius: 10px 0px 0px 0px;
+}
+.workout-card {
+  .avatar-bordered {
+    overflow: auto;
+    width: 40px;
+    border-radius: 50%;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    border: white 1px solid;
+  }
+}
+
+.workout-card .workout-card-info {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  background-color: white;
+}
+
+.recent-workout-list-card {
+  display: flex;
+  flex-direction: row;
+  width: 1312px;
+  height: 64px;
+}
+
+.recent-workout-list-card-left {
+  width: 112px;
+}
+
+.recent-workout-list-card-right {
+  width: 1200px;
+  justify-content: space-evenly;
+  align-items: center;
+}
