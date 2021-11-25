@@ -1,12 +1,20 @@
-<%= link_to "New Workout", new_workout_path %>
+<h1 class="workouts-heading">My Workouts:</h1>
 
 
 
-<div class="workout-card-index">
+<div class="workout-card-index-div">
+  <%= link_to new_workout_path do %>
+    <div class="workout-card-info-index add-workout-button">
+      <p class="add-workout-button-text">+</p>
+    </div>
+  <%end%>
+
     <% @workouts.each do |workout|%>
     <%= link_to workout_path(workout) do %>
+
     <div class="workout-card-info-index">
-        <img src="https://static.onecms.io/wp-content/uploads/sites/35/2020/04/13/GettyImages-1175207081-2000.jpg" />
+        <%= image_tag("https://static.onecms.io/wp-content/uploads/sites/35/2020/04/13/GettyImages-1175207081-2000.jpg") %>
+
         <div class="workout-card-text">
           <h1 class="workout-name"><%= workout.name %></h1>
           <p class="workout-card-sport"><em>Sport:</em> <%= workout.sport %></p>
@@ -14,7 +22,11 @@
           <h3 class="workout-card-emoji"><%= workout.difficulty %></h3>
           <p class="workout-card-time"><strong>Time:</strong> <%= workout.workout_duration %> mins</p>
         </div>
-      </div>
+
+    </div>
+
       <% end %>
   <% end %>
+
+
 </div>
