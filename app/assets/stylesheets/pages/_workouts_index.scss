@@ -25,7 +25,12 @@ margin-left: 10px
   background-color: white;
   width: 350px;
   height: 300px;
+  transition-duration: 0.5s;
+}
 
+.workout-card-info-index:hover {
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  transition-duration: 0.5s;
 }
 
 .workout-card-text {
