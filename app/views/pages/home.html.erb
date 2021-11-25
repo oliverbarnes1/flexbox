@@ -1,3 +1,5 @@
+<%# <h1>Pages#home</h1>
+<p>Find me in app/views/pages/home.html.erb</p> %>
 
 <div class="container-div">
 
@@ -9,9 +11,11 @@
     <p>New Workout</p>
 
     <div class="fav-workouts-grid">
-      <div class="card-add-new-workout-top">
-        <h2>+ New Workout</h2>
-      </div>
+      <%= link_to new_workout_path do %>
+        <div class="card-add-new-workout-top">
+          <h2>+ New Workout</h2>
+        </div>
+      <%end%>
       <div class="card-add-new-workout-top">
         <h2>+ Random Workout</h2>
       </div>
@@ -26,7 +30,7 @@
       <% @workouts.each do |workout|%>
         <%= link_to workout_path(workout) do %>
           <div class="workout-card">
-            <img src="https://color-hex.org/colors/3d5a80.png">
+            <%= image_tag("https://static.onecms.io/wp-content/uploads/sites/35/2020/04/13/GettyImages-1175207081-2000.jpg") %>
             <div class="workout-card-info">
               <div>
                 <h1 class="workout-name"><%= workout.name %></h1>
@@ -39,14 +43,33 @@
           </div>
         <% end %>
       <% end %>
-      <div class="card-all-workouts-down">
-        <h2>See All Workouts</h2>
-      </div>
+      <%= link_to workouts_path do %>
+        <div class="card-all-workouts-down">
+          <h2>See All Workouts</h2>
+        </div>
+      <%end%>
     </div>
   </div>
 
-  <div class="home-cards-container-down">
+  <br>
 
+  <div class="home-cards-container-down">
+    <p>Recent Workouts</p>
+    <% @workouts.each do |workout|%>
+        <%= link_to workout_path(workout) do %>
+          <div class="recent-workouts-grid">
+            <div class="recent-workout-list-card-left">
+              <img src='https://www.icolorpalette.com/wp-content/themes/icolorpalette-child/solid.php?c=293241'>
+            </div>
+            <div class="recent-workout-list-card-right">
+              <p><strong><%= workout.name %></strong></p>
+              <p>Info</p>
+              <p>Edit</p>
+              <p>Delete</p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
   </div>
 
 </div>
