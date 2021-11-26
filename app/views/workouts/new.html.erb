@@ -22,32 +22,4 @@
   </div>
 
  </div>
-  <div class="nw-exercises">
-  <h2>Exercises</h2>
-    <% @workout_exercises = WorkoutExercise.where(workout_id: @workout.id ).to_a %>
-    <% @workout_exercises.each do |workout_exercise| %>
-        <div class="ws-excercise-card">
-          <% exercise = Exercise.find(workout_exercise.exercise_id) %>
-          <div>
-            <ul>
-              <li><strong><%= exercise.name %></strong></li>
-              <li><strong><%= exercise.description %></strong></li>
-              <li><strong><%= exercise.category %></strong></li>
-              <li><strong><%= exercise.sport %></strong></li>
-              <li><strong><%= exercise.difficulty %></strong></li>
-              <li><strong><%= exercise.muscle_group %></strong></li>
-            </ul>
-          </div>
-        </div>
-    <% end %>
 
-  </div>
-
-  <%# <div class="add-exercise-button">
-    <<%= link_to "Add Exercise", new_workout_workout_exercise_path(@workout.id ) %>
-  <%# </div> %>
-
-  <div class="nw-buttons">
-    <a href="#" class="button-secondary">Discard Workout</a>
-    <a href="#" class="button-primary">Create Workout and add exercises</a>
-  </div>
