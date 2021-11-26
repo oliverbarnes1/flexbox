@@ -1,0 +1,28 @@
+.nwe-container {
+  margin-top: 24px;
+  align-items: center;
+  text-align: center;
+  background-color: white;
+  border-radius: 10px;
+  border: grey;
+  padding: 30px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.nwe-title h2 {
+  font-size: 50px;
+}
+
+.nwe-exercises {
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.nwe-buttons {
+  align-self: flex-start;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
