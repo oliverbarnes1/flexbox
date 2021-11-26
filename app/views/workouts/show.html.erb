@@ -1,9 +1,4 @@
-
-
 <div class="ws-container" data-controller="workouttitle">
-<div data-workouttitle-target="backbutton" >
-  <%= link_to "Back", workouts_path %>
-</div>
 
   <div class="ws-header">
     <div class="ws-details" data-workouttitle-target="wsdetails">
@@ -35,8 +30,8 @@
     </div>
   </div>
 
-
   <div class="ws-exercises" data-action="keyup@window->workouttitle#nextExercise">
+    <h2>Execises in this workout:</h2>
     <% @workout_exercises = WorkoutExercise.where(workout_id: @workout.id ).to_a %>
     <% @workout_exercises.each do |workout_exercise| %>
       <% exercise = Exercise.find(workout_exercise.exercise_id) %>
@@ -61,18 +56,13 @@
   </div>
 
   <div class="ws-buttons" data-workouttitle-target="bottombuttons">
-    <a href="#" class="button-primary">Copy Workout</a>
-    <%= link_to "Edit Workout", edit_workout_path(@workout), class: "button-primary" %>
+    <div data-workouttitle-target="backbutton" class="button-secondary">
+      <%= link_to "Back", workouts_path %>
+    </div>
+    <a href="#" class="button-secondary">Copy Workout</a>
+    <%= link_to "Edit Workout", edit_workout_path(@workout), class: "button-secondary" %>
   </div>
 
+
+
 </div>
-
-
-
-<%# Workout details %>
-
-<%# list of workout exercises %>
-
-<%# copy button %>
-<%# edit button %>
-<%# start button %>

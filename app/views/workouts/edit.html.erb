@@ -1,6 +1,3 @@
-
-<%= link_to "Back", workouts_path %>
-
 <div class="nw-title">
   <h2><strong>Edit your workout</strong></h2>
 </div>
@@ -18,7 +15,7 @@
       <%= f.input :muscle_group, label: "Muscle Group", :input_html => { class: 'field' } %>
       <%= f.input :description, label: "Description", :input_html => { class: 'field' } %>
       <%# <%= f.input :photo, as: :file %>
-        <%= f.button :submit, "Save workout details",  class: "save-workout-button"  %>
+        <%= f.button :submit, "Update workout details",  class: "save-workout-button"  %>
     <% end %>
   </div>
 
@@ -26,7 +23,7 @@
     <h2>Exercises</h2>
       <%= link_to new_workout_workout_exercise_path(@workout.id) do %>
     <div class="we-nw-card">
-        <h3><strong><i class="fas fa-plus"></i> Add a new exercise</strong></h3>
+        <h3><strong><i class="fas fa-plus"></i> Add an exercise</strong></h3>
     </div>
       <% end %>
     <% @workout_exercises = WorkoutExercise.where(workout_id: @workout.id ).to_a %>
@@ -52,4 +49,6 @@
   <% end %>
 
   </div>
+
 </div>
+  <%= link_to "Back", workouts_path, class:"button-secondary"%>
