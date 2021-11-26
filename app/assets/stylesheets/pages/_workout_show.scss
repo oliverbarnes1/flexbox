@@ -7,6 +7,7 @@
   justify-content: space-around;
   margin-bottom: 40px;
   margin-top: 20px;
+  height: 185px;
 }
 
 .ws-exercises {
@@ -25,8 +26,11 @@
 }
 
 .ws-details-fold {
-  height: 0;
-  transition-duration: 0.5s;
+  height: 0 !important;
+}
+
+.ws-fade {
+  transition: height 0.5s;
 }
 
 .ws-start-workout {
@@ -54,6 +58,15 @@
   transition-duration: 0.5s;
 }
 
+.active h3 {
+  font-size: 100px;
+  transition-duration: 0.5s;
+}
+
+h3 {
+  transition-duration: 0.5s;
+}
+
 .ws-excercise-card:hover .ws-container{
   transition-duration: 0.5s;
 }
@@ -66,8 +79,12 @@
 .ws-exercise-name  {
   flex: 3;
   display: flex;
-  padding-left: 24px;
   align-items: center;
+  transition-duration: 0.5s;
+}
+
+.ws-exercise-name-after {
+  justify-content: center;
 }
 
 .ws-few-content-right {
@@ -75,6 +92,7 @@
   align-items: center;
   width: 74px;
   font-size: 30px;
+  margin-right: 24px;
   // flex: 1;
 }
 
@@ -107,4 +125,5 @@
   align-items: center;
   width: 100%;
   margin: 30px 0;
+  height: 100px;
 }
