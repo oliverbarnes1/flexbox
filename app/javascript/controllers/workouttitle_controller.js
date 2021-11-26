@@ -18,6 +18,11 @@ export default class extends Controller {
     button.classList.add("ws-details-disappear")
     details.classList.add("ws-details-disappear")
     bottombuttons.classList.add("ws-details-disappear")
+    setTimeout(function () {
+      button.classList.add("ws-details-fold")
+      details.classList.add("ws-details-fold")
+      bottombuttons.classList.add("ws-details-fold")
+    }, 2000);
   }
 
   nextExercise(event) {
