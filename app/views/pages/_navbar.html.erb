@@ -1,15 +1,19 @@
 <div class="navbar">
   <ul class="navbar-items">
-    <li class="navbar-item">Linkyboi</li>
-    <li class="navbar-item">Linkyboi</li>
     <%= link_to root_path do %>
-    <li class="logo-placeholder">Flexboooox</li>
+      <li class="logo-placeholder">FlexBox</li>
     <% end %>
-    <li class="navbar-item">Linkyboi</li>
-      <% if user_signed_in? %>
-        <li class="navbar-item"><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
-      <% else %>
-        <li class="navbar-item"><%= link_to "Log in", new_user_session_path%></li>
-      <% end %>
+    <%= link_to workouts_path do %>
+      <li class="navbar-item">Workouts</li>
+    <%end%>
+    <li class="navbar-item">About</li>
+    <li class="navbar-item">Blog</li>
+  </ul>
+  <ul class ="navbar-items-right">
+    <% if user_signed_in? %>
+      <li class="navbar-item"><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+    <% else %>
+      <li class="navbar-item"><%= link_to "Log in", new_user_session_path%></li>
+    <% end %>
   </ul>
 </div>
