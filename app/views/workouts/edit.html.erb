@@ -1,15 +1,14 @@
-Hello
+
 <%= link_to "Back", workouts_path %>
 
-<div class="nw-container">
-  <div class="nw-title">
-    <h2><strong>Edit your workout</strong></h2>
-  </div>
-  <div class="nw-form-container">
+<div class="nw-title">
+  <h2><strong>Edit your workout</strong></h2>
+</div>
+<div class="we-page">
 
-<div class="nw-form-container">
+  <div class="we-form">
     <h2>Workout details</h2>
-    <%= simple_form_for @workout, url: workouts_path, html: { class: "nw-form"} do |f|%>
+    <%= simple_form_for @workout, url: workout_path(@workout.id), html: { class: "nw-form"} do |f|%>
       <%= f.input :name, label: "Name of workout (15 Characters Max)", :input_html => { class: 'field' } %>
       <%= f.input :category, collection: ["warmup", "weights", "arobic", "cardio"], label: "Category", :input_html => { class: 'field' } %>
       <%= f.input :sport, label: "Sport", :input_html => { class: 'field' } %>
@@ -19,37 +18,38 @@ Hello
       <%= f.input :muscle_group, label: "Muscle Group", :input_html => { class: 'field' } %>
       <%= f.input :description, label: "Description", :input_html => { class: 'field' } %>
       <%# <%= f.input :photo, as: :file %>
-        <%= f.button :submit, "Save workout details",  class: "submit-button booking-submit"  %>
+        <%= f.button :submit, "Save workout details",  class: "save-workout-button"  %>
     <% end %>
   </div>
 
-
-<div class="nw-exercises">
-  <h2>Exercises</h2>
+  <div class="we-exercises" >
+    <h2>Exercises</h2>
+      <%= link_to new_workout_workout_exercise_path(@workout.id) do %>
+    <div class="we-nw-card">
+        <h3><strong><i class="fas fa-plus"></i> Add a new exercise</strong></h3>
+    </div>
+      <% end %>
     <% @workout_exercises = WorkoutExercise.where(workout_id: @workout.id ).to_a %>
     <% @workout_exercises.each do |workout_exercise| %>
-        <div class="ws-excercise-card">
-          <% exercise = Exercise.find(workout_exercise.exercise_id) %>
-          <div>
-            <ul>
-              <li><strong><%= workout_exercise.reps %></strong></li>
-              <li><strong><%= workout_exercise.sets %></strong></li>
-              <li><strong><%= workout_exercise.weight %></strong></li>
-              <li><strong><%= workout_exercise.exercise_duration %></strong></li>
-            </ul>
-          </div>
+    <% exercise = Exercise.find(workout_exercise.exercise_id) %>
+    <div class="we-excercise-card">
+
+      <div class="we-image-div">
+        <%= image_tag(exercise.exercise_image) %>
+      </div>
+
+      <div class="we-exercise-name">
+        <h3><strong><%= exercise.name %></strong></h3>
+      </div>
+
+      <div class ="we-few-content-right">
+        <div>
+          <strong><%= exercise.difficulty %></strong>
         </div>
-    <% end %>
-    <div>
+      </div>
 
-
-  <%= link_to "Add a new exercise to this workout", new_workout_workout_exercise_path(@workout.id) %>
+    </div>
+  <% end %>
 
   </div>
-
-
-  <div class="ws-buttons">
-    <a href="#">Copy Workout</a>
-    <a href="#">Edit Workout</a>
-    <a href="#">Start Workout</a>
-  </div>
+</div>

@@ -27,6 +27,7 @@ class WorkoutsController < ApplicationController
   end
 
   def update
+    @workout = Workout.find(params[:id])
     @workout.update(workout_params)
     if @workout.update(workout_params)
       redirect_to workout_path(@workout), notice: 'workout was successfully updated.'
