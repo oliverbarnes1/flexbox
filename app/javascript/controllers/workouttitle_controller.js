@@ -1,7 +1,7 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = ["wsdetails", "button", "exercises", "bottombuttons"]
+  static targets = ["wsdetails", "button", "exercises", "bottombuttons", "backbutton"]
 
   connect() {
     console.log("connected!")
@@ -13,9 +13,11 @@ export default class extends Controller {
     console.log(exercise)
     const details = this.wsdetailsTarget
     const button = this.buttonTarget
+    const backbutton = this.backbuttonTarget
     const bottombuttons = this.bottombuttonsTarget
     exercise.classList.add("active")
     button.classList.add("ws-details-disappear")
+    backbutton.classList.add("ws-details-disappear")
     details.classList.add("ws-details-disappear")
     bottombuttons.classList.add("ws-details-disappear")
     setTimeout(function () {
@@ -41,4 +43,10 @@ export default class extends Controller {
       }
     })
   }
+
+
+
+
+
+
 }
