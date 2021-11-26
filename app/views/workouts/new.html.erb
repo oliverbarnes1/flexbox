@@ -1,10 +1,9 @@
-<div class="wn-btn-back">
-  <%= link_to "Back", workouts_path %>
-</div>
- <div class="nw-container">
+<div class="nw-container">
+
   <div class="nw-title">
     <h2><strong>Create a new workout</strong></h2>
   </div>
+
   <div class="nw-form-container">
     <h2>Workout details</h2>
     <%= simple_form_for @workout, url: workouts_path, html: { class: "nw-form"} do |f|%>
@@ -17,9 +16,9 @@
       <%= f.input :muscle_group, label: "Muscle Group", :input_html => { class: 'field' } %>
       <%= f.input :description, label: "Description", :input_html => { class: 'field' } %>
       <%# <%= f.input :photo, as: :file %>
-        <%= f.button :submit, "Save workout details",  class: "wn-btn"  %>
+      <%= link_to "Cancel", workouts_path, class:"button-secondary" %>
+      <%= f.button :submit, "Save workout details",  class: "button-primary"  %>
     <% end %>
   </div>
 
- </div>
-
+</div>
