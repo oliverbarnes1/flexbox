@@ -1,6 +1,13 @@
+
+
+<%# <div class="back-container" data-workouttitle-target="backbutton" >
+  <%= link_to "Back", workouts_path, class: "back-button" %>
+<%# </div> %>
+
+
 <div class="ws-container" data-controller="workouttitle">
 
-  <div class="ws-header">
+  <div class="ws-header ws-fade" data-workouttitle-target="header">
     <div class="ws-details" data-workouttitle-target="wsdetails">
 
       <h1><strong><%= @workout.name %></strong></h1>
@@ -25,7 +32,7 @@
         </div>
     </div>
 
-    <div class='ws-start-workout' >
+    <div class='ws-start-workout'>
         <a href="#" class="start-workout-button" data-action="click->workouttitle#buttontest" data-workouttitle-target="button"><strong>Start<br>Workout!</strong></a>
     </div>
   </div>
@@ -37,15 +44,15 @@
       <% exercise = Exercise.find(workout_exercise.exercise_id) %>
       <div class="ws-excercise-card" data-workouttitle-target="exercises">
 
-        <div class="ws-image-div">
+        <div class="ws-image-div" data-workouttitle-target="picture">
           <%= image_tag(exercise.exercise_image) %>
         </div>
 
-        <div class="ws-exercise-name">
+        <div class="ws-exercise-name" data-workouttitle-target="name">
           <h3><strong><%= exercise.name %></strong></h3>
         </div>
 
-        <div class ="ws-few-content-right">
+        <div class ="ws-few-content-right" data-workouttitle-target="emoji">
           <div>
             <strong><%= exercise.difficulty %></strong>
           </div>
