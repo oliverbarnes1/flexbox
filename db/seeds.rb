@@ -8,7 +8,7 @@
 
 
 user1 = User.new(
-  email: "gym@bro.roidz",
+  email: "the@rock.roidz",
   password: "123123"
 )
 puts "saving"
@@ -18,7 +18,7 @@ puts "saved"
 ##############################################################
 
 workout1 = Workout.new(
-  name: "All Round Warmup!",
+  name: "🏋️‍♀️All Round Warmup!🏋️‍♀️",
   category: "Warmup",
   sport: "Any",
   difficulty: "🥵",
@@ -259,7 +259,7 @@ workout_exercise.save!
 puts "saved"
 
 workout_exercise = WorkoutExercise.new(
-  workout_id: workout1.id,
+  workout_id: workout2.id,
   exercise_id: exercise6.id,
   reps: 50,
   exercise_duration: 10,
@@ -272,7 +272,7 @@ puts "saved"
 
 
 workout_exercise = WorkoutExercise.new(
-  workout_id: workout1.id,
+  workout_id: workout2.id,
   exercise_id: exercise7.id,
   reps: 10,
   exercise_duration: 10,
@@ -283,8 +283,8 @@ workout_exercise.save!
 puts "saved"
 
 workout_exercise = WorkoutExercise.new(
-  workout_id: workout1.id,
-  exercise_id: exercise8.id,
+  workout_id: workout2.id,
+  exercise_id: exercise3.id,
   reps: 10,
   exercise_duration: 10,
   sets: 3,
@@ -294,8 +294,8 @@ workout_exercise.save!
 puts "saved"
 
 workout_exercise = WorkoutExercise.new(
-  workout_id: workout1.id,
-  exercise_id: exercise9.id,
+  workout_id: workout2.id,
+  exercise_id: exercise2.id,
   reps: 10,
   exercise_duration: 10,
   sets: 3,
@@ -305,8 +305,8 @@ workout_exercise.save!
 puts "saved"
 
 workout_exercise = WorkoutExercise.new(
-  workout_id: workout1.id,
-  exercise_id: exercise10.id,
+  workout_id: workout2.id,
+  exercise_id: exercise1.id,
   reps: 10,
   exercise_duration: 10,
   sets: 3,
