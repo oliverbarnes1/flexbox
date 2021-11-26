@@ -156,8 +156,9 @@
 .recent-workout-list-card-right {
   width: 1200px;
   display: flex;
+  padding-left: 20px;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
 }
 
