@@ -1,14 +1,20 @@
-<div class="">
-  <div class="">
-    <h2><strong>Add a new exercise</strong></h2>
+
+  <%= link_to "Back", edit_workout_path(@workout) %>
+ <div class="nwe-container">
+
+  <div class="nwe-title">
+    <h2><strong>Add a new exercise to your workout</strong></h2>
   </div>
-  </div>
+
+  <div class="nwe-form-container">
+    <h2>Exercise details</h2>
     <%= simple_form_for [@workout, @workout_exercise], html: { class: "nw-form"} do |f|%>
       <%= f.association :exercise, label: "Select exercise", :input_html => { class: 'field' } %>
       <%= f.input :reps, label: "Reps", :input_html => { class: 'field' } %>
       <%= f.input :sets, label: "Sets", collection: ["😴", "😀", "🥵", "🤮", "💀"], label: "Difficulty", :input_html => { class: 'field' } %>
       <%= f.input :weight, label: "Weight", :input_html => { class: 'field' } %>
       <%= f.input :exercise_duration, label: "Exercise duration", :input_html => { class: 'field' } %>
-      <%= f.button :submit, "Save your changes",  class: "submit-button booking-submit"  %>
+      <%= f.button :submit, "Add exercise",   class: "button-primary"  %>
     <% end %>
   </div>
+</div>
