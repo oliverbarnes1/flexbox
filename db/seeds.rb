@@ -11,7 +11,6 @@ Workout.destroy_all
 User.destroy_all
 Exercise.destroy_all
 
-
 user1 = User.new(
   email: "the@rock.roidz",
   password: "123123"
