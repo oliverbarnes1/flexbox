@@ -9,7 +9,7 @@ Hello
 
 <div class="nw-form-container">
     <h2>Workout details</h2>
-    <%= simple_form_for @workout, url: workouts_path, html: { class: "nw-form"} do |f|%>
+    <%= simple_form_for @workout, url: workout_path(@workout.id), html: { class: "nw-form"} do |f|%>
       <%= f.input :name, label: "Name of workout (15 Characters Max)", :input_html => { class: 'field' } %>
       <%= f.input :category, collection: ["warmup", "weights", "arobic", "cardio"], label: "Category", :input_html => { class: 'field' } %>
       <%= f.input :sport, label: "Sport", :input_html => { class: 'field' } %>
