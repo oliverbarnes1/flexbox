@@ -1,6 +1,5 @@
 
-  <%= link_to "Back", edit_workout_path(@workout) %>
- <div class="nwe-container">
+<div class="nwe-container">
 
   <div class="nwe-title">
     <h2><strong>Add a new exercise to your workout</strong></h2>
@@ -14,6 +13,7 @@
       <%= f.input :sets, label: "Sets", collection: ["😴", "😀", "🥵", "🤮", "💀"], label: "Difficulty", :input_html => { class: 'field' } %>
       <%= f.input :weight, label: "Weight", :input_html => { class: 'field' } %>
       <%= f.input :exercise_duration, label: "Exercise duration", :input_html => { class: 'field' } %>
+      <%= link_to "Cancel", edit_workout_path(@workout), class: "button-secondary" %>
       <%= f.button :submit, "Add exercise",   class: "button-primary"  %>
     <% end %>
   </div>
