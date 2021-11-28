@@ -5,4 +5,7 @@ class PagesController < ApplicationController
     @workouts = Workout.all
   end
 
+  def dashboard
+    @workouts = Workout.all
+  end
 end

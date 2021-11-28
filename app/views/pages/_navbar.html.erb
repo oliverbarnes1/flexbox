@@ -3,11 +3,15 @@
     <%= link_to root_path do %>
       <li class="logo-placeholder">FlexBox</li>
     <% end %>
-    <%= link_to workouts_path do %>
-      <li class="navbar-item">Workouts</li>
+    <%= link_to dashboard_path do %>
+      <li class="navbar-item">My Dashboard</li>
     <%end%>
-    <li class="navbar-item">About</li>
-    <li class="navbar-item">Blog</li>
+    <%= link_to workouts_path do %>
+      <li class="navbar-item">My Workouts</li>
+    <%end%>
+    <%= link_to workouts_path do %>
+      <li class="navbar-item">My Goals</li>
+    <%end%>
   </ul>
   <ul class ="navbar-items-right">
     <% if user_signed_in? %>
