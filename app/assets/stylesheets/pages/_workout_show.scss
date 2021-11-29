@@ -127,3 +127,10 @@ h3 {
   margin: 30px 0;
   height: 100px;
 }
+
+.spotify-player {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+}
