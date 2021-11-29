@@ -25,9 +25,9 @@
       <h1 style="font-size: 100px;"><strong>FlexBox</strong></h1>
       <p class="description-text">Whatever your sport, create your perfect workout routine.</p>
       <% if user_signed_in? %>
-        <p class="button-primary" id="homepage-button"><%= link_to "Lets go ->", workouts_path %> </p>
+        <p class="button-primary" id="bp"><%= link_to "Lets go ->", workouts_path %> </p>
       <% else %>
-        <p class="button-primary"><%= link_to "Lets go ->", new_user_session_path %> </p>
+        <p class="button-primary" id="bp"><%= link_to "Lets go ->", new_user_session_path %> </p>
       <% end %>
   </div>
 </div>
