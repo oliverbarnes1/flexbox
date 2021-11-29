@@ -11,6 +11,9 @@
 }
 
 .ws-exercises {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding-right: 20px;
   padding-left: 20px;
 }
@@ -19,6 +22,8 @@
   text-align: center;
   padding-left: 30px;
 }
+
+// Some CSS selectors for the show page's fancy JavaScript
 
 .ws-details-disappear {
   opacity: 0 !important;
@@ -32,6 +37,23 @@
 .ws-fade {
   transition: height 0.5s;
 }
+
+.active {
+  height: 374px;
+  width: 150%;
+  transition-duration: 0.5s;
+}
+
+.active h3 {
+  font-size: 100px;
+  transition-duration: 0.5s;
+}
+
+h3 {
+  transition-duration: 0.5s;
+}
+
+// -------------------------------
 
 .ws-start-workout {
   display: flex;
@@ -50,21 +72,6 @@
   transition-duration: 0.5s;
   height:80px;
   align-items: center;
-}
-
-.active {
-  height: 374px;
-  width: 100%;
-  transition-duration: 0.5s;
-}
-
-.active h3 {
-  font-size: 100px;
-  transition-duration: 0.5s;
-}
-
-h3 {
-  transition-duration: 0.5s;
 }
 
 .ws-excercise-card:hover .ws-container{

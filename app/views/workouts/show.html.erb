@@ -36,7 +36,7 @@
   </div>
 
 
-  <div class="ws-exercises" data-action="keyup@window->workouttitle#nextExercise">
+  <div class="ws-exercises" data-action="keyup@window->workouttitle#nextExercise" data-action="keydown@window->workouttitle#blockdefault">
     <% @workout_exercises = WorkoutExercise.where(workout_id: @workout.id ).to_a %>
     <% @workout_exercises.each do |workout_exercise| %>
       <% exercise = Exercise.find(workout_exercise.exercise_id) %>
