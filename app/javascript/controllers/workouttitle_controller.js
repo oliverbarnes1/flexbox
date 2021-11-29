@@ -24,7 +24,7 @@ export default class extends Controller {
     backbutton.classList.add("ws-details-disappear")
     details.classList.add("ws-details-disappear")
     bottombuttons.classList.add("ws-details-disappear")
-    this.sleep(10000);
+    this.sleep(10000)s
     setTimeout(function () {
       button.classList.add("ws-details-fold")
       details.classList.add("ws-details-fold")

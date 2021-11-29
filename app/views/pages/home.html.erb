@@ -1,87 +1,33 @@
-<%# <h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p> %>
+<div class="hp-background">
+  <%# <div class="logo">
+      <img src="app/assets/images/logo1.png">
+  </div> %>
 
-<div class="container-div">
-
-  <div class='home-h1'>
+  <div class="hp-navbar">
     <% if user_signed_in? %>
-      <h1>Hello, <%= current_user.email %>!</h1>
+      <%= link_to dashboard_path do %>
+        <div>
+          <p class="button-link">Go to your dashboard</p>
+        </div>
+      <% end %>
+
     <% else %>
-      <h1>Hello!</h1>
+      <div class="button-primary">
+        <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+      </div>
+      <div class="button-secondary">
+        <%= link_to "Sign-up", new_user_registration_path, class: "nav-link" %>
+      </div>
     <% end %>
   </div>
 
-  <div class="home-cards-container">
-    <div class="nw-text-h1">
-      <h4>NEW WORKOUT:</h4>
-    </div>
-    <div class="fav-workouts-grid">
-      <%= link_to new_workout_path do %>
-        <div class="card-add-new-workout-top">
-          <h2>+ New Workout</h2>
-        </div>
-      <%end%>
-      <div class="card-add-new-workout-top">
-        <h2>+ Random Workout</h2>
-      </div>
-      <%= link_to workouts_path do %>
-      <div class="card-add-new-workout-top">
-          <h2>Find Workout</h2>
-      </div>
-      <% end %>
-    </div>
-
-    <div class="nw-text-h1">
-      <h4>FAVOURITE WORKOUTS:</h4>
-    </div>
-
-
-    <div class="fav-workouts-grid-down">
-      <% @workouts.each do |workout|%>
-        <%= link_to workout_path(workout) do %>
-          <div class="workout-card">
-            <%= image_tag("https://static.onecms.io/wp-content/uploads/sites/35/2020/04/13/GettyImages-1175207081-2000.jpg") %>
-            <div class="workout-card-info">
-              <div>
-                <h1 class="workout-name"><%= workout.name %></h1>
-                <p class="workout-card-sport"><em>Sport:</em> <%= workout.sport %></p>
-                <p class="workout-card-category"><em><%= workout.category %></em></p>
-                <h3 class="workout-card-emoji"><%= workout.difficulty %></h3>
-                <p class="workout-card-time"><strong>Time:</strong> <%= workout.workout_duration %> mins</p>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-      <%= link_to workouts_path do %>
-        <div class="card-all-workouts-down">
-          <h2>See All Workouts</h2>
-        </div>
-      <%end%>
-    </div>
-  </div>
-
-  <br>
-
-  <div class="home-cards-container-down">
-    <div class="nw-text-h1">
-      <h1>Recent Workouts</h1>
-    </div>
-    <% @workouts.each do |workout|%>
-        <%= link_to workout_path(workout) do %>
-          <div class="recent-workouts-grid">
-            <div class="recent-workout-list-card-left">
-              <img src='https://static.onecms.io/wp-content/uploads/sites/35/2020/04/13/GettyImages-1175207081-2000.jpg'>
-            </div>
-            <div class="recent-workout-list-card-right">
-              <p><strong><%= workout.name %></strong></p>
-              <p>Info</p>
-              <p>Edit</p>
-              <p>Delete</p>
-            </div>
-          </div>
-        <% end %>
+  <div class="hp-text">
+      <h1 style="font-size: 100px;"><strong>FlexBox</strong></h1>
+      <p class="description-text">Whatever your sport, create your perfect workout routine.</p>
+      <% if user_signed_in? %>
+        <p class="button-primary" id="homepage-button"><%= link_to "Lets go ->", workouts_path %> </p>
+      <% else %>
+        <p class="button-primary"><%= link_to "Lets go ->", new_user_session_path %> </p>
       <% end %>
   </div>
-
 </div>
