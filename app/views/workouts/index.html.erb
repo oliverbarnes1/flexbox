@@ -12,6 +12,10 @@
       <%= link_to workout_path(workout) do %>
         <div class="workout-card-info-index">
             <%= image_tag("https://static.onecms.io/wp-content/uploads/sites/35/2020/04/13/GettyImages-1175207081-2000.jpg") %>
+          <div class="favourite-icon">
+            <i class="far fa-heart"></i>
+            <i class="fas fa-heart"></i>
+          </div>
             <div class="workout-card-text">
               <h1 class="workout-name"><%= workout.name %></h1>
               <p class="workout-card-sport"><em>Sport:</em> <%= workout.sport %></p>
