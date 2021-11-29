@@ -13,7 +13,9 @@
 
   <body>
     <div class="navbar-div">
-      <%= render 'pages/navbar' %>
+      <% unless action_name == 'home' %>
+        <%= render 'pages/navbar' %>
+      <% end %>
     </div>
 
     <div class="content-div">
@@ -21,7 +23,9 @@
     </div>
 
     <div class="footer-div">
-      <%= render 'pages/footer' %>
+      <% unless action_name == 'home' %>
+        <%= render 'pages/footer' %>
+      <% end %>
     </div>
 
 
