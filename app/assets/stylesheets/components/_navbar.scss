@@ -44,7 +44,7 @@
   // padding-left: 20px;
   // padding-right: 20px;
   // margin: 0;
-  margin-right: 180px;
+  margin-right: 120px;
   margin-bottom: 30px;
   font-weight: 300;
 }
@@ -80,4 +80,10 @@
   font-size: 40px;
   font-weight: 500;
   transition-duration: 0.3s;
+}
+
+.avatar-bordered {
+  margin-top: 10px;
+  margin-left: 15px;
+  border-radius: 50%;
 }
