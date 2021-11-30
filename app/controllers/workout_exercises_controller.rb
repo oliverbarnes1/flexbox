@@ -10,23 +10,40 @@ class WorkoutExercisesController < ApplicationController
     @workout_exercise = WorkoutExercise.new(workoutexercise_params)
     @workout = Workout.find(params[:workout_id])
     @workout_exercise.workout = @workout
+    @exercise = Exercise.find(@workout_exercise.exercise_id)
 
-    if @workout_exercise.save
-      redirect_to workout_path(@workout)
-    else
-      render :new
+    respond_to do |format|
+      if @workout_exercise.save
+        format.html { redirect_to edit_workout_path(@workout) }
+        # format.js {
+        #   return render partial: 'workouts/workout_exercise', locals: {workout_exercise: @workout_exercise, exercise: @exercise}
+        # }
+        format.json
+        # render json: @workout_exercise
+        # format.json
+      end
     end
+
+    # if @workout_exercise.save
+    #   redirect_to workout_path(@workout), notice: 'Workout Exercise was successfully created.'
+    # else
+    #   render :new
+    # end
   end
 
   def show
   end
 
   def edit
+    @workout_exercise = WorkoutExercise.find(params[:id])
+    @workout = Workout.find(params[:workout_id])
   end
 
   def update
-    if @workout_exercise.update(workout_exercise_params)
-      redirect_to @workout_exercise, notice: 'Successfully updated!'
+    @workout = Workout.find(params[:workout_id])
+    @workout_exercise.update(workoutexercise_params)
+    if @workout_exercise.save
+      redirect_to edit_workout_path(@workout), notice: 'Workout Exercise was successfully updated.'
     else
       render notice: 'Failed.'
     end
