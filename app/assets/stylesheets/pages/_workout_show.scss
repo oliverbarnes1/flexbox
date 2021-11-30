@@ -17,8 +17,14 @@
 
 .ws-details {
   text-align: center;
-  padding-left: 30px;
+  // padding-left: 30px;
 }
+
+.ws-heading{
+  height: 40px;
+}
+
+// JavaScript CSS classes -----------------
 
 .ws-details-disappear {
   opacity: 0 !important;
@@ -27,10 +33,76 @@
 
 .ws-details-fold {
   height: 0 !important;
+  transition-duration: 1s;
 }
 
 .ws-fade {
-  transition: height 0.5s;
+  transition: height 1s;
+}
+
+.active {
+  height: 374px !important;
+  width: 100% !important;
+  transition-duration: 0.5s;
+}
+
+.active h3 {
+  font-size: 70px;
+  transition-duration: 0.5s;
+}
+
+h3 {
+  transition-duration: 0.5s;
+}
+
+.ws-workout-reps-time-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  width: 0;
+  transition-duration: 0.5s;
+  transition: width 0.5s
+}
+
+.reps-size-add {
+  width: 400px;
+  transition-duration: 0.3s;
+  transition: width 0.3s
+}
+
+.info-add {
+  opacity: 1 !important;
+  transition: opacity 0.6s;
+  font-size: 50px;
+}
+
+.exercise-info {
+  text-align: center;
+  font-size: 35px;
+  opacity: 0;
+  transition: opacity 0.5s;
+  margin: 0px 20px 0px 0px;
+}
+
+.cwb-button-visible {
+  opacity: 1 !important;
+  transition: opacity 1s;
+}
+
+//-------------------------------
+
+.cwb-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 0px;
+  transition: height 0.3s;
+}
+
+.cwb-container-unfold {
+  height: 160px !important;
+  transition: height 0.3s;
 }
 
 .ws-start-workout {
@@ -42,7 +114,7 @@
 
 .ws-excercise-card {
   border-radius: 7px;
-  margin-bottom: 8px;
+  margin-bottom: 14px;
   background: white;
   border: 1px solid rgb(235,235,235);
   width: 100%;
@@ -50,21 +122,7 @@
   transition-duration: 0.5s;
   height:80px;
   align-items: center;
-}
-
-.active {
-  height: 374px;
-  width: 100%;
-  transition-duration: 0.5s;
-}
-
-.active h3 {
-  font-size: 100px;
-  transition-duration: 0.5s;
-}
-
-h3 {
-  transition-duration: 0.5s;
+  box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.1);
 }
 
 .ws-excercise-card:hover .ws-container{
@@ -97,9 +155,10 @@ h3 {
 }
 
 .ws-excercise-card img {
-  height: 80px;
+  height: 78px;
   object-fit: cover;
-  border-radius: 7px 0px 0px 7px;
+  border-radius: 6px 0px 0px 6px;
+  margin: 1px 0;
 }
 
 .ws-excercises {

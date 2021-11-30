@@ -45,7 +45,7 @@ class WorkoutExercisesController < ApplicationController
     if @workout_exercise.save
       redirect_to edit_workout_path(@workout), notice: 'Workout Exercise was successfully updated.'
     else
-      render notice: 'Workout Exercise already exists'
+      render notice: 'Failed.'
     end
   end
 

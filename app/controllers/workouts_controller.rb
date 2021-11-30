@@ -1,4 +1,14 @@
 class WorkoutsController < ApplicationController
+  before_action :authenticate_user!, only: :toggle_favorite
+
+  def toggle_favorite
+    @workout = Workout.find_by(id: params[:id])
+    current_user.favorited?(@workout) ? current_user.unfavorite(@workout) : current_user.favorite(@workout)
+    respond_to do |format|
+      format.js {}
+    end
+  end
+
   def index
     @workouts = Workout.all
   end

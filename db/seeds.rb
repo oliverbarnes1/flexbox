@@ -12,7 +12,7 @@ User.destroy_all
 Exercise.destroy_all
 
 user1 = User.new(
-  email: "the@rock.roidz",
+  email: "Bolt@gmail.com",
   password: "123123"
 )
 puts "saving"
@@ -25,11 +25,11 @@ workout1 = Workout.new(
   name: "🏋️‍♀️All Round Warmup!🏋️‍♀️",
   category: "Warmup",
   sport: "Any",
-  difficulty: "🥵",
+  difficulty: "😀",
   workout_duration: "30",
   equipment: "None",
-  muscle_group: "quads, Abs",
-  description: "A good started exercise to get correctly warmed up before a big activity.",
+  muscle_group: "Whole body",
+  description: "A good workout to get your whole body warmed up and ready!",
   user_id: user1.id
 )
 puts "saving"
@@ -37,59 +37,56 @@ workout1.save!
 puts "saved"
 
 workout2 = Workout.new(
-  name: "💀Intense Warmup💀",
-  category: "weights",
+  name: "💀Intense Workout💀",
+  category: "Workout",
   sport: "Any",
   difficulty: "🤮",
-  workout_duration: "10",
+  workout_duration: "45",
   equipment: "None",
-  muscle_group: "glutes, Abs",
-  description: "if you want a good warmup to get you sweating by the end this is the one for you",
+  muscle_group: "Whole body",
+  description: "You will definitly be sweating by the end of this workout",
   user_id: user1.id
 )
 puts "saving"
 workout2.save!
 puts "saved"
 
-
-
 ##################################################################################
 
-exercise1 = Exercise.new(
-  name: "Lunges",
-  category: "Warmup",
-  sport: "Running",
-  difficulty: "😀",
-  muscle_group: "Legs",
-  description: "Lunges increaseyour balance also increasing strength in your legs and glutes.",
-  exercise_image: "https://thumbs.gfycat.com/InferiorFalseGalago-max-1mb.gif"
+exercise = Exercise.new(
+  name: "Push-up",
+  category: "Workout",
+  sport: "Workout",
+  difficulty: "🤮",
+  description: "A push-up is a common calisthenics exercise beginning from the prone position.",
+  muscle_group: "Chest, shoulders, abs and triceps",
+  exercise_image: "https://im3.ezgif.com/tmp/ezgif-3-5482bd7ac349.gif"
 )
 puts "saving"
-exercise1.save!
+exercise.save!
 puts "saved"
 
 exercise2 = Exercise.new(
   name: "Squat",
-  category: "Weights",
-  sport: "Gymnastics",
+  category: "Workout",
+  sport: "Workout",
   difficulty: "🥵",
-  muscle_group: "Quads",
+  muscle_group: "Hamstrings, buttocks and quadriceps",
   description: "A squat is a strength exercise in which the trainee lowers their hips from a standing position and then stands back up",
-  exercise_image: "https://www.verywellfit.com/thmb/NF55yRjCpuEMUVtibfSepA_F9l8=/3000x2000/filters:fill(FFDB5D,1)/79--Sumo-SquatGIF-a10fc1d5c41f4b3cbb9ab82dca25936b.gif"
+  exercise_image: "https://im3.ezgif.com/tmp/ezgif-3-2c42ec3f99cf.gif"
 )
 puts "saving"
 exercise2.save!
 puts "saved"
 
-
 exercise3 = Exercise.new(
-  name: "Plank",
-  category: "Warmup",
-  sport: "Boxing",
-  difficulty: "🥵",
-  muscle_group: "Abs",
-  description: "The plank is an isometric core strength exercise that involves maintaining a position similar to a push-up for the maximum possible time",
-  exercise_image: "https://hips.hearstapps.com/ame-prod-menshealth-assets.s3.amazonaws.com/main/assets/plank.gif?resize=480:*"
+  name: "Lunge",
+  category: "Workout",
+  sport: "Workout",
+  difficulty: "😀",
+  description: "A lunge can refer to any position of the human body where one leg is positioned forward with knee bent and foot flat on the ground while the other leg is positioned behind",
+  muscle_group: "Abs, quadriceps, hamstrings and calves",
+  exercise_image: "https://im3.ezgif.com/tmp/ezgif-3-f7244ae93b4c.gif"
 )
 puts "saving"
 exercise3.save!
@@ -97,312 +94,147 @@ puts "saved"
 
 
 exercise4 = Exercise.new(
-  name: "Push-up",
-  category: "Warmup",
-  sport: "Fitness",
-  difficulty: "🤮",
+  name: "Russian twist",
+  category: "Workout",
+  sport: "Workout",
+  difficulty: "🥵",
+  description: "The Russian twist is a simple abdominal exercise for working the core, shoulders, and hips.",
   muscle_group: "Abs",
-  description: "Traditional pushups are beneficial for building upper body strength",
-  exercise_image: "https://i.imgur.com/zLoQVoA.gif"
+  exercise_image: "https://im3.ezgif.com/tmp/ezgif-3-290567db0bfd.gif"
 )
 puts "saving"
 exercise4.save!
 puts "saved"
 
-
 exercise5 = Exercise.new(
-  name: "Star jump",
-  category: "Warmup",
-  sport: "Fitness",
-  difficulty: "😀",
-  muscle_group: "Legs",
-  description: "jumping exercise performed by jumping to a position with the legs spread wide and the hands going overhead, and then returning to a position with the feet together and the arms at the sides.",
-  exercise_image: "https://cdn.dribbble.com/users/2931468/screenshots/5720362/jumping-jack.gif"
+  name: "Plank",
+  category: "Workout",
+  sport: "Workout",
+  difficulty: "💀",
+  description: "is is a strength exercise that involves maintaining a position similar to a push-up for the maximum possible time",
+  muscle_group: "Abs",
+  exercise_image: "https://im3.ezgif.com/tmp/ezgif-3-46fb1d165284.gif"
 )
 puts "saving"
 exercise5.save!
 puts "saved"
 
-
 exercise6 = Exercise.new(
-  name: "Mountain climber",
-  category: "Warmup",
-  sport: "Fitness",
+  name: "Sit-up",
+  category: "Workout",
+  sport: "Workout",
   difficulty: "🥵",
-  muscle_group: "Legs",
-  description: "Mountain climbers is an explosive bodyweight exercise which engages multiple muscle groups at once helping to improve your balance, agility, coordination, strength, flexibility and blood circulation",
-  exercise_image: "https://kaizenminutes.com/wp-content/uploads/2020/04/mountain-climbers.gif"
+  description: "The sit-up is an abdominal endurance training exercise to strengthen, tighten and tone the abdominal muscles",
+  muscle_group: "Abs and back",
+  exercise_image: "https://im3.ezgif.com/tmp/ezgif-3-ae4c609a1ccf.gif"
 )
 puts "saving"
 exercise6.save!
 puts "saved"
 
-
 exercise7 = Exercise.new(
-  name: "Flutter kicks",
-  category: "Warmup",
-  sport: "Fitness",
-  difficulty: "😀",
-  muscle_group: "Abs",
-  description: "Although they target your core, flutter kicks also zero in on the hips",
-  exercise_image: "https://i.pinimg.com/originals/04/e4/42/04e4425ceaf57c8d34b37837762044b5.gif"
+  name: "Running",
+  category: "Workout ",
+  sport: "Workout",
+  difficulty: "😴",
+  description: "10K!!!! DO IT NOW",
+  muscle_group: "Legs",
+  exercise_image: "https://im3.ezgif.com/tmp/ezgif-3-2f54be4576c6.gif"
 )
 puts "saving"
 exercise7.save!
 puts "saved"
 
-
 exercise8 = Exercise.new(
-  name: "Burpees",
-  category: "Warmup",
-  sport: "Fitness",
-  difficulty: "🥵",
-  muscle_group: "Full-body",
-  description: "Burpees are a type of high-impact plyometric exercise",
-  exercise_image: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/workouts/2016/03/burpee-1457045324.gif"
+  name: "Mountain climber",
+  category: "Workout",
+  sport: "Workout",
+  difficulty: "😀",
+  description: "Mountain climbers is an explosive bodyweight exercise which engages multiple muscle groups at once helping to improve your balance, agility, coordination, strength, flexibility and blood circulation",
+  muscle_group: "Abs, lower back, hamstrings and glutes",
+  exercise_image: "https://im3.ezgif.com/tmp/ezgif-3-a248716c18fd.gif"
 )
 puts "saving"
 exercise8.save!
 puts "saved"
 
+#####################################################################
+
+
 exercise9 = Exercise.new(
-  name: "Bicycle crunch",
+  name: "Quad stretch",
   category: "Warmup",
-  sport: "Fitness",
-  difficulty: "🤮",
-  muscle_group: "Abs",
-  description: "Bicycle crunchs are a highly intense abdominal exercise",
-  exercise_image: "https://177d01fbswx3jjl1t20gdr8j-wpengine.netdna-ssl.com/wp-content/uploads/2019/06/Bicycle-Crunch.gif"
+  sport: "Warmup",
+  difficulty: "🥵",
+  description: "This simple stretch exercise is great for fixing your muscles, anytime, anywhere",
+  muscle_group: "Quads",
+  exercise_image: "https://im3.ezgif.com/tmp/ezgif-3-34b8092a09bc.gif"
 )
 puts "saving"
 exercise9.save!
 puts "saved"
 
 exercise10 = Exercise.new(
-  name: "Superman",
+  name: "Hamstring stretch",
   category: "Warmup",
-  sport: "Fitness",
-  difficulty: "🥵",
-  muscle_group: "Abs",
-  description: "Work your abs with this intense excercise",
-  exercise_image: "https://hips.hearstapps.com/ame-prod-menshealth-assets.s3.amazonaws.com/main/assets/superman.gif?resize=480:*"
+  sport: "Warmup",
+  difficulty: "😴",
+  description: "Stretching the hamstrings while standing may provide a deeper stretch, so they must be performed with caution and using correct posture,",
+  muscle_group: "Hamstring",
+  exercise_image: "https://im3.ezgif.com/tmp/ezgif-3-c0ae1e4bbcc7.gif"
 )
 puts "saving"
 exercise10.save!
 puts "saved"
 
-# exercise = Exercise.new(
-#   name: "",
-#   category: "",
-#   sport: "",
-#   difficulty: "😴😀🥵🤮💀",
-#   muscle_group: "",
-#   description: "",
-#   exercise_image: ""
-# )
-# puts "saving"
-# exercise.save!
-# puts "saved"
-
-
-##################################################################################################
-
-
-workout_exercise1 = WorkoutExercise.new(
-  workout_id: workout1.id,
-  exercise_id: exercise1.id,
-  reps: 10,
-  exercise_duration: 10,
-  sets: 3,
+exercise11 = Exercise.new(
+  name: "Calve Stretch",
+  category: "Warmup",
+  sport: "Warmup",
+  difficulty: "😴",
+  description: "This can help lengthen the muscle fiber and possibly lessen the pain you’re experiencing",
+  muscle_group: "Calve",
+  exercise_image: "https://im3.ezgif.com/tmp/ezgif-3-27c2d235c570.gif"
 )
 puts "saving"
-workout_exercise1.save!
+exercise11.save!
 puts "saved"
 
-workout_exercise2 = WorkoutExercise.new(
-  workout_id: workout1.id,
-  exercise_id: exercise2.id,
-  reps: 10,
-  exercise_duration: 10,
-  sets: 3,
+exercise12 = Exercise.new(
+  name: "Groin Stretch",
+  category: "Warmup",
+  sport: "Warmup",
+  difficulty: "😀",
+  description: "Ideal for after a workout to cool down",
+  muscle_group: "Groin",
+  exercise_image: "https://im3.ezgif.com/tmp/ezgif-3-ee172268eb92.gif"
 )
 puts "saving"
-workout_exercise2.save!
+exercise12.save!
 puts "saved"
 
-workout_exercise = WorkoutExercise.new(
-  workout_id: workout1.id,
-  exercise_id: exercise3.id,
-  exercise_duration: 60,
-  sets: 3,
+exercise13 = Exercise.new(
+  name: "Arm Stretch",
+  category: "Warmup",
+  sport: "Warmup",
+  difficulty: "😀",
+  description: "Cross-Body Shoulder Stretch",
+  muscle_group: "Triceps",
+  exercise_image: "https://im3.ezgif.com/tmp/ezgif-3-e7e8d0e42edb.gif"
 )
 puts "saving"
-workout_exercise.save!
+exercise13.save!
 puts "saved"
 
-workout_exercise = WorkoutExercise.new(
-  workout_id: workout1.id,
-  exercise_id: exercise4.id,
-  reps: 20,
-  exercise_duration: 30,
-  sets: 3,
+exercise14 = Exercise.new(
+  name: "Neck Stretch",
+  category: "Warmup",
+  sport: "Warmup",
+  difficulty: "😴",
+  description: "A basic exercise that is important for stretching the chest and shoulder muscles is the corner stretch",
+  muscle_group: "Neck",
+  exercise_image: "https://im3.ezgif.com/tmp/ezgif-3-15d57c67c942.gif"
 )
 puts "saving"
-workout_exercise.save!
-puts "saved"
-
-workout_exercise = WorkoutExercise.new(
-  workout_id: workout1.id,
-  exercise_id: exercise5.id,
-  reps: 50,
-  exercise_duration: 10,
-  sets: 2,
-)
-puts "saving"
-workout_exercise.save!
-puts "saved"
-
-workout_exercise = WorkoutExercise.new(
-  workout_id: workout2.id,
-  exercise_id: exercise6.id,
-  reps: 50,
-  exercise_duration: 10,
-  sets: 3,
-)
-puts "saving"
-workout_exercise.save!
-puts "saved"
-
-
-
-workout_exercise = WorkoutExercise.new(
-  workout_id: workout2.id,
-  exercise_id: exercise7.id,
-  reps: 10,
-  exercise_duration: 10,
-  sets: 3,
-)
-puts "saving"
-workout_exercise.save!
-puts "saved"
-
-workout_exercise = WorkoutExercise.new(
-  workout_id: workout2.id,
-  exercise_id: exercise3.id,
-  reps: 10,
-  exercise_duration: 10,
-  sets: 3,
-)
-puts "saving"
-workout_exercise.save!
-puts "saved"
-
-workout_exercise = WorkoutExercise.new(
-  workout_id: workout2.id,
-  exercise_id: exercise2.id,
-  reps: 10,
-  exercise_duration: 10,
-  sets: 3,
-)
-puts "saving"
-workout_exercise.save!
-puts "saved"
-
-workout_exercise = WorkoutExercise.new(
-  workout_id: workout2.id,
-  exercise_id: exercise1.id,
-  reps: 10,
-  exercise_duration: 10,
-  sets: 3,
-)
-puts "saving"
-workout_exercise.save!
-puts "saved"
-
-
-
-
-
-
-
-#######################################################################################
-
-
-workout_exercise = WorkoutExercise.new(
-  workout_id: workout2.id,
-  exercise_id: exercise4.id,
-  reps: 20,
-  exercise_duration: 30,
-  sets: 3,
-)
-puts "saving"
-workout_exercise.save!
-puts "saved"
-
-workout_exercise = WorkoutExercise.new(
-  workout_id: workout2.id,
-  exercise_id: exercise5.id,
-  reps: 50,
-  exercise_duration: 10,
-  sets: 2,
-)
-puts "saving"
-workout_exercise.save!
-puts "saved"
-
-workout_exercise = WorkoutExercise.new(
-  workout_id: workout2.id,
-  exercise_id: exercise6.id,
-  reps: 50,
-  exercise_duration: 10,
-  sets: 3,
-)
-puts "saving"
-workout_exercise.save!
-puts "saved"
-
-
-
-workout_exercise = WorkoutExercise.new(
-  workout_id: workout2.id,
-  exercise_id: exercise7.id,
-  reps: 10,
-  exercise_duration: 10,
-  sets: 3,
-)
-puts "saving"
-workout_exercise.save!
-puts "saved"
-
-workout_exercise = WorkoutExercise.new(
-  workout_id: workout2.id,
-  exercise_id: exercise8.id,
-  reps: 10,
-  exercise_duration: 10,
-  sets: 3,
-)
-puts "saving"
-workout_exercise.save!
-puts "saved"
-
-workout_exercise = WorkoutExercise.new(
-  workout_id: workout2.id,
-  exercise_id: exercise9.id,
-  reps: 10,
-  exercise_duration: 10,
-  sets: 3,
-)
-puts "saving"
-workout_exercise.save!
-puts "saved"
-
-workout_exercise = WorkoutExercise.new(
-  workout_id: workout2.id,
-  exercise_id: exercise10.id,
-  reps: 10,
-  exercise_duration: 10,
-  sets: 3,
-)
-puts "saving"
-workout_exercise.save!
+exercise14.save!
 puts "saved"

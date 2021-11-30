@@ -6,6 +6,9 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @completed_workouts = CompletedWorkout.all
     @workouts = Workout.all
+    @favorite_workouts = current_user.all_favorites
+    # @workout = Workout.find(params[:workout_id])
   end
 end

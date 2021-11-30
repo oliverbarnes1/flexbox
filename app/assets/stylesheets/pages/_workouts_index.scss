@@ -9,7 +9,6 @@
 font-size: 30px;
 width: 50%;
 margin-left: 10px
-
 }
 
 .workout-card-info-index > img {
@@ -94,5 +93,16 @@ margin-left: 10px
   left: 303px;
   font-size: 30px;
   color: #FB7D7D;
-  opacity: 0.8;
+  opacity: 0.5;
+  text-shadow: 0px 0px 0px black;
+  transition: opacity 0.5s;
+  transition: text-shadow 0.5s;
+}
+
+
+.active-icon {
+  opacity: 1;
+  text-shadow: 5px 5px 10px black;
+  transition: opacity 0.5s;
+  transition: text-shadow 0.5s;
 }
