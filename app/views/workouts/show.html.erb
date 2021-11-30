@@ -50,7 +50,8 @@
 
 
         <div class="ws-image-div" data-workouttitle-target="picture">
-          <%= image_tag(exercise.exercise_image) %>
+
+          <%= cl_image_tag(exercise.photo.key) %>
         </div>
 
         <div class="ws-exercise-name" data-workouttitle-target="name">

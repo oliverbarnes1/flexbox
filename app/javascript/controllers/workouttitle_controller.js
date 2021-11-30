@@ -49,7 +49,8 @@ export default class extends Controller {
 
       setTimeout(function () {
         pictures.forEach((picture) => {
-          picture.remove()
+          picture.classList.remove("ws-details-disappear")
+          picture.classList.add("width")
         })
         emojis.forEach((emoji) => {
           emoji.remove()
