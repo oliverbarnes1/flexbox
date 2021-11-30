@@ -5,27 +5,30 @@
       <%= image_tag "https://i.ibb.co/R9tqn5p/o-t.png" %>
     </div>
     <div>
-      <h1>FlexBox</h1>
+      <h1 class="flexbox-heading">FlexBox</h1>
     </div>
     <% end %>
   </div>
   <ul class="navbar-items-center">
     <%= link_to dashboard_path do %>
-      <li class="navbar-item">Dashboard</li>
+      <div class="navbar-item-center"><li class="navbar-item">Dashboard</li></div>
     <%end%>
     <%= link_to workouts_path do %>
-      <li class="navbar-item">Workouts</li>
+      <div class="navbar-item-center"><li class="navbar-item">Workouts</li></div>
     <%end%>
     <%= link_to workouts_path do %>
-      <li class="navbar-item">Goals</li>
+      <div class="navbar-item-center"><li class="navbar-item">Goals</li></div>
+    <%end%>
+    <%= link_to completed_workouts_path do %>
+      <div class="navbar-item-center"><li class="navbar-item">History</li></div>
     <%end%>
   </ul>
-  <ul class ="navbar-items-right">
+  <div class ="navbar-items-right">
     <% if user_signed_in? %>
-      <li class="navbar-item"><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+      <div class="navbar-item"><%= link_to "Log Out", destroy_user_session_path, method: :delete %></div>
       <img src="https://st2.depositphotos.com/1006318/5909/v/950/depositphotos_59095055-stock-illustration-profile-icon-male-avatar.jpg" class="avatar-bordered">
     <% else %>
-      <li class="navbar-item"><%= link_to "Log in", new_user_session_path%></li>
+      <div class="navbar-item"><%= link_to "Log in", new_user_session_path%></div>
     <% end %>
-  </ul>
+  </div>
 </div>
