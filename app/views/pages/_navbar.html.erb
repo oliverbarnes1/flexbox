@@ -1,11 +1,14 @@
 <div class="navbar">
-  <ul class="navbar-items-left">
-    <img src='https://i.ibb.co/R9tqn5p/o-t.png'>
-    <%= link_to root_path do %>
-      <%# <li class="logo-placeholder">FlexBox</li> %>
-      <li>FlexBox</li>
+  <div class="navbar-items-left">
+    <%= link_to dashboard_path, class: "navbar-brand" do %>
+    <div>
+      <%= image_tag "https://i.ibb.co/R9tqn5p/o-t.png" %>
+    </div>
+    <div>
+      <h1>FlexBox</h1>
+    </div>
     <% end %>
-  </ul>
+  </div>
   <ul class="navbar-items-center">
     <%= link_to dashboard_path do %>
       <li class="navbar-item">Dashboard</li>

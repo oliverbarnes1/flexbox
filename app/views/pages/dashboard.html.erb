@@ -31,10 +31,11 @@
       <h4>FAVOURITE WORKOUTS:</h4>
     </div>
 
-
     <div class="fav-workouts-grid-down">
       <% @workouts.each do |workout|%>
-        <%= link_to workout_path(workout) do %>
+        <% @favorite_workouts[0...2].each do |fav| %>
+          <% if workout.id == fav.favoritable_id %>
+          <%= link_to workout_path(workout) do %>
           <div class="workout-card">
             <%= image_tag("https://static.onecms.io/wp-content/uploads/sites/35/2020/04/13/GettyImages-1175207081-2000.jpg") %>
             <div class="workout-card-info">
@@ -47,6 +48,8 @@
               </div>
             </div>
           </div>
+          <% end %>
+          <% end %>
         <% end %>
       <% end %>
       <%= link_to workouts_path do %>
@@ -54,6 +57,7 @@
           <h2>See All Workouts</h2>
         </div>
       <%end%>
+    </div>
     </div>
   </div>
 
