@@ -173,6 +173,20 @@
   transition-duration: 0.5s;
 }
 
+.card-no-workouts-down {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f1f1;
+  border: 1px solid rgb(231, 231, 231);
+  color: black;
+  border-radius: 10px;
+  box-shadow: $flexbox-shadow;
+  width: 350px;
+  height: 300px;
+  transition-duration: 0.5s;
+}
+
 .card-all-workouts-down:hover {
   box-shadow: $flexbox-shadow-hover;
   transition-duration: 0.5s;
