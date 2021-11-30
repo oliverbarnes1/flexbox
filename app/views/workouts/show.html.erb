@@ -28,8 +28,11 @@
             <div><strong><i class="far fa-clock"></i> Duration: </strong><%= @workout.workout_duration %></div>
             <div><strong><i class="fas fa-dumbbell"></i> Equipment: </strong><%= @workout.equipment %></div>
           </div>
-
         </div>
+    </div>
+
+    <div class="spotify-player">
+      <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4cMP5VV3uz1?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
     </div>
 
     <div class='ws-start-workout'>
@@ -38,11 +41,13 @@
   </div>
 
   <div class="ws-exercises" data-action="keyup@window->workouttitle#nextExercise">
-    <h2>Execises in this workout:</h2>
+    <h2 class="ws-heading" data-workouttitle-target="heading">Exercises in this workout:</h2>
     <% @workout_exercises = WorkoutExercise.where(workout_id: @workout.id ).to_a %>
     <% @workout_exercises.each do |workout_exercise| %>
       <% exercise = Exercise.find(workout_exercise.exercise_id) %>
-      <div class="ws-excercise-card" data-workouttitle-target="exercises">
+      <div class="ws-excercise-card" data-workouttitle-target="exercises" data-time="<%= workout_exercise.exercise_duration %>" data-reps="<%= workout_exercise.reps %>">
+
+
 
         <div class="ws-image-div" data-workouttitle-target="picture">
           <%= image_tag(exercise.exercise_image) %>

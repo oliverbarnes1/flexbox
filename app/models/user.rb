@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :workouts
   has_many :completed_workouts
   has_many :favourite_workouts
+  acts_as_favoritor
 end

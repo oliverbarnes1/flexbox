@@ -11,6 +11,10 @@
   padding-right: 70px;
 }
 
+.navbar-brand {
+  display: flex;
+}
+
 .navbar-items-left {
   display: flex;
   // flex-direction: row;
@@ -26,7 +30,7 @@
   font-weight: 500;
 }
 
-.navbar-items-left > img {
+.navbar-items-left .navbar-brand img {
   object-fit: cover;
   width: 70px;
   height: 100%;
