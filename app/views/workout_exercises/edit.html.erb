@@ -2,12 +2,11 @@
   <div class="nw-title">
     <h2><strong>Edit exercise</strong></h2>
   </div>
-    <%= simple_form_for @workout_exercise, url: workout_exercise_path(@workout_exercise.id), html: { class: "nw-form"} do |f|%>
-      <%= f.input :name, label: "Choose exercise", :input_html => { class: 'field' } %>
-      <%= f.input :sport, label: "Reps", :input_html => { class: 'field' } %>
-      <%= f.input :difficulty, label: "Sets", collection: ["😴", "😀", "🥵", "🤮", "💀"], label: "Difficulty", :input_html => { class: 'field' } %>
-      <%= f.input :workout_duration, label: "Weight", :input_html => { class: 'field' } %>
-      <%= f.input :equipment, label: "Exercise duration", :input_html => { class: 'field' } %>
+    <%= simple_form_for [@workout, @workout_exercise], html: { class: "nw-form"} do |f|%>
+      <%= f.input :reps, label: "Reps", :input_html => { class: 'field' } %>
+      <%= f.input :sets, label: "Sets", :input_html => { class: 'field' } %>
+      <%= f.input :weight, label: "Weight", :input_html => { class: 'field' } %>
+      <%= f.input :exercise_duration, label: "Exercise duration", :input_html => { class: 'field' } %>
       <%= f.button :submit, "Save your changes",  class: "submit-button booking-submit"  %>
     <% end %>
   </div>

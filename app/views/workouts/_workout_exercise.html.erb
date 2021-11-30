@@ -1,0 +1,16 @@
+  <div class="we-excercise-card">
+    <div class="we-image-div">
+      <%= image_tag(exercise.exercise_image) %>
+    </div>
+
+    <div class="we-exercise-name">
+      <h3><strong><%= exercise.name %></strong></h3>
+    </div>
+
+    <div class ="we-few-content-right">
+      <div>
+        <strong><%= exercise.difficulty %></strong>
+        <%= link_to "Edit",  edit_workout_workout_exercise_path(workout_exercise.workout_id, workout_exercise.id), class:"edit-icon"%>
+      </div>
+    </div>
+  </div>
