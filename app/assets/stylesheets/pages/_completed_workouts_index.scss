@@ -1,0 +1,45 @@
+.completed-workout-card-index-div {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.completed-workout-card-info-index > img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px 10px 0px 0px;
+  height: 50%;
+}
+
+.completed-workout-card-info-index {
+  border-radius: 10px;
+  box-shadow: $flexbox-shadow;
+  background-color: white;
+  width: 350px;
+  height: 300px;
+  transition-duration: 0.5s;
+  position: relative;
+}
+
+.completed-workout-name {
+font-size: 30px;
+width: 100%;
+margin-left: 10px
+}
+
+.completed-workout-date {
+font-size: 20px;
+width: 100%;
+margin-left: 10px
+}
+
+.completed-workout-card-emoji {
+  position: absolute;
+  right: 15px;
+  bottom: 5px;
+}
+.completed-workout-card-category {
+  position: absolute;
+  left: 15px;
+  bottom: 0px;
+}
