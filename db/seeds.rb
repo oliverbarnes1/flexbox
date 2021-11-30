@@ -212,7 +212,7 @@ workout_exercise1 = WorkoutExercise.new(
   workout_id: workout1.id,
   exercise_id: exercise1.id,
   reps: 10,
-  exercise_duration: 10,
+  exercise_duration: nil,
   sets: 3,
 )
 puts "saving"
@@ -223,7 +223,7 @@ workout_exercise2 = WorkoutExercise.new(
   workout_id: workout1.id,
   exercise_id: exercise2.id,
   reps: 10,
-  exercise_duration: 10,
+  exercise_duration: nil,
   sets: 3,
 )
 puts "saving"
@@ -244,7 +244,7 @@ workout_exercise = WorkoutExercise.new(
   workout_id: workout1.id,
   exercise_id: exercise4.id,
   reps: 20,
-  exercise_duration: 30,
+  exercise_duration: nil,
   sets: 3,
 )
 puts "saving"
@@ -255,7 +255,7 @@ workout_exercise = WorkoutExercise.new(
   workout_id: workout1.id,
   exercise_id: exercise5.id,
   reps: 50,
-  exercise_duration: 10,
+  exercise_duration: nil,
   sets: 2,
 )
 puts "saving"
@@ -266,7 +266,7 @@ workout_exercise = WorkoutExercise.new(
   workout_id: workout2.id,
   exercise_id: exercise6.id,
   reps: 50,
-  exercise_duration: 10,
+  exercise_duration: nil,
   sets: 3,
 )
 puts "saving"
@@ -279,7 +279,7 @@ workout_exercise = WorkoutExercise.new(
   workout_id: workout2.id,
   exercise_id: exercise7.id,
   reps: 10,
-  exercise_duration: 10,
+  exercise_duration: nil,
   sets: 3,
 )
 puts "saving"
@@ -290,7 +290,7 @@ workout_exercise = WorkoutExercise.new(
   workout_id: workout2.id,
   exercise_id: exercise3.id,
   reps: 10,
-  exercise_duration: 10,
+  exercise_duration: nil,
   sets: 3,
 )
 puts "saving"
@@ -301,7 +301,7 @@ workout_exercise = WorkoutExercise.new(
   workout_id: workout2.id,
   exercise_id: exercise2.id,
   reps: 10,
-  exercise_duration: 10,
+  exercise_duration: nil,
   sets: 3,
 )
 puts "saving"
@@ -312,7 +312,7 @@ workout_exercise = WorkoutExercise.new(
   workout_id: workout2.id,
   exercise_id: exercise1.id,
   reps: 10,
-  exercise_duration: 10,
+  exercise_duration: nil,
   sets: 3,
 )
 puts "saving"
