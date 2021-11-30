@@ -52,33 +52,42 @@
       <h4>FAVOURITE WORKOUTS:</h4>
     </div>
 
-    <div class="fav-workouts-grid-down">
-      <% @workouts.each do |workout|%>
-        <% @favorite_workouts.last(2).each do |fav| %>
-          <% if workout.id == fav.favoritable_id %>
-            <div class="dashboard-link-container">
-              <%= link_to workout_path(workout) do %>
-                <div class="workout-card">
-                  <%= image_tag("https://static.onecms.io/wp-content/uploads/sites/35/2020/04/13/GettyImages-1175207081-2000.jpg") %>
-                  <div class="workout-card-info">
-                    <div>
-                      <h1 class="workout-name"><%= workout.name %></h1>
-                      <p class="workout-card-sport"><em>Sport:</em> <%= workout.sport %></p>
-                      <p class="workout-card-category"><em><%= workout.category %></em></p>
-                      <h3 class="workout-card-emoji"><%= workout.difficulty %></h3>
-                      <p class="workout-card-time"><strong>Time:</strong> <%= workout.workout_duration %> mins</p>
+    <div class="fav-workouts-grid-down" >
+
+      <% if @favourite_workouts == nil%>
+        <div class="card-no-workouts-down">
+          <h2 class="favourites-btn">No workouts added to favourites.</h2>
+        </div>
+      <% else %>
+        <% @workouts.each do |workout|%>
+          <% @favorite_workouts.last(2).each do |fav| %>
+            <% if workout.id == fav.favoritable_id %>
+              <div class="dashboard-link-container">
+                <%= link_to workout_path(workout) do %>
+                  <div class="workout-card">
+                    <%= image_tag("https://static.onecms.io/wp-content/uploads/sites/35/2020/04/13/GettyImages-1175207081-2000.jpg") %>
+                    <div class="workout-card-info">
+                      <div>
+                        <h1 class="workout-name"><%= workout.name %></h1>
+                        <p class="workout-card-sport"><em>Sport:</em> <%= workout.sport %></p>
+                        <p class="workout-card-category"><em><%= workout.category %></em></p>
+                        <h3 class="workout-card-emoji"><%= workout.difficulty %></h3>
+                        <p class="workout-card-time"><strong>Time:</strong> <%= workout.workout_duration %> mins</p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              <% end %>
-            </div>
+                <% end %>
+              </div>
+            <% end %>
           <% end %>
         <% end %>
-      <% end %>
-      <%= link_to workouts_path do %>
-        <div class="card-all-workouts-down">
-          <h2 class="favourites-btn">View Favourite Workouts</h2>
-        </div>
+      <%end%>
+      <% unless @favourite_workouts == nil%>
+        <%= link_to workouts_path do %>
+          <div class="card-all-workouts-down">
+            <h2 class="favourites-btn">View Favourite Workouts</h2>
+          </div>
+        <%end%>
       <%end%>
     </div>
     </div>

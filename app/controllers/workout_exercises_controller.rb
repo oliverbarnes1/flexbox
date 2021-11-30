@@ -12,7 +12,7 @@ class WorkoutExercisesController < ApplicationController
     @workout_exercise.workout = @workout
 
     if @workout_exercise.save
-      redirect_to workout_path(@workout), notice: 'Workout Exercise was successfully created.'
+      redirect_to workout_path(@workout)
     else
       render :new
     end
@@ -26,9 +26,9 @@ class WorkoutExercisesController < ApplicationController
 
   def update
     if @workout_exercise.update(workout_exercise_params)
-      redirect_to @workout_exercise, notice: 'Workout Exercise was successfully updated.'
+      redirect_to @workout_exercise, notice: 'Successfully updated!'
     else
-      render notice: 'Workout Exercise already exists'
+      render notice: 'Failed.'
     end
   end
 
