@@ -1,0 +1,5 @@
+const postApi = () => {
+
+}
+
+export {posApi}

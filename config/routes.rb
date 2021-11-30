@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   end
   resources :completed_workouts, only: [:index, :new, :create, :show]
   get '/dashboard', to: 'pages#dashboard', as: 'dashboard'
+  get '/auth/:strava/callback', to: 'workouts#index'
+  post '/auth/:strava/callback', to: 'workouts#create'
+
   # get '/homepage', to: 'pages#homepage', as: 'homepage'
   # get '/workouts/:id/inprogress', to: 'pages#inprogress', as: 'inprogress'
 end
