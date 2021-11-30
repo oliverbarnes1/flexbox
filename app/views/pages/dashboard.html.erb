@@ -5,47 +5,46 @@
     <h1>Hello!</h1>
   <% end %>
 </div>
-<div class="dash-content-div">
-  <div class="home-cards-container">
-    <div class="nw-text-h1">
-      <h5>NEW WORKOUT:</h5>
-    </div>
-    <div class="fav-workouts-grid">
-      <%= link_to new_workout_path do %>
-        <div class="card-add-new-workout-top">
-          <h4>+ New Workout</h4>
-        </div>
-      <%end%>
-      <div class="card-add-new-workout-top">
-        <h4>+ Random Workout</h4>
+  <div class="dash-content-div">
+    <div class="home-cards-container">
+      <div class="nw-text-h1">
+        <h5>NEW WORKOUT:</h5>
       </div>
-      <%= link_to workouts_path do %>
-      <div class="card-add-new-workout-top">
-          <h4>Find Workout</h4>
-      </div>
-      <% end %>
-    </div>
-  </div>
-  <div class="home-cards-container-down">
-    <div class="nw-text-h1">
-      <h5>RECENT WORKOUTS:</h5>
-    </div>
-    <% 3.times do workout = @workouts.sample %>
-        <%= link_to workout_path(workout) do %>
-          <div class="recent-workouts-grid">
-            <div class="recent-workout-list-card-left">
-              <img src='https://static.onecms.io/wp-content/uploads/sites/35/2020/04/13/GettyImages-1175207081-2000.jpg'>
-            </div>
-            <div class="recent-workout-list-card-right">
-              <p><strong><%= workout.name %></strong></p>
-              <p class="button-secondary">More Info</p>
-            </div>
+      <div class="fav-workouts-grid">
+        <%= link_to new_workout_path do %>
+          <div class="card-add-new-workout-top">
+            <h4>+ New Workout</h4>
           </div>
+        <%end%>
+        <%= link_to workouts_path do %>
+        <div class="card-add-new-workout-top">
+            <h4>Find Workout</h4>
+        </div>
         <% end %>
-      <% end %>
+      </div>
+    </div>
+    <div class="home-cards-container-down">
+      <div class="nw-text-h1">
+        <h5>RECENT WORKOUTS:</h5>
+      </div>
+      <div class="completed-cards-container">
+        <% @completed_workouts.last(3).each do |completed_workout| %>
+          <%= link_to completed_workouts_path do %>
+            <div class="recent-workouts-grid">
+              <div class="recent-workout-list-card-left">
+                <img src='https://static.onecms.io/wp-content/uploads/sites/35/2020/04/13/GettyImages-1175207081-2000.jpg'>
+              </div>
+              <div class="recent-workout-list-card-right">
+                <% workout = Workout.find(completed_workout.workout_id) %>
+                <p class="dashboard-completed"><%= workout.name %></p>
+                <h3 class="dashboard-emoji"><%= workout.difficulty %></h3>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
   </div>
-</div>
-
 <div class="dash-content-div-bottom">
   <div class="home-container-bottom">
 
@@ -55,28 +54,30 @@
 
     <div class="fav-workouts-grid-down">
       <% @workouts.each do |workout|%>
-        <% @favorite_workouts[0...2].each do |fav| %>
+        <% @favorite_workouts.last(2).each do |fav| %>
           <% if workout.id == fav.favoritable_id %>
-          <%= link_to workout_path(workout) do %>
-          <div class="workout-card">
-            <%= image_tag("https://static.onecms.io/wp-content/uploads/sites/35/2020/04/13/GettyImages-1175207081-2000.jpg") %>
-            <div class="workout-card-info">
-              <div>
-                <h1 class="workout-name"><%= workout.name %></h1>
-                <p class="workout-card-sport"><em>Sport:</em> <%= workout.sport %></p>
-                <p class="workout-card-category"><em><%= workout.category %></em></p>
-                <h3 class="workout-card-emoji"><%= workout.difficulty %></h3>
-                <p class="workout-card-time"><strong>Time:</strong> <%= workout.workout_duration %> mins</p>
-              </div>
+            <div class="dashboard-link-container">
+              <%= link_to workout_path(workout) do %>
+                <div class="workout-card">
+                  <%= image_tag("https://static.onecms.io/wp-content/uploads/sites/35/2020/04/13/GettyImages-1175207081-2000.jpg") %>
+                  <div class="workout-card-info">
+                    <div>
+                      <h1 class="workout-name"><%= workout.name %></h1>
+                      <p class="workout-card-sport"><em>Sport:</em> <%= workout.sport %></p>
+                      <p class="workout-card-category"><em><%= workout.category %></em></p>
+                      <h3 class="workout-card-emoji"><%= workout.difficulty %></h3>
+                      <p class="workout-card-time"><strong>Time:</strong> <%= workout.workout_duration %> mins</p>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
             </div>
-          </div>
-          <% end %>
           <% end %>
         <% end %>
       <% end %>
       <%= link_to workouts_path do %>
         <div class="card-all-workouts-down">
-          <h2>See All Workouts</h2>
+          <h2 class="favourites-btn">View Favourite Workouts</h2>
         </div>
       <%end%>
     </div>

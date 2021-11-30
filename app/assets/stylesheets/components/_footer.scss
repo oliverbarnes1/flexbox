@@ -9,6 +9,7 @@
   color: white;
   // padding-left: 70px;
   padding-right: 55px;
+  padding-left: 55px;
 }
 
 .footer-items {
@@ -29,7 +30,7 @@
 
 .footer-item {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   text-align: center;
   transition-duration: 0.3s;
