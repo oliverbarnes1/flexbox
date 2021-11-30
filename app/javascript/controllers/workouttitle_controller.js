@@ -60,8 +60,8 @@ export default class extends Controller {
         })
         bottombuttons.remove()
         exercise.classList.add("active")
+        exercise.insertAdjacentHTML("afterbegin", `<div class=\"ws-image-div-large\"><img src=${exercise.dataset.url} class=\"exercise-image\"></div>`)
         if (exercise.dataset.time) {
-          let time = exercise.dataset.time
           exercise.insertAdjacentHTML("beforeend", `<div class=\"workout-reps-time ws-workout-reps-time-display\"><p class=\"exercise-info\"></p></div>`)
         }
         else {
@@ -70,9 +70,15 @@ export default class extends Controller {
           setTimeout(function () {
           let info = document.querySelector('.workout-reps-time')
           info.classList.add("reps-size-add")
+          let imagediv = document.querySelector('.ws-image-div-large')
+          imagediv.classList.add("image-size-add")
+          let image = document.querySelector('.exercise-image')
+          image.classList.add("image-size-add")
           setTimeout(function () {
             let opacity = document.querySelector(".exercise-info")
             opacity.classList.add("info-add")
+            // let opacity2 = document.querySelector(".exercise-image")
+            // opacity2.classList.add("image-add")
           }, 200)
         }, 400)
       }, 500)
@@ -132,25 +138,11 @@ export default class extends Controller {
             }, 400)
           }, 200)
         } else {
-          console.log(document.querySelector('.cwb-container'))
-
-            window.scroll({
-              bottom: 0,
-              left: 0,
-              behavior: 'smooth'
-            });
-            setTimeout(function () {
-              let cwbcontainer = document.querySelector('.cwb-container')
-              console.log(cwbcontainer)
-              cwbcontainer.classList.add('cwb-container-unfold')
-              let cwbutton = document.querySelector('.complete-workout-button')
-              cwbutton.classList.remove('cwb-displaynone')
-              console.log(cwbutton)
-              setTimeout(function () {
-                cwbutton.classList.add('cwb-button-visible')
-              }, 1)
-            }, 1)
-
+          console.log(document.querySelector('.complete-button'))
+          if (document.querySelector('.complete-button') == null) {
+          let container = document.querySelector('.ws-container')
+            container.insertAdjacentHTML("afterend", "<a href=\"/workouts/new\"><div class=\"complete-workout-button\"><span class=\"complete-workout-button-text\">+</span></div></a>")
+          }
         }
       }
   }

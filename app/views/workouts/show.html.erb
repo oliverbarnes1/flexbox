@@ -39,18 +39,18 @@
         <a href="#" class="start-workout-button" data-action="click->workouttitle#buttontest" data-workouttitle-target="button"><strong>Start<br>Workout!</strong></a>
     </div>
   </div>
+  <h2 class="ws-heading" data-workouttitle-target="heading">Exercises in this workout:</h2>
 
   <div class="ws-exercises" data-action="keyup@window->workouttitle#nextExercise">
-    <h2 class="ws-heading" data-workouttitle-target="heading">Exercises in this workout:</h2>
     <% @workout_exercises = WorkoutExercise.where(workout_id: @workout.id ).to_a %>
     <% @workout_exercises.each do |workout_exercise| %>
       <% exercise = Exercise.find(workout_exercise.exercise_id) %>
-      <div class="ws-excercise-card" data-workouttitle-target="exercises" data-time="<%= workout_exercise.exercise_duration %>" data-reps="<%= workout_exercise.reps %>">
+      <div class="ws-excercise-card" data-workouttitle-target="exercises" data-time="<%= workout_exercise.exercise_duration %>" data-reps="<%= workout_exercise.reps %>" data-url="<%= exercise.exercise_image %>">
 
 
 
         <div class="ws-image-div" data-workouttitle-target="picture">
-          <%= image_tag(exercise.exercise_image) %>
+          <%= image_tag(exercise.exercise_image, data: {"workouttitle-target" => "picture"}) %>
         </div>
 
         <div class="ws-exercise-name" data-workouttitle-target="name">
@@ -68,10 +68,8 @@
   </div>
 
   <div class="ws-buttons" data-workouttitle-target="bottombuttons">
-    <div data-workouttitle-target="backbutton" class="button-secondary">
-      <%= link_to "Back", workouts_path %>
-    </div>
-    <a href="#" class="button-secondary">Copy Workout</a>
+    <%= link_to "Back", workouts_path, class: "button-secondary" %>
+    <%# <a href="#" class="button-secondary">Copy Workout</a> %>
     <%= link_to "Edit Workout", edit_workout_path(@workout), class: "button-secondary" %>
   </div>
 
