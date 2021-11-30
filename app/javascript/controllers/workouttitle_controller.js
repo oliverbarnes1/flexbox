@@ -132,11 +132,25 @@ export default class extends Controller {
             }, 400)
           }, 200)
         } else {
-          console.log(document.querySelector('.complete-button'))
-          if (document.querySelector('.complete-button') == null) {
-          let container = document.querySelector('.ws-container')
-            container.insertAdjacentHTML("afterend", "<a href=\"/workouts/new\"><div class=\"complete-workout-button\"><span class=\"complete-workout-button-text\">+</span></div></a>")
-          }
+          console.log(document.querySelector('.cwb-container'))
+
+            window.scroll({
+              bottom: 0,
+              left: 0,
+              behavior: 'smooth'
+            });
+            setTimeout(function () {
+              let cwbcontainer = document.querySelector('.cwb-container')
+              console.log(cwbcontainer)
+              cwbcontainer.classList.add('cwb-container-unfold')
+              let cwbutton = document.querySelector('.complete-workout-button')
+              cwbutton.classList.remove('cwb-displaynone')
+              console.log(cwbutton)
+              setTimeout(function () {
+                cwbutton.classList.add('cwb-button-visible')
+              }, 1)
+            }, 1)
+
         }
       }
   }

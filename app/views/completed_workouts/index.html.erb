@@ -1,8 +1,20 @@
-<div class = cw_list_container>
-  <ul>
+<div class=>
+  <h1 style="margin: 24px 0px;">My Workout History:</h1>
+
+  <div class="completed-workout-card-index-div">
+
     <% @completed_workouts.each do |completed_workout|%>
-      <% workout = Workout.find_by(id: completed_workout.id)%>
-      <li><%= workout.name%></li>
-      <% end %>
-  </ul>
+        <div class="completed-workout-card-info-index">
+            <%= image_tag("https://static.onecms.io/wp-content/uploads/sites/35/2020/04/13/GettyImages-1175207081-2000.jpg") %>
+            <div class="workout-card-text">
+              <% workout = Workout.find(completed_workout.workout_id) %>
+              <h1 class="completed-workout-name"><%= workout.name %></h1>
+              <p class="completed-workout-date">Completed at: <strong><%= completed_workout.created_at.strftime("%b %e, %l:%M %p") %></strong></p>
+              <p class="completed-workout-card-category"><em><%= workout.category %></em></p>
+              <h3 class="completed-workout-card-emoji"><%= workout.difficulty %></h3>
+            </div>
+        </div>
+    <% end %>
+
+  </div>
 </div>
