@@ -14,21 +14,13 @@
 .dash-content-div {
   display: flex;
   flex-direction: row;
-  // align-items: center;
-  justify-content: center;
-  // flex-grow: 2;
-  // min-height: 100vh;
-  width: 100%;
-  min-height: 500px;
-  padding-right: 50px;
-  padding-left: 50px;
-  // margin-bottom: 10px;
-  background-color: #E0FBFC;
-  margin-top: 50px;
+  justify-content: space-between;
+  width: 85vw;
+  margin-top: 30px;
 }
 
 .content-div {
-  background-color: #E0FBFC;
+  background-color: $flexbox-baby;
 }
 
 .home-h1 h1 {
@@ -42,18 +34,35 @@
 .home-cards-container {
   display: flex;
   flex-direction: column;
-  width: 45%;
+  width: 36vw;
   height: 275px;
   // min-height: 700px;
   padding-left: 50px;
   padding-right: 50px;
-  padding-top: 20px;
-  padding-bottom: 30px;
+  padding-top: 25px;
+  padding-bottom: 25px;
   background: #FFFFFF;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: $flexbox-shadow;
   border-radius: 10px 10px 10px 10px;
   // margin-top: 25px;
-  margin-right: 5px;
+}
+
+.home-cards-container-down {
+  // top: 0px;
+  display: flex;
+  width: 47.5vw;
+  flex-direction: column;
+  height: 275px;
+  // min-height: 700px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background: #FFFFFF;
+  box-shadow: $flexbox-shadow;
+  border-radius: 10px;
+  // margin-top: 10px;
+  // margin-bottom: 20px;
 }
 
 .dash-content-div-top {
@@ -68,8 +77,7 @@
   padding-right: 50px;
   padding-left: 50px;
   // margin-bottom: -50px;
-  margin-top: 50px;
-  background-color: #E0FBFC;
+  margin-top: 30px;
 }
 
 .dash-content-div-bottom {
@@ -79,28 +87,22 @@
   justify-content: center;
   // flex-grow: 2;
   // min-height: 100vh;
-  width: 100%;
+  width: 85vw;
   // min-height: 700px;
-  padding-right: 50px;
-  padding-left: 50px;
   margin-bottom: 100px;
-  margin-top: -200px;
-  background-color: #E0FBFC;
+  margin-top: 30px;
 }
 
 .home-container-bottom {
   display: flex;
   flex-direction: column;
-  width: calc(90% + 15px);
+  width: 100%;
   height: 425px;
   // min-height: 700px;
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-top: 35px;
-  padding-bottom: 25px;
+  padding: 35px 50px 25px 50px;
   background: #FFFFFF;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 10px 10px 10px 10px;
+  box-shadow: $flexbox-shadow;
+  border-radius: 10px;
   // margin-top: 25px;
   // margin-right: 5px;
 }
@@ -108,44 +110,31 @@
 .fav-workouts-grid {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   width: 100%;
 }
 
 .fav-workouts-grid-down {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 8px;
-  // justify-content: space-evenly;
-}
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 37px;
+  grid-row-gap: 37px;
 
-.home-cards-container-down {
-  // top: 0px;
-  display: flex;
-  width: 45%;
-  flex-direction: column;
-  height: 275px;
-  // min-height: 700px;
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  background: #FFFFFF;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 10px 10px 10px 10px;
-  // margin-top: 10px;
-  // margin-bottom: 20px;
-  margin-left: 5px;
+
 }
 
 .recent-workouts-grid {
   display: flex;
   flex-direction: row;
   border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin-bottom: 10px;
-  // justify-content: space-evenly;
+  box-shadow: $flexbox-shadow;
+  transition-duration: 0.5s;
+}
+
+.recent-workouts-grid:hover {
+  box-shadow: $flexbox-shadow-hover;
+  transition-duration: 0.5s;
 }
 
 .card-add-new-workout-top {
@@ -158,7 +147,7 @@
   // margin-top: -5px;
   // margin-bottom: 15px;
   border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: $flexbox-shadow;
   width: 200px;
   height: 180px;
   transition-duration: 0.5s;
@@ -167,7 +156,7 @@
 }
 
 .card-add-new-workout-top:hover {
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  box-shadow: $flexbox-shadow-hover;
   transition-duration: 0.5s;
 }
 
@@ -178,14 +167,14 @@
   background-color: #EE6C4D;
   color: black;
   border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: $flexbox-shadow;
   width: 350px;
   height: 300px;
   transition-duration: 0.5s;
 }
 
 .card-all-workouts-down:hover {
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  box-shadow: $flexbox-shadow-hover;
   transition-duration: 0.5s;
 }
 
@@ -193,7 +182,7 @@
   display: flex;
   flex-direction: column;
   border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: $flexbox-shadow;
   background-color: white;
   width: 350px;
   height: 300px;
@@ -202,7 +191,7 @@
 }
 
 .workout-card:hover {
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  box-shadow: $flexbox-shadow-hover;
   transition-duration: 0.5s;
 }
 
@@ -216,12 +205,7 @@
 
 
 .workout-card .workout-card-info {
-  // padding: 16px;
-  // display: flex;
-  // justify-content: space-between;
-  // align-items: flex-end;
-  // position: relative;
-  // background-color: white;
+
   padding-left: 10px;
   padding-right: 10px;
   position: relative;
@@ -247,11 +231,9 @@
   width: 1200px;
   height: 50px;
   display: flex;
-  padding-left: 20px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding-top: 15px;
 }
 
 .recent-workout-list-card-right-most {
@@ -275,33 +257,28 @@
   font-size: 12px;
 }
 
-// .workout-name {
-//   font-size: 11px;
-//   width: 50%;
-//   margin-left: -5px
-// }
+.dashboard-emoji {
+  padding-right: 10px;
+  margin: 0;
+}
 
+.dashboard-completed {
+  margin: 0;
+  padding: 0px 0px 0px 30px;
+}
 
-// .workout-card-time {
-//   position: absolute;
-//   right: 15px;
-//   bottom: 10px;
-//   margin: 0
-// }
-// .workout-card-emoji {
-//   position: absolute;
-//   right: 15px;
-//   top: 0px;
-// }
-// .workout-card-category {
-//   position: absolute;
-//   right: 15px;
-//   top: 40px;
-// }
+.completed-cards-container {
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
-// .workout-card-sport {
-//   position: absolute;
-//   left: 5px;
-//   bottom: 0px;
-//   margin: 0;
-//   font-size: 9px;
+.favourites-btn {
+  text-align: center;
+}
+
+.dashboard-link-container {
+  height: 300px;
+  width: 350px;
+}
