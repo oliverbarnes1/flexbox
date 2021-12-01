@@ -12,9 +12,9 @@
 
     <div class ="we-few-content-right">
       <%# <%= link_to "Edit",  edit_workout_workout_exercise_path(workout_exercise.workout_id, workout_exercise.id), class:"edit-icon"%>
-        <h4 class="edit-button" id="<%= workout_exercise.id %>"><i class="fas fa-edit"></i></i></h4>
+        <div class="edit-button" id="<%= workout_exercise.id %>"><i class="fas fa-edit" style="margin: 10px;"></i></i></div>
         <%= link_to new_workout_path do %>
-          <%= link_to "",  workout_workout_exercise_path(@workout.id, workout_exercise.id), method: :delete, class: "far fa-trash-alt"%>
+          <%= link_to "",  workout_workout_exercise_path(@workout.id, workout_exercise.id), method: :delete, class: "far fa-trash-alt", style: "margin: 10px;"%>
         <%end%>
 
 
