@@ -11,19 +11,22 @@
     <% @workouts.each do |workout|%>
         <%= tag.div class: "workout-card-info-index", id: dom_id(workout) do %>
           <%= link_to toggle_favorite_workout_path(workout), remote: true, method: :post do %>
-            <div class="favourite-icon <%= 'active-icon' if current_user.favorited?(workout) %>" data-id="<%= workout.id %>">
-              <i class="fas fa-heart"></i>
+            <div class="favourite-icon-div">
+              <div class="favourite-icon <%= 'active-icon' if current_user.favorited?(workout) %>" data-id="<%= workout.id %>">
+                <i class="fas fa-heart"></i>
+              </div>
             </div>
           <% end %>
-            <%= image_tag("https://static.onecms.io/wp-content/uploads/sites/35/2020/04/13/GettyImages-1175207081-2000.jpg") %>
+          <%= image_tag("https://static.onecms.io/wp-content/uploads/sites/35/2020/04/13/GettyImages-1175207081-2000.jpg") %>
+          <%= link_to workout_path(workout) do %>
             <div class="workout-card-text">
-              <h1 class="workout-name"><%= link_to workout.name, workout_path(workout) %></h1>
-              <p class="workout-card-sport"><em>Sport:</em> <%= link_to workout.sport, workout_path(workout) %></p>
-              <p class="workout-card-category"><em><%= link_to workout.category, workout_path(workout) %></em></p>
-              <h3 class="workout-card-emoji"><%= link_to workout.difficulty, workout_path(workout) %></h3>
-              <p class="workout-card-time"><strong>Time:</strong> <%= link_to workout.workout_duration, workout_path(workout) %> mins</p>
+              <h1 class="workout-name"><%= workout.name %></h1>
+              <p class="workout-card-sport"><em>Sport:</em> <%= workout.sport %></p>
+              <p class="workout-card-category"><em><%= workout.category %></em></p>
+              <h3 class="workout-card-emoji"><%= workout.difficulty %></h3>
+              <p class="workout-card-time"><strong>Time:</strong> <%= workout.workout_duration %> mins</p>
             </div>
-
+          <%end%>
         <% end %>
     <% end %>
 
