@@ -42,6 +42,7 @@
 
   <h2 class="ws-heading" data-workouttitle-target="heading"></h2>
   <div class="ws-exercises" data-action="keyup@window->workouttitle#nextExercise">
+
       <% @workout_exercises = WorkoutExercise.where(workout_id: @workout.id ).to_a %>
       <% @workout_exercises.each do |workout_exercise| %>
         <% exercise = Exercise.find(workout_exercise.exercise_id) %>
@@ -57,6 +58,7 @@
           </div>
           <div class ="ws-few-content-right" data-workouttitle-target="emoji">
               <strong class="emoji"><%= exercise.difficulty %></strong>
+
           </div>
         </div>
       <% end %>
