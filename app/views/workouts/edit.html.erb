@@ -37,11 +37,9 @@
     <% @workout_exercises = WorkoutExercise.where(workout_id: @workout.id ).to_a %>
     <div data-insert-in-list-target="items" data-controller="insert-updated-exercise">
       <% @workout_exercises.each do |workout_exercise| %>
-      <% @exercise = Exercise.find(workout_exercise.exercise_id) %>
-        <%= render partial: 'workout_exercise', locals: { workout_exercise: workout_exercise, exercise: @exercise } %>
-        <%# <div data-insert-updated-exercise-target="exercises">
+        <% @exercise = Exercise.find(workout_exercise.exercise_id) %>
+          <%= render partial: 'workout_exercise', locals: { workout_exercise: workout_exercise, exercise: @exercise } %>
           <%= render 'edit_we_form', workout: @workout %>
-        <%# </div> %>
       <% end %>
     </div>
 
@@ -56,5 +54,4 @@
 document.getElementById("add-we-button").addEventListener("click", () => {
 document.getElementById("new-we-form").style.display="block";
 })
-
 </script>
