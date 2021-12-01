@@ -35,11 +35,13 @@
 
       <% end %>
     <% @workout_exercises = WorkoutExercise.where(workout_id: @workout.id ).to_a %>
-    <div data-insert-in-list-target="items">
+    <div data-insert-in-list-target="items" data-controller="insert-updated-exercise">
       <% @workout_exercises.each do |workout_exercise| %>
       <% @exercise = Exercise.find(workout_exercise.exercise_id) %>
         <%= render partial: 'workout_exercise', locals: { workout_exercise: workout_exercise, exercise: @exercise } %>
-        <%= render 'edit_we_form', workout: @workout %>
+        <%# <div data-insert-updated-exercise-target="exercises">
+          <%= render 'edit_we_form', workout: @workout %>
+        <%# </div> %>
       <% end %>
     </div>
 
