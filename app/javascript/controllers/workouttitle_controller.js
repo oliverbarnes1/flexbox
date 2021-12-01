@@ -103,7 +103,7 @@ export default class extends Controller {
             removeinfo.classList.remove("reps-size-add")
             setTimeout(function () {
               window.scrollBy({
-                top: 88,
+                top: 94,
                 left: 0,
                 behavior: 'smooth'
               });
