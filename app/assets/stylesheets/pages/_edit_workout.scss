@@ -20,11 +20,12 @@
   margin-bottom: 8px;
   background: white;
   border: 1px solid rgb(235,235,235);
-  width: 100%;
+  width: 600px;
   display: flex;
   transition-duration: 0.5s;
   height:80px;
   align-items: center;
+  justify-content: space-between;
 }
 
 
@@ -39,8 +40,10 @@
 .we-few-content-right {
   display: flex;
   align-items: center;
-  width: 74px;
+  justify-content: space-between;
+  width: 172px;
   font-size: 30px;
+  padding-right: 16px;
 }
 
 .we-excercise-card img {
@@ -107,5 +110,13 @@
 }
 
 #new-we-form {
+  display: none;
+}
+
+.edit-we-form {
+  display: none;
+}
+
+.delete-we-form {
   display: none;
 }

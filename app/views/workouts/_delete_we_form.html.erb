@@ -1,0 +1,6 @@
+<%= tag.div class: "delete-we-form" , id: dom_id(workout_exercise) do %>
+  <%= simple_form_for [workout, workout_exercise], html: { class: "nw-form"} do |f|%>
+    <%= link_to "Cancel", edit_workout_path(@workout), class: "button-secondary" %>
+    <%= f.button :submit, "Are you sure?",   class: "button-primary", data: {disable_with: false} %>
+  <% end %>
+<% end %>

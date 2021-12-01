@@ -49,6 +49,13 @@ class WorkoutExercisesController < ApplicationController
     end
   end
 
+  def destroy
+    @workout = Workout.find(params[:workout_id])
+    @workout_exercise = WorkoutExercise.find(params[:id])
+    @workout_exercise.destroy
+    redirect_to edit_workout_path(@workout)
+  end
+
   private
 
   def set_workoutexercise
