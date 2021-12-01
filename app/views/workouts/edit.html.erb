@@ -22,8 +22,8 @@
   <div class="we-exercises">
     <h2>Exercises</h2>
 
-    <div class="we-nw-card" id="add-we-button">
-        <h3><strong><i class="fas fa-plus"></i> Add an exercise</strong></h3>
+    <div class="button-secondary" id="add-we-button">
+        <h3><i class="fas fa-plus"></i> Add an exercise</h3>
     </div>
 
 
@@ -39,7 +39,7 @@
       <% @workout_exercises.each do |workout_exercise| %>
         <% @exercise = Exercise.find(workout_exercise.exercise_id) %>
           <%= render partial: 'workout_exercise', locals: { workout_exercise: workout_exercise, exercise: @exercise } %>
-          <%= render 'edit_we_form', workout: @workout %>
+          <%= render partial: 'edit_we_form', locals: { workout_exercise: workout_exercise, workout: @workout } %>
       <% end %>
     </div>
 
@@ -53,5 +53,9 @@
 <script>
 document.getElementById("add-we-button").addEventListener("click", () => {
 document.getElementById("new-we-form").style.display="block";
+})
+document.getElementById("edit-we").addEventListener("click", (e) => {
+console.log(e.currentTarget);
+// document.getElementById("edit_we_form").style.display="block";
 })
 </script>
