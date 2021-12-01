@@ -1,7 +1,7 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = ["wsdetails", "button", "exercises", "bottombuttons", "header", "picture", "emoji", "name", "heading"]
+  static targets = ["wsdetails", "button", "exercises", "bottombuttons", "header", "picture", "emoji", "name", "heading", "workoutheading"]
 
   connect() {
     console.log("connected!")
@@ -20,6 +20,7 @@ export default class extends Controller {
     const header = this.headerTarget
     const button = this.buttonTarget
     const heading = this.headingTarget
+    const workoutheading = this.workoutheadingTarget
     const backbutton = this.backbuttonTarget
     const bottombuttons = this.bottombuttonsTarget
     const pictures = this.pictureTargets
@@ -27,6 +28,7 @@ export default class extends Controller {
     const names = this.nameTargets
     button.classList.add("ws-details-disappear")
     heading.classList.add("ws-details-disappear")
+    workoutheading.classList.add("ws-details-disappear")
     details.classList.add("ws-details-disappear")
     bottombuttons.classList.add("ws-details-disappear")
 
@@ -43,14 +45,12 @@ export default class extends Controller {
       button.classList.add("ws-details-fold")
       details.classList.add("ws-details-fold")
       bottombuttons.classList.add("ws-details-fold")
-      header.classList.add("ws-details-fold")
+      header.classList.add("ws-header-fold")
       heading.classList.add("ws-details-fold")
+      workoutheading.classList.add("ws-details-fold")
 
 
       setTimeout(function () {
-        pictures.forEach((picture) => {
-          picture.remove()
-        })
         emojis.forEach((emoji) => {
           emoji.remove()
         })
@@ -59,6 +59,7 @@ export default class extends Controller {
           name.classList.remove("ws-details-disappear")
         })
         bottombuttons.remove()
+
         exercise.classList.add("active")
         if (exercise.dataset.time) {
           let time = exercise.dataset.time
@@ -71,6 +72,8 @@ export default class extends Controller {
           let info = document.querySelector('.workout-reps-time')
           info.classList.add("reps-size-add")
           setTimeout(function () {
+            let picture = document.querySelector('.picture')
+            picture.classList.remove("ws-details-disappear")
             let opacity = document.querySelector(".exercise-info")
             opacity.classList.add("info-add")
           }, 200)
@@ -86,8 +89,11 @@ export default class extends Controller {
         if (muscles.nextElementSibling) {
           let fadeout = document.querySelector(".exercise-info")
           fadeout.classList.remove("info-add")
+          let picturefade = document.querySelector('.picture')
+          picturefade.classList.add("ws-details-disappear")
           console.log(fadeout)
           setTimeout(function () {
+            picturefade.classList.remove("picture")
             fadeout.remove()
             let removeinfo = document.querySelector('.workout-reps-time')
             console.log(removeinfo)
@@ -98,7 +104,7 @@ export default class extends Controller {
                 left: 0,
                 behavior: 'smooth'
               });
-              removeinfo.remove()
+              removeinfo.classList.remove('workout-reps-time')
               muscles.classList.remove("active")
               muscles.nextElementSibling.classList.add("active")
               if (muscles.dataset.time) {
@@ -114,6 +120,8 @@ export default class extends Controller {
                 setTimeout(function () {
                   let infopacity = document.querySelector(".exercise-info")
                   infopacity.classList.add("info-add")
+                  let picture = document.querySelector('.picture')
+                  picture.classList.remove("ws-details-disappear")
                   if (muscles.dataset.time) {
                     let timer = muscles.dataset.time
                     let duration = document.querySelector('.exercise-info')
@@ -132,8 +140,15 @@ export default class extends Controller {
             }, 400)
           }, 200)
         } else {
-          console.log(document.querySelector('.cwb-container'))
-
+          muscles.classList.remove("active")
+          let fadeout = document.querySelector(".exercise-info")
+          fadeout.classList.remove("info-add")
+          setTimeout(function () {
+            let picturefade = document.querySelector('.picture')
+            picturefade.classList.add("ws-details-disappear")
+            let muscles = document.querySelector('.active')
+            let removeinfo = document.querySelector('.workout-reps-time')
+            removeinfo.classList.remove("reps-size-add")
             window.scroll({
               bottom: 0,
               left: 0,
@@ -150,7 +165,7 @@ export default class extends Controller {
                 cwbutton.classList.add('cwb-button-visible')
               }, 1)
             }, 1)
-
+          }, 500)
         }
       }
   }
