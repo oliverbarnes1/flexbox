@@ -7,10 +7,19 @@
 }
 
 .ws-header {
-  display:flex;
+  opacity: 1;
+  display: flex;
   justify-content: space-around;
-  height: 185px;
+  height: 250px;
   width: 65vw;
+  background-color: white;
+  box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 7px;
+  border: 1px solid rgb(235,235,235);
+}
+
+.ws-item {
+  margin-top: 4px;
 }
 
 .ws-exercises {
@@ -30,6 +39,7 @@
 }
 
 .ws-details {
+  padding-top: 20px;
   text-align: center;
   // padding-left: 30px;
 }
@@ -56,7 +66,7 @@
   transition-duration: 0.5s;
   height:80px;
   align-items: center;
-  box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: $flexbox-shadow
 }
 
 // JavaScript CSS classes -----------------
@@ -67,12 +77,17 @@
 
 .ws-details-disappear {
   opacity: 0 !important;
+  transition: opacity 0.2s;
+}
+
+.ws-header-disappear {
   transition: opacity 0.6s;
+  opacity: 0 !important;
 }
 
 .ws-header-fold {
-  height: 0 !important;
   transition: height 1s;
+  height: 0 !important;
 }
 
 .ws-details-fold {
@@ -81,28 +96,27 @@
 }
 
 .ws-fade {
-  transition: height 1s;
+  transition: height 1s, opacity 0.6s;
 }
 
 .active {
-  height: 300px !important;
-  width: 75vw !important;
+  height: 402px !important;
+  width: 95vw !important;
   transition-duration: 0.7s;
 }
 
 .active img {
-  width: 430px;
-  height: 374px !important;
+  height: 402px !important;
   transition-duration: 0.5s;
 }
 
 .active h3 {
-  font-size: 70px;
-  transition-duration: 0.4s;
+  font-size: 50px;
+  transition-duration: 0.3s;
 }
 
 h3 {
-  transition-duration: 0.4s;
+  transition-duration: 0.3s;
 }
 
 .ws-workout-reps-time-display {
@@ -162,8 +176,7 @@ h3 {
 .ws-start-workout {
   display: flex;
   justify-content: center;
-  align-items: flex-end;
-  padding-right: 30px;
+  align-items: center;
 }
 
 
@@ -201,9 +214,15 @@ h3 {
 }
 
 .ws-image-div {
-margin-right: 20px;
-width: 250px;
-margin-right: 50px;
+margin-right: 10px;
+width: 350px;
+transition: width 0.6s;
+}
+
+.active .ws-image-div {
+margin-right: 30px;
+width: 536px;
+transition: width 0.6s;
 }
 
 .ws-icons {
@@ -212,6 +231,22 @@ margin-right: 50px;
   font-size: 20px;
   margin-top: 15px;
   text-align: left;
+}
+
+.ws-icons-right {
+  margin-left: 10px;
+}
+
+.ws-icons-left {
+  margin-right: 10px;
+}
+
+.ws-icons-center-r {
+  margin-left: 40px;
+}
+
+.ws-icons-center-l {
+  margin-right: 40px;
 }
 
 .ws-buttons {

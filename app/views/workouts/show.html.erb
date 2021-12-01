@@ -18,16 +18,29 @@
         <div class="ws-icons">
 
           <div class="ws-icons-left">
-            <div><strong>Category: </strong><%= @workout.category %></div>
-            <div><strong><i class="fas fa-running"></i> Sport: </strong><%= @workout.sport %></div>
-            <div><strong><i class="fas fa-bullseye"></i> Muscle Group: </strong><%= @workout.muscle_group %></div>
+            <div class="ws-item"><strong>Category: </strong></div>
+            <div class="ws-item"><strong><i class="fas fa-running"></i> Sport: </strong></div>
+            <div class="ws-item"><strong><i class="fas fa-bullseye"></i> Muscle Group: </strong></div>
+          </div>
+
+          <div class="ws-icons-center-l">
+            <div class="ws-item"><%= @workout.category != "" ? @workout.category : "N/A" %></div>
+            <div class="ws-item"><%= @workout.sport != ""  ? @workout.sport : "N/A" %></div>
+            <div class="ws-item"><%= @workout.muscle_group != "" ? @workout.muscle_group : "N/A" %></div>
+          </div>
+
+          <div class="ws-icons-center-e">
+            <div class="ws-item"><strong><i class="fas fa-signal"></i>  Difficulty: </strong></div>
+            <div class="ws-item"><strong><i class="far fa-clock"></i> Duration: </strong></div>
+            <div class="ws-item"><strong><i class="fas fa-dumbbell"></i> Equipment: </strong></div>
           </div>
 
           <div class="ws-icons-right">
-            <div><strong><i class="fas fa-signal"></i>  Difficulty: </strong><%= @workout.difficulty %></div>
-            <div><strong><i class="far fa-clock"></i> Duration: </strong><%= @workout.workout_duration %></div>
-            <div><strong><i class="fas fa-dumbbell"></i> Equipment: </strong><%= @workout.equipment %></div>
+            <div class="ws-item"><%= @workout.difficulty != "" ? @workout.difficulty : "N/A" %></div>
+            <div class="ws-item"><%= @workout.workout_duration != "" ? @workout.workout_duration : "N/A" %></div>
+            <div class="ws-item"><%= @workout.equipment != "" ? @workout.equipment : "N/A" %></div>
           </div>
+
         </div>
     </div>
 
@@ -65,9 +78,7 @@
   </div>
 
   <div class="ws-buttons" data-workouttitle-target="bottombuttons">
-    <div data-workouttitle-target="backbutton" class="button-secondary">
-      <%= link_to "Back", workouts_path %>
-    </div>
+    <%= link_to "Back", workouts_path, class: "button-secondary"%>
     <a href="#" class="button-secondary">Copy Workout</a>
     <%= link_to "Edit Workout", edit_workout_path(@workout), class: "button-secondary" %>
   </div>

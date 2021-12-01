@@ -8,7 +8,8 @@
 .workout-name {
 font-size: 30px;
 width: 50%;
-margin-left: 10px
+margin-left: 10px;
+padding-top: 10px;
 }
 
 .workout-card-info-index > img {
@@ -29,17 +30,24 @@ margin-left: 10px
   position: relative;
 }
 
-.workout-card-info-index:hover {
-  box-shadow: 0 0 20px rgba(0,0,0,0.3);
-  transition-duration: 0.5s;
-}
 
 .workout-card-text {
   padding-left: 10px;
   padding-right: 10px;
   position: relative;
-  height: calc(50% - 10px);
-  margin-top: 10px;
+  height: calc(50%);
+  background-color: white;
+  border-radius: 0px 0px 7px 7px;
+  transition-duration: 0.5s;
+}
+
+.workout-card-text:hover {
+  background-color: rgb(232, 232, 232);
+  transition-duration: 0.5s;
+}
+
+.workout-card-image {
+  height: calc(50% + 10px);
 }
 
 .workout-card-time {
@@ -51,7 +59,7 @@ margin-left: 10px
 .workout-card-emoji {
   position: absolute;
   right: 15px;
-  top: 0px;
+  top: 10px;
 }
 .workout-card-category {
   position: absolute;
@@ -87,21 +95,36 @@ margin-left: 10px
   margin: 30px 0;
 }
 
-.favourite-icon {
+.favourite-icon-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   top: 4px;
-  left: 303px;
+  right: 4px;
+  width: 50px;
+  height: 50px;
+  }
+
+.favourite-icon {
   font-size: 30px;
-  color: #FB7D7D;
-  opacity: 0.5;
+  color: white;
+  opacity: 0.6;
   text-shadow: 0px 0px 0px black;
-  transition: opacity 0.5s;
-  transition: text-shadow 0.5s;
+  transition: opacity 0.5s, text-shadow 0.5s, color 0.5s, font-size 0.05s;
 }
 
+.favourite-icon:hover {
+  color: #ED846C;
+}
+
+.favourite-icon:active {
+  font-size: 28px;
+}
 
 .active-icon {
   opacity: 1;
+  color: #ED846C;
   text-shadow: 5px 5px 10px black;
   transition: opacity 0.5s;
   transition: text-shadow 0.5s;
