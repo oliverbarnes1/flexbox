@@ -174,9 +174,8 @@
 }
 
 .card-no-workouts-down {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+  text-align: center;
   background-color: #f1f1f1;
   border: 1px solid rgb(231, 231, 231);
   color: black;
@@ -185,6 +184,11 @@
   width: 350px;
   height: 300px;
   transition-duration: 0.5s;
+}
+.card-no-workouts-down h2 {
+  margin: 10px;
+  font-weight: 200;
+  margin-top: 110px;
 }
 
 .card-all-workouts-down:hover {

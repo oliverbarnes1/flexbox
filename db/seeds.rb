@@ -22,7 +22,7 @@ puts "saved"
 ##############################################################
 
 workout1 = Workout.new(
-  name: "🏋️‍♀️All Round Warmup!🏋️‍♀️",
+  name: "All Round Warmup!",
   category: "Warmup",
   sport: "Any",
   difficulty: "😀",
@@ -37,7 +37,7 @@ workout1.save!
 puts "saved"
 
 workout2 = Workout.new(
-  name: "💀Intense Workout💀",
+  name: "Intense Workout",
   category: "Workout",
   sport: "Any",
   difficulty: "🤮",
