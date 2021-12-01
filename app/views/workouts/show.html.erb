@@ -18,16 +18,29 @@
         <div class="ws-icons">
 
           <div class="ws-icons-left">
-            <div><strong>Category: </strong><%= @workout.category %></div>
-            <div><strong><i class="fas fa-running"></i> Sport: </strong><%= @workout.sport %></div>
-            <div><strong><i class="fas fa-bullseye"></i> Muscle Group: </strong><%= @workout.muscle_group %></div>
+            <div class="ws-item"><strong>Category: </strong></div>
+            <div class="ws-item"><strong><i class="fas fa-running"></i> Sport: </strong></div>
+            <div class="ws-item"><strong><i class="fas fa-bullseye"></i> Muscle Group: </strong></div>
+          </div>
+
+          <div class="ws-icons-center-l">
+            <div class="ws-item"><%= @workout.category != "" ? @workout.category : "N/A" %></div>
+            <div class="ws-item"><%= @workout.sport != ""  ? @workout.sport : "N/A" %></div>
+            <div class="ws-item"><%= @workout.muscle_group != "" ? @workout.muscle_group : "N/A" %></div>
+          </div>
+
+          <div class="ws-icons-center-e">
+            <div class="ws-item"><strong><i class="fas fa-signal"></i>  Difficulty: </strong></div>
+            <div class="ws-item"><strong><i class="far fa-clock"></i> Duration: </strong></div>
+            <div class="ws-item"><strong><i class="fas fa-dumbbell"></i> Equipment: </strong></div>
           </div>
 
           <div class="ws-icons-right">
-            <div><strong><i class="fas fa-signal"></i>  Difficulty: </strong><%= @workout.difficulty %></div>
-            <div><strong><i class="far fa-clock"></i> Duration: </strong><%= @workout.workout_duration %></div>
-            <div><strong><i class="fas fa-dumbbell"></i> Equipment: </strong><%= @workout.equipment %></div>
+            <div class="ws-item"><%= @workout.difficulty != "" ? @workout.difficulty : "N/A" %></div>
+            <div class="ws-item"><%= @workout.workout_duration != "" ? @workout.workout_duration : "N/A" %></div>
+            <div class="ws-item"><%= @workout.equipment != "" ? @workout.equipment : "N/A" %></div>
           </div>
+
         </div>
     </div>
 
@@ -49,7 +62,7 @@
         <div class="ws-excercise-card" data-workouttitle-target="exercises" data-time="<%= workout_exercise.exercise_duration %>" data-reps="<%= workout_exercise.reps %>">
           <div class="sub-container">
             <div class="ws-image-div">
-              <%= image_tag(exercise.exercise_image, data: {"workouttitle-target"=>"picture"}, class: "picture") %>
+              <%= cl_image_tag(exercise.photo.key, data: {"workouttitle-target"=>"picture"}, class: "picture") %>
             </div>
 
             <div class="ws-exercise-name" data-workouttitle-target="name">
