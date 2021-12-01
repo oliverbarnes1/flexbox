@@ -7,7 +7,7 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: $flexbox-shadow;
   border-radius: 4px;
   margin: 16px 16px;
 }
@@ -20,10 +20,17 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  background-color: #E0FBFC;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+  background-color: $flexbox-secondary;
+  box-shadow: $flexbox-shadow;
   border-radius: 4px;
   margin: 16px 16px;
+  transition: background-color 0.5s, box-shadow 0.5s;
+}
+
+.button-secondary:hover {
+  box-shadow: $flexbox-shadow-hover;
+  background-color: $flexbox-secondary-hover;
+  transition: background-color 0.5s, box-shadow 0.5s;
 }
 
 .button-link {
@@ -82,7 +89,7 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: $flexbox-shadow;;
   border-radius: 4px;
   transition-duration: 0.5s;
   font-size: 30px;
@@ -105,7 +112,7 @@
   text-decoration: none;
   display: inline-block;
   font-size: 20px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: $flexbox-shadow;;
   border-radius: 4px;
   margin: 16px 16px;
   transition-duration: 0.3s;
@@ -125,7 +132,7 @@
   text-decoration: none;
   display: inline-block;
   font-size: 20px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: $flexbox-shadow;;
   border-radius: 4px;
   margin: 16px 16px;
   transition-duration: 0.3s;
@@ -146,7 +153,7 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: $flexbox-shadow;;
   border-radius: 4px;
   margin: 16px 16px;
   transition-duration: 0.5s;
@@ -175,7 +182,7 @@
   height: 100px;
   text-decoration: none;
   font-size: 40px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: $flexbox-shadow;
   border-radius: 4px;
   font-size: 50px;
   margin: 25px 0 35px 0;

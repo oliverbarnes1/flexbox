@@ -1,10 +1,9 @@
-<%= tag.div class: "edit-we-form" , id: dom_id(workout_exercise) do %>
-  <%= simple_form_for [workout, workout_exercise], html: { class: "nw-form"} do |f|%>
-    <%= f.input :reps, label: "Reps", :input_html => { class: 'field' } %>
-    <%= f.input :sets, label: "Sets", :input_html => { class: 'field' } %>
-    <%= f.input :weight, label: "Weight", :input_html => { class: 'field' } %>
-    <%= f.input :exercise_duration, label: "Exercise duration", :input_html => { class: 'field' } %>
-    <%= link_to "Cancel", edit_workout_path(@workout), class: "button-secondary" %>
-    <%= f.button :submit, "Update exercise",   class: "button-primary", data: {disable_with: false} %>
-  <% end %>
+
+<%= simple_form_for [@workout, @workout_exercise], html: { class: "nw-form"} do |f|%>
+  <%= f.input :reps, label: "Reps", :input_html => { class: 'field' } %>
+  <%= f.input :sets, label: "Sets", :input_html => { class: 'field' } %>
+  <%= f.input :weight, label: "Weight", :input_html => { class: 'field' } %>
+  <%= f.input :exercise_duration, label: "Exercise duration (sec)", :input_html => { class: 'field' } %>
+  <%= link_to "Cancel", edit_workout_path(@workout), class: "button-secondary" %>
+  <%= f.button :submit, "Update exercise",   class: "button-primary", data: {disable_with: false} %>
 <% end %>

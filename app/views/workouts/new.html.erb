@@ -8,6 +8,7 @@
     <h2>Workout details</h2>
     <%= simple_form_for @workout, url: workouts_path, html: { class: "nw-form"} do |f|%>
       <%= f.input :name, label: "Name of workout (15 Characters Max)", :input_html => { class: 'field' } %>
+      <%= f.input :photo, as: :file %>
       <%= f.input :category, collection: ["warmup", "weights", "arobic", "cardio"], label: "Category", :input_html => { class: 'field' } %>
       <%= f.input :sport, label: "Sport", :input_html => { class: 'field' } %>
       <%= f.input :difficulty, label: "Difficulty", collection: ["😴", "😀", "🥵", "🤮", "💀"], label: "Difficulty", :input_html => { class: 'field' } %>
