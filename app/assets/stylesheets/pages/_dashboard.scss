@@ -96,7 +96,7 @@
 .home-container-bottom {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 85vw;
   height: 425px;
   // min-height: 700px;
   padding: 35px 50px 25px 50px;
@@ -113,15 +113,16 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  background-color: white;
+  border-radius: 7px;
 }
 
 .fav-workouts-grid-down {
+  width: calc(85vw - 100px);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-column-gap: 37px;
-  grid-row-gap: 37px;
-
-
+  column-gap: 30px;
+  row-gap: 37px;
 }
 
 .recent-workouts-grid {
@@ -130,9 +131,12 @@
   border-radius: 10px;
   box-shadow: $flexbox-shadow;
   transition-duration: 0.5s;
+  width: calc(47.5vw - 100px);
+  height: 50px;
 }
 
 .recent-workouts-grid:hover {
+  background-color: $flexbox-white-hover;
   box-shadow: $flexbox-shadow-hover;
   transition-duration: 0.5s;
 }
@@ -148,17 +152,17 @@
   // margin-bottom: 15px;
   border-radius: 10px;
   box-shadow: $flexbox-shadow;
-  width: 14vw;
+  width: 13.5vw;
   height: 180px;
-  transition: width 0.1s;
-  transition: box-shadow 0.5s;
+  transition: background-color 0.5s, box-shadow 0.5s;
   padding-left: 10px;
   padding-right: 10px;
 }
 
 .card-add-new-workout-top:hover {
+  background-color: $flexbox-orange-hover;
   box-shadow: $flexbox-shadow-hover;
-  transition-duration: 0.5s;
+  transition: background-color 0.5s, box-shadow 0.5s;
 }
 
 .card-all-workouts-down {
@@ -175,7 +179,6 @@
 }
 
 .card-no-workouts-down {
-
   text-align: center;
   background-color: #f1f1f1;
   border: 1px solid rgb(231, 231, 231);
@@ -186,6 +189,14 @@
   height: 300px;
   transition-duration: 0.5s;
 }
+
+.card-no-workouts-down:hover {
+  border: 1px solid #dbdbdb;
+  background-color: #e0dfdf;
+  box-shadow: $flexbox-shadow-hover;
+  transition: box-shadow 0.5s, background-color 0.5s, border 0.5s;
+}
+
 .card-no-workouts-down h2 {
   margin: 10px;
   font-weight: 200;
@@ -203,15 +214,16 @@
   border-radius: 10px;
   box-shadow: $flexbox-shadow;
   background-color: white;
-  width: 350px;
+  width: calc((85vw - 160px) / 3);
   height: 300px;
-  transition-duration: 0.5s;
+  transition: background-color 0.5s, box-shadow 0.5s;
   margin-bottom: 11px;
 }
 
 .workout-card:hover {
+  background-color: $flexbox-white-hover;
   box-shadow: $flexbox-shadow-hover;
-  transition-duration: 0.5s;
+  transition: background-color 0.5s, box-shadow 0.5s;
 }
 
 .workout-card > img {
@@ -288,9 +300,10 @@
 
 .completed-cards-container {
   height: 180px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  row-gap: 10px;
 }
 
 .favourites-btn {
@@ -299,5 +312,5 @@
 
 .dashboard-link-container {
   height: 300px;
-  width: 350px;
+  width: calc((85vw - 160px) / 3)
 }
