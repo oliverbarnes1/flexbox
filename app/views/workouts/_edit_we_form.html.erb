@@ -1,4 +1,4 @@
-<%= simple_form_for [@workout, @workout_exercise], html: { class: "nw-form"} data: { insert_updated_exercise_target: 'exercises', action: 'submit->insert-updated-exercise#send' } do |f|%>
+<%= simple_form_for [@workout, @workout_exercise], html: { class: "nw-form"} do |f|%>
   <%= f.input :reps, label: "Reps", :input_html => { class: 'field' } %>
   <%= f.input :sets, label: "Sets", :input_html => { class: 'field' } %>
   <%= f.input :weight, label: "Weight", :input_html => { class: 'field' } %>

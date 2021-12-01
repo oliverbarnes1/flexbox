@@ -1,6 +1,6 @@
   <div class="we-excercise-card">
     <div class="we-image-div">
-      <%= image_tag(exercise.exercise_image) %>
+      <%= cl_image_tag(exercise.photo.key) %>
     </div>
 
     <div class="we-exercise-name">
