@@ -141,12 +141,30 @@
   transition-duration: 0.5s;
 }
 
-.card-add-new-workout-top {
+.card-add-new-workout-top-1 {
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #EE6C4D;
+  color: black;
+  // margin-top: -5px;
+  // margin-bottom: 15px;
+  border-radius: 10px;
+  box-shadow: $flexbox-shadow;
+  width: 13.5vw;
+  height: 180px;
+  transition: background-color 0.5s, box-shadow 0.5s;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.card-add-new-workout-top {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #94A8B3;
   color: black;
   // margin-top: -5px;
   // margin-bottom: 15px;
@@ -279,14 +297,6 @@
   margin-bottom: 10px;
   border-radius: 50%;
 }
-
-// .button-secondary {
-//   height: 65%;
-//   padding-bottom: 0px;
-//   padding-top: 3px;
-//   margin-top: -2px;
-//   font-size: 12px;
-// }
 
 .dashboard-emoji {
   padding-right: 10px;
