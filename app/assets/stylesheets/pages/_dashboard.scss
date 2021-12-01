@@ -148,9 +148,10 @@
   // margin-bottom: 15px;
   border-radius: 10px;
   box-shadow: $flexbox-shadow;
-  width: 200px;
+  width: 14vw;
   height: 180px;
-  transition-duration: 0.5s;
+  transition: width 0.1s;
+  transition: box-shadow 0.5s;
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -263,13 +264,6 @@
   border-radius: 50%;
 }
 
-.button-secondary {
-  height: 65%;
-  padding-bottom: 0px;
-  padding-top: 3px;
-  margin-top: -2px;
-  font-size: 12px;
-}
 
 .dashboard-emoji {
   padding-right: 10px;

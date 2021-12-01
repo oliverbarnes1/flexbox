@@ -31,54 +31,57 @@ export default class extends Controller {
     workoutheading.classList.add("ws-details-disappear")
     details.classList.add("ws-details-disappear")
     bottombuttons.classList.add("ws-details-disappear")
-
     setTimeout(function () {
-      pictures.forEach((picture) => {
-        picture.classList.add("ws-details-disappear")
-      })
-      emojis.forEach((emoji) => {
-        emoji.classList.add("ws-details-disappear")
-      })
-      names.forEach((name) => {
-        name.classList.add("ws-details-disappear")
-      })
-      button.classList.add("ws-details-fold")
-      details.classList.add("ws-details-fold")
-      bottombuttons.classList.add("ws-details-fold")
-      header.classList.add("ws-header-fold")
-      heading.classList.add("ws-details-fold")
-      workoutheading.classList.add("ws-details-fold")
-
+      header.classList.add("ws-header-disappear")
 
       setTimeout(function () {
+        pictures.forEach((picture) => {
+          picture.classList.add("ws-details-disappear")
+        })
         emojis.forEach((emoji) => {
-          emoji.remove()
+          emoji.classList.add("ws-details-disappear")
         })
         names.forEach((name) => {
-          name.classList.add("ws-exercise-name-after")
-          name.classList.remove("ws-details-disappear")
+          name.classList.add("ws-details-disappear")
         })
-        bottombuttons.remove()
+        button.classList.add("ws-details-fold")
+        details.classList.add("ws-details-fold")
+        bottombuttons.classList.add("ws-details-fold")
+        header.classList.add("ws-header-fold")
+        heading.classList.add("ws-details-fold")
+        workoutheading.classList.add("ws-details-fold")
 
-        exercise.classList.add("active")
-        if (exercise.dataset.time) {
-          let time = exercise.dataset.time
-          exercise.insertAdjacentHTML("beforeend", `<div class=\"workout-reps-time ws-workout-reps-time-display\"><p class=\"exercise-info\"></p></div>`)
-        }
-        else {
-          exercise.insertAdjacentHTML("beforeend", `<div class=\"workout-reps-time ws-workout-reps-time-display\"><p class=\"exercise-info\">${exercise.dataset.reps} reps</p></div>`)
-        }
-          setTimeout(function () {
-          let info = document.querySelector('.workout-reps-time')
-          info.classList.add("reps-size-add")
-          setTimeout(function () {
-            let picture = document.querySelector('.picture')
-            picture.classList.remove("ws-details-disappear")
-            let opacity = document.querySelector(".exercise-info")
-            opacity.classList.add("info-add")
-          }, 200)
-        }, 400)
-      }, 500)
+
+        setTimeout(function () {
+          emojis.forEach((emoji) => {
+            emoji.remove()
+          })
+          names.forEach((name) => {
+            name.classList.add("ws-exercise-name-after")
+            name.classList.remove("ws-details-disappear")
+          })
+          bottombuttons.remove()
+
+          exercise.classList.add("active")
+          if (exercise.dataset.time) {
+            let time = exercise.dataset.time
+            exercise.insertAdjacentHTML("beforeend", `<div class=\"workout-reps-time ws-workout-reps-time-display\"><p class=\"exercise-info\"></p></div>`)
+          }
+          else {
+            exercise.insertAdjacentHTML("beforeend", `<div class=\"workout-reps-time ws-workout-reps-time-display\"><p class=\"exercise-info\">${exercise.dataset.reps} reps</p></div>`)
+          }
+            setTimeout(function () {
+            let info = document.querySelector('.workout-reps-time')
+            info.classList.add("reps-size-add")
+            setTimeout(function () {
+              let picture = document.querySelector('.picture')
+              picture.classList.remove("ws-details-disappear")
+              let opacity = document.querySelector(".exercise-info")
+              opacity.classList.add("info-add")
+            }, 200)
+          }, 400)
+        }, 500)
+      }, 100);
     }, 500);
   }
 
@@ -140,15 +143,15 @@ export default class extends Controller {
             }, 400)
           }, 200)
         } else {
-          muscles.classList.remove("active")
+          let picturefade = document.querySelector('.picture')
+          picturefade.classList.add("ws-details-disappear")
+          let muscles = document.querySelector('.active')
           let fadeout = document.querySelector(".exercise-info")
           fadeout.classList.remove("info-add")
           setTimeout(function () {
-            let picturefade = document.querySelector('.picture')
-            picturefade.classList.add("ws-details-disappear")
-            let muscles = document.querySelector('.active')
             let removeinfo = document.querySelector('.workout-reps-time')
             removeinfo.classList.remove("reps-size-add")
+            muscles.classList.remove("active")
             window.scroll({
               bottom: 0,
               left: 0,
