@@ -15,7 +15,8 @@
               <i class="fas fa-heart"></i>
             </div>
           <% end %>
-            <%= image_tag("https://static.onecms.io/wp-content/uploads/sites/35/2020/04/13/GettyImages-1175207081-2000.jpg") %>
+          <% image =["https://static.onecms.io/wp-content/uploads/sites/35/2020/04/13/GettyImages-1175207081-2000.jpg", "https://img.etimg.com/photo/msid-74747053,quality-100/for-miles-a-great-bodyweight-workout-would-include-squats-push-ups-walking-lunges-.jpg"] %>
+            <%= cl_image_tag(workout.photo.key) %>
             <div class="workout-card-text">
               <h1 class="workout-name"><%= link_to workout.name, workout_path(workout) %></h1>
               <p class="workout-card-sport"><em>Sport:</em> <%= link_to workout.sport, workout_path(workout) %></p>
