@@ -1,7 +1,7 @@
 <div class="nw-title">
   <h2><strong>Edit your workout</strong></h2>
 </div>
-<div class="we-page">
+<div class="we-page" data-controller="insert-in-list">
 
   <div class="we-form">
     <h2>Workout details</h2>
@@ -19,36 +19,40 @@
     <% end %>
   </div>
 
-  <div class="we-exercises" >
+  <div class="we-exercises">
     <h2>Exercises</h2>
-      <%= link_to new_workout_workout_exercise_path(@workout.id) do %>
-    <div class="we-nw-card">
+
+    <div class="we-nw-card" id="add-we-button">
         <h3><strong><i class="fas fa-plus"></i> Add an exercise</strong></h3>
     </div>
+
+
+    <div>
+      <%= render 'new_we_form', workout: @workout %>
+    </div>
+
+    <%= link_to new_workout_workout_exercise_path(@workout.id) do %>
+
       <% end %>
     <% @workout_exercises = WorkoutExercise.where(workout_id: @workout.id ).to_a %>
-    <% @workout_exercises.each do |workout_exercise| %>
-    <% exercise = Exercise.find(workout_exercise.exercise_id) %>
-    <div class="we-excercise-card">
-
-      <div class="we-image-div">
-        <%= cl_image_tag(exercise.photo.key) %>
-      </div>
-
-      <div class="we-exercise-name">
-        <h3><strong><%= exercise.name %></strong></h3>
-      </div>
-
-      <div class ="we-few-content-right">
-        <div>
-          <strong><%= exercise.difficulty %></strong>
-        </div>
-      </div>
-
+    <div data-insert-in-list-target="items">
+      <% @workout_exercises.each do |workout_exercise| %>
+      <% @exercise = Exercise.find(workout_exercise.exercise_id) %>
+        <%= render partial: 'workout_exercise', locals: { workout_exercise: workout_exercise, exercise: @exercise } %>
+        <%= render 'edit_we_form', workout: @workout %>
+      <% end %>
     </div>
-  <% end %>
 
   </div>
 
+
+
 </div>
   <%= link_to "Back", workouts_path, class:"button-secondary"%>
+
+<script>
+document.getElementById("add-we-button").addEventListener("click", () => {
+document.getElementById("new-we-form").style.display="block";
+})
+
+</script>

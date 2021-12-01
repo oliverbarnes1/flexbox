@@ -41,7 +41,9 @@
   </div>
 
   <div class="ws-exercises" data-action="keyup@window->workouttitle#nextExercise">
-    <h2 class="ws-heading" data-workouttitle-target="heading">Exercises in this workout:</h2>
+    
+    <h2>Execises in this workout:</h2>
+
     <% @workout_exercises = WorkoutExercise.where(workout_id: @workout.id ).to_a %>
     <% @workout_exercises.each do |workout_exercise| %>
       <% exercise = Exercise.find(workout_exercise.exercise_id) %>
