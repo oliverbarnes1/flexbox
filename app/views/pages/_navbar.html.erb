@@ -5,7 +5,7 @@
       <%= image_tag "https://i.ibb.co/R9tqn5p/o-t.png" %>
     </div>
     <div>
-      <h1 class="flexbox-heading">FlexBox</h1>
+      <h1 class="flexbox-heading">lexBox</h1>
     </div>
     <% end %>
   </div>
@@ -25,10 +25,20 @@
   </ul>
   <div class ="navbar-items-right">
     <% if user_signed_in? %>
-      <div class="navbar-item"><%= link_to "Log Out", destroy_user_session_path, method: :delete %></div>
+      <div class="navbar-item">
+        <%# <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+        <%= link_to destroy_user_session_path, method: :delete do %>
+          <p class="button-primary">Log Out</p>
+        <% end %>
+      </div>
       <img src="https://st2.depositphotos.com/1006318/5909/v/950/depositphotos_59095055-stock-illustration-profile-icon-male-avatar.jpg" class="avatar-bordered">
     <% else %>
-      <div class="navbar-item"><%= link_to "Log in", new_user_session_path%></div>
+      <div class="navbar-item">
+        <%# <%= link_to "Log in", new_user_session_path%>
+        <%= link_to new_user_session_path do %>
+          <p class="button-primary">Log In</p>
+        <% end %>
+      </div>
     <% end %>
   </div>
 </div>

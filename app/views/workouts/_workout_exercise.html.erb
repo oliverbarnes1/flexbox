@@ -7,10 +7,18 @@
       <h3><strong><%= exercise.name %></strong></h3>
     </div>
 
+    <%= exercise.difficulty %>
+
+
     <div class ="we-few-content-right">
-      <div>
-        <strong><%= exercise.difficulty %></strong>
-        <%= link_to "Edit",  edit_workout_workout_exercise_path(workout_exercise.workout_id, workout_exercise.id), class:"edit-icon"%>
-      </div>
+      <%# <%= link_to "Edit",  edit_workout_workout_exercise_path(workout_exercise.workout_id, workout_exercise.id), class:"edit-icon"%>
+        <h4 class="edit-button" id="<%= workout_exercise.id %>"><i class="fas fa-edit"></i></i></h4>
+        <%= link_to new_workout_path do %>
+          <%= link_to "",  workout_workout_exercise_path(@workout.id, workout_exercise.id), method: :delete, class: "far fa-trash-alt"%>
+        <%end%>
+
+
+
+        <%#= link_to "Delete",  workout_workout_exercise() , action: delete, class:"button-secondary"%>
     </div>
   </div>
