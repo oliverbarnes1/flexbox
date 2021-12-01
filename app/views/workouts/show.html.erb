@@ -49,7 +49,7 @@
         <div class="ws-excercise-card" data-workouttitle-target="exercises" data-time="<%= workout_exercise.exercise_duration %>" data-reps="<%= workout_exercise.reps %>">
           <div class="sub-container">
             <div class="ws-image-div">
-              <%= image_tag(exercise.exercise_image, data: {"workouttitle-target"=>"picture"}, class: "picture") %>
+              <%= cl_image_tag(exercise.photo.key, data: {"workouttitle-target"=>"picture"}, class: "picture") %>
             </div>
 
             <div class="ws-exercise-name" data-workouttitle-target="name">

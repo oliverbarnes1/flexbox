@@ -5,12 +5,13 @@
 }
 
 .hp-background {
-  height: 100vw;
+  height: 100vh;
   width: 100%;
-  background: url("https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?cs=srgb&dl=pexels-leon-ardho-1552242.jpg&fm=jpg") no-repeat center fixed;
+  // background: url("https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?cs=srgb&dl=pexels-leon-ardho-1552242.jpg&fm=jpg") no-repeat center fixed;
   background-size: cover;
   box-shadow: inset 0 0 0 1000px rgba(66, 66, 66, 0.3);
-
+  position: absolute;
+  // object-fit: cover;
 }
 
 .hp-navbar {
@@ -19,7 +20,10 @@
   justify-content: flex-end;
   height: 100px;
   width: 100vw;
+  z-index: 1;
+  background-color: transparent;
   // margin-top: 10px;
+  position: absolute;
 }
 
 .hp-navbar-right {
@@ -35,8 +39,44 @@
   left: 30%;
   top: 30%;
   width: 40vw;
-  padding: 4px;
+  padding: 10px 14px 14px 22px;
   color: white;
   font-size: 30px;
-  background-color:rgba(66, 66, 66, 0.4);
+  background-color:rgba(66, 66, 66, 0.6);
+  border-radius: 16px;
 }
+
+.hp-text-logo {
+  display: flex;
+  flex-direction: row;
+}
+
+.hp-text-logo > img {
+  object-fit: cover;
+  width: 50px;
+  // height: 100%;
+  height: 92px;
+  margin-top: 15px;
+  margin-right: 2px;
+}
+
+.button-primary {
+  margin-left: 3px;
+}
+
+// .button-secondary {
+//   margin-left: -8px;
+// }
+
+.description-text {
+  margin-left: 1px;
+}
+
+.fa-arrow-right {
+  margin-left: 3px;
+}
+
+// .button-secondary {
+//   padding-top: -3px;
+//   margin-top: 2px;
+// }

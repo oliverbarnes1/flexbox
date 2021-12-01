@@ -4,30 +4,32 @@
   </div> %>
 
   <div class="hp-navbar">
-    <% if user_signed_in? %>
-      <%= link_to dashboard_path do %>
-        <div>
-          <p class="button-link">Go to your dashboard</p>
-        </div>
+    <% unless user_signed_in? %>
+      <%= link_to new_user_session_path do %>
+        <p class="button-primary">Login</p>
       <% end %>
-
-    <% else %>
-      <div class="button-primary">
-        <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-      </div>
-      <div class="button-secondary">
-        <%= link_to "Sign-up", new_user_registration_path, class: "nav-link" %>
-      </div>
+      <%= link_to new_user_registration_path do %>
+        <p class="button-secondary">Sign Up</p>
+      <% end %>
     <% end %>
   </div>
 
+  <%= video_tag "workout.mp4", autoplay: :autoplay, loop: :loop, muted: :muted %>
+
   <div class="hp-text">
-      <h1 style="font-size: 100px;"><strong>FlexBox</strong></h1>
+      <div class="hp-text-logo">
+        <img src="https://i.ibb.co/R9tqn5p/o-t.png" >
+        <h1 style="font-size: 100px;"><strong>lexBox</strong></h1>
+      </div>
       <p class="description-text">Whatever your sport, create your perfect workout routine.</p>
       <% if user_signed_in? %>
-        <p class="button-primary" id="bp"><%= link_to "Lets go ->", workouts_path %> </p>
+        <%= link_to dashboard_path do %>
+          <p class="button-primary">Lets Go <i class="fas fa-arrow-right"></i></p>
+        <% end %>
       <% else %>
-        <p class="button-primary" id="bp"><%= link_to "Lets go ->", new_user_session_path %> </p>
+        <%= link_to new_user_session_path do %>
+          <p class="button-primary">Lets Go <i class="fas fa-arrow-right"></i></p>
+        <% end %>
       <% end %>
   </div>
 </div>
