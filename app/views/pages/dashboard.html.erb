@@ -68,22 +68,20 @@
           <% @workouts.each do |workout| %>
             <% if workout.id == fav.favoritable.id %>
               <div class="dashboard-link-container">
-
-                  <%= link_to workout_path(workout) do %>
-                    <div class="workout-card">
-                      <%= cl_image_tag(workout.photo.key) %>
-                      <div class="workout-card-info">
-                        <div>
-                          <h1 class="workout-name"><%= workout.name %></h1>
-                          <p class="workout-card-sport"><em>Sport:</em> <%= workout.sport %></p>
-                          <p class="workout-card-category"><em><%= workout.category %></em></p>
-                          <h3 class="workout-card-emoji"><%= workout.difficulty %></h3>
-                          <p class="workout-card-time"><strong>Time:</strong> <%= workout.workout_duration %> mins</p>
-                        </div>
+                <%= link_to workout_path(workout) do %>
+                  <div class="workout-card">
+                    <%= cl_image_tag(workout.photo.key) %>
+                    <div class="workout-card-info">
+                      <div>
+                        <h1 class="workout-name"><%= workout.name %></h1>
+                        <p class="workout-card-sport"><em>Sport:</em> <%= workout.sport %></p>
+                        <p class="workout-card-category"><em><%= workout.category %></em></p>
+                        <h3 class="workout-card-emoji"><%= workout.difficulty %></h3>
+                        <p class="workout-card-time"><strong>Time:</strong> <%= workout.workout_duration %> mins</p>
                       </div>
                     </div>
-                  <% end %>
-
+                  </div>
+                <% end %>
               </div>
             <% end %>
           <% end %>
