@@ -78,9 +78,7 @@
   </div>
 
   <div class="ws-buttons" data-workouttitle-target="bottombuttons">
-    <div data-workouttitle-target="backbutton" class="button-secondary">
-      <%= link_to "Back", workouts_path %>
-    </div>
+    <%= link_to "Back", workouts_path, class: "button-secondary"%>
     <a href="#" class="button-secondary">Copy Workout</a>
     <%= link_to "Edit Workout", edit_workout_path(@workout), class: "button-secondary" %>
   </div>

@@ -100,13 +100,13 @@
 }
 
 .active {
-  height: 250px !important;
-  width: 75vw !important;
+  height: 402px !important;
+  width: 95vw !important;
   transition-duration: 0.7s;
 }
 
 .active img {
-  height: 248px !important;
+  height: 402px !important;
   transition-duration: 0.5s;
 }
 
@@ -216,6 +216,13 @@ h3 {
 .ws-image-div {
 margin-right: 10px;
 width: 350px;
+transition: width 0.6s;
+}
+
+.active .ws-image-div {
+margin-right: 30px;
+width: 536px;
+transition: width 0.6s;
 }
 
 .ws-icons {
