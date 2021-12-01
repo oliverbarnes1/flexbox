@@ -10,7 +10,7 @@
   <div class="ws-header ws-fade" data-workouttitle-target="header">
     <div class="ws-details" data-workouttitle-target="wsdetails">
 
-      <h1><strong><%= @workout.name %></strong></h1>
+      <h1 data-workouttitle-target="workoutheading"><%= @workout.name %></h1>
       <div>
         <strong><%= @workout.description %></strong>
       </div>
@@ -40,34 +40,28 @@
     </div>
   </div>
 
+  <h2 class="ws-heading" data-workouttitle-target="heading"></h2>
   <div class="ws-exercises" data-action="keyup@window->workouttitle#nextExercise">
-    
-    <h2>Execises in this workout:</h2>
 
-    <% @workout_exercises = WorkoutExercise.where(workout_id: @workout.id ).to_a %>
-    <% @workout_exercises.each do |workout_exercise| %>
-      <% exercise = Exercise.find(workout_exercise.exercise_id) %>
-      <div class="ws-excercise-card" data-workouttitle-target="exercises" data-time="<%= workout_exercise.exercise_duration %>" data-reps="<%= workout_exercise.reps %>">
+      <% @workout_exercises = WorkoutExercise.where(workout_id: @workout.id ).to_a %>
+      <% @workout_exercises.each do |workout_exercise| %>
+        <% exercise = Exercise.find(workout_exercise.exercise_id) %>
+        <div class="ws-excercise-card" data-workouttitle-target="exercises" data-time="<%= workout_exercise.exercise_duration %>" data-reps="<%= workout_exercise.reps %>">
+          <div class="sub-container">
+            <div class="ws-image-div">
+              <%= image_tag(exercise.exercise_image, data: {"workouttitle-target"=>"picture"}, class: "picture") %>
+            </div>
 
+            <div class="ws-exercise-name" data-workouttitle-target="name">
+              <h3><strong><%= exercise.name %></strong></h3>
+            </div>
+          </div>
+          <div class ="ws-few-content-right" data-workouttitle-target="emoji">
+              <strong class="emoji"><%= exercise.difficulty %></strong>
 
-
-        <div class="ws-image-div" data-workouttitle-target="picture">
-
-          <%= cl_image_tag(exercise.photo.key) %>
-        </div>
-
-        <div class="ws-exercise-name" data-workouttitle-target="name">
-          <h3><strong><%= exercise.name %></strong></h3>
-        </div>
-
-        <div class ="ws-few-content-right" data-workouttitle-target="emoji">
-          <div>
-            <strong><%= exercise.difficulty %></strong>
           </div>
         </div>
-
-      </div>
-    <% end %>
+      <% end %>
   </div>
 
   <div class="ws-buttons" data-workouttitle-target="bottombuttons">
