@@ -32,6 +32,9 @@ workout1 = Workout.new(
   description: "A good workout to get your whole body warmed up and ready!",
   user_id: user1.id
 )
+require "open-uri"
+file = URI.open("https://res.cloudinary.com/da1wivhkn/image/upload/v1638363750/warmup_jdkyao.jpg")
+workout1.photo.attach(io: file, filename: "wokrout1.jpg", content_type: "image/jpg")
 puts "saving"
 workout1.save!
 puts "saved"
@@ -47,6 +50,8 @@ workout2 = Workout.new(
   description: "You will definitly be sweating by the end of this workout",
   user_id: user1.id
 )
+file = URI.open("https://res.cloudinary.com/da1wivhkn/image/upload/v1638363750/workout_bsg1cn.jpg")
+workout2.photo.attach(io: file, filename: "warmup.jpg", content_type: "image/jpg")
 puts "saving"
 workout2.save!
 puts "saved"
@@ -61,7 +66,6 @@ exercise = Exercise.new(
   description: "A push-up is a common calisthenics exercise beginning from the prone position.",
   muscle_group: "Chest, shoulders, abs and triceps"
 )
-require "open-uri"
 file = URI.open("https://res.cloudinary.com/da1wivhkn/image/upload/v1638302558/flexbox/push-up_ogpm7o.gif")
 exercise.photo.attach(io: file, filename: "push_up.gif", content_type: "image/gif")
 puts "saving"

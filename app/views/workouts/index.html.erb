@@ -17,8 +17,10 @@
               </div>
             </div>
           <% end %>
-          <%= image_tag("https://static.onecms.io/wp-content/uploads/sites/35/2020/04/13/GettyImages-1175207081-2000.jpg") %>
+
+          <%= cl_image_tag(workout.photo.key) %>
           <%= link_to workout_path(workout) do %>
+
             <div class="workout-card-text">
               <h1 class="workout-name"><%= workout.name %></h1>
               <p class="workout-card-sport"><em>Sport:</em> <%= workout.sport %></p>
