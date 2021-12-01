@@ -46,6 +46,12 @@
   transition-duration: 0.5s;
 }
 
+.active img {
+  width: 430px;
+  height: 374px !important;
+  transition-duration: 0.5s;
+}
+
 .active h3 {
   font-size: 70px;
   transition-duration: 0.5s;
@@ -192,4 +198,13 @@ h3 {
   bottom: 0;
   left: 0;
   z-index: 999;
+}
+
+// .width img {
+//   width: 430px;
+//   height: 374px;
+// }
+
+.width {
+  width: 430px;
 }

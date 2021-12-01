@@ -59,9 +59,11 @@ exercise = Exercise.new(
   sport: "Workout",
   difficulty: "🤮",
   description: "A push-up is a common calisthenics exercise beginning from the prone position.",
-  muscle_group: "Chest, shoulders, abs and triceps",
-  exercise_image: "https://im3.ezgif.com/tmp/ezgif-3-5482bd7ac349.gif"
+  muscle_group: "Chest, shoulders, abs and triceps"
 )
+require "open-uri"
+file = URI.open("https://res.cloudinary.com/da1wivhkn/image/upload/v1638302558/flexbox/push-up_ogpm7o.gif")
+exercise.photo.attach(io: file, filename: "push_up.gif", content_type: "image/gif")
 puts "saving"
 exercise.save!
 puts "saved"
@@ -75,6 +77,8 @@ exercise2 = Exercise.new(
   description: "A squat is a strength exercise in which the trainee lowers their hips from a standing position and then stands back up",
   exercise_image: "https://im3.ezgif.com/tmp/ezgif-3-2c42ec3f99cf.gif"
 )
+file = URI.open("https://res.cloudinary.com/da1wivhkn/image/upload/v1638293304/ezgif.com-gif-maker_1_mizhxn.gif")
+exercise2.photo.attach(io: file, filename: "squat.gif", content_type: "image/gif")
 puts "saving"
 exercise2.save!
 puts "saved"
@@ -88,6 +92,8 @@ exercise3 = Exercise.new(
   muscle_group: "Abs, quadriceps, hamstrings and calves",
   exercise_image: "https://im3.ezgif.com/tmp/ezgif-3-f7244ae93b4c.gif"
 )
+file = URI.open("https://res.cloudinary.com/da1wivhkn/image/upload/v1638302581/flexbox/lunge_dv33hi.gif")
+exercise3.photo.attach(io: file, filename: "lunge.gif", content_type: "image/gif")
 puts "saving"
 exercise3.save!
 puts "saved"
@@ -102,6 +108,8 @@ exercise4 = Exercise.new(
   muscle_group: "Abs",
   exercise_image: "https://im3.ezgif.com/tmp/ezgif-3-290567db0bfd.gif"
 )
+file = URI.open("https://res.cloudinary.com/da1wivhkn/image/upload/v1638302583/flexbox/russian_twis_qmp2ld.gif")
+exercise4.photo.attach(io: file, filename: "russian twist.gif", content_type: "image/gif")
 puts "saving"
 exercise4.save!
 puts "saved"
@@ -115,6 +123,8 @@ exercise5 = Exercise.new(
   muscle_group: "Abs",
   exercise_image: "https://im3.ezgif.com/tmp/ezgif-3-46fb1d165284.gif"
 )
+file = URI.open("https://res.cloudinary.com/da1wivhkn/image/upload/v1638302582/flexbox/plank_wu8j6l.gif")
+exercise5.photo.attach(io: file, filename: "plank.gif", content_type: "image/gif")
 puts "saving"
 exercise5.save!
 puts "saved"
@@ -128,6 +138,8 @@ exercise6 = Exercise.new(
   muscle_group: "Abs and back",
   exercise_image: "https://im3.ezgif.com/tmp/ezgif-3-ae4c609a1ccf.gif"
 )
+file = URI.open("https://res.cloudinary.com/da1wivhkn/image/upload/v1638302584/flexbox/sit-up_yhpqft.gif")
+exercise6.photo.attach(io: file, filename: "Sit-up.gif", content_type: "image/gif")
 puts "saving"
 exercise6.save!
 puts "saved"
@@ -141,6 +153,8 @@ exercise7 = Exercise.new(
   muscle_group: "Legs",
   exercise_image: "https://im3.ezgif.com/tmp/ezgif-3-2f54be4576c6.gif"
 )
+file = URI.open("https://res.cloudinary.com/da1wivhkn/image/upload/v1638302583/flexbox/running_rdijlw.gif")
+exercise7.photo.attach(io: file, filename: "running.gif", content_type: "image/gif")
 puts "saving"
 exercise7.save!
 puts "saved"
@@ -154,6 +168,8 @@ exercise8 = Exercise.new(
   muscle_group: "Abs, lower back, hamstrings and glutes",
   exercise_image: "https://im3.ezgif.com/tmp/ezgif-3-a248716c18fd.gif"
 )
+file = URI.open("https://res.cloudinary.com/da1wivhkn/image/upload/v1638302584/flexbox/mountain_zvsinr.gif")
+exercise8.photo.attach(io: file, filename: "climber.gif", content_type: "image/gif")
 puts "saving"
 exercise8.save!
 puts "saved"
@@ -170,6 +186,8 @@ exercise9 = Exercise.new(
   muscle_group: "Quads",
   exercise_image: "https://im3.ezgif.com/tmp/ezgif-3-34b8092a09bc.gif"
 )
+file = URI.open("https://res.cloudinary.com/da1wivhkn/image/upload/v1638302582/flexbox/quad_lic678.gif")
+exercise9.photo.attach(io: file, filename: "quad.gif", content_type: "image/gif")
 puts "saving"
 exercise9.save!
 puts "saved"
@@ -183,6 +201,8 @@ exercise10 = Exercise.new(
   muscle_group: "Hamstring",
   exercise_image: "https://im3.ezgif.com/tmp/ezgif-3-c0ae1e4bbcc7.gif"
 )
+file = URI.open("https://res.cloudinary.com/da1wivhkn/image/upload/v1638302582/flexbox/hamstring_rzq3sg.gif")
+exercise10.photo.attach(io: file, filename: "hamstring.gif", content_type: "image/gif")
 puts "saving"
 exercise10.save!
 puts "saved"
@@ -196,6 +216,8 @@ exercise11 = Exercise.new(
   muscle_group: "Calve",
   exercise_image: "https://im3.ezgif.com/tmp/ezgif-3-27c2d235c570.gif"
 )
+file = URI.open("https://res.cloudinary.com/da1wivhkn/image/upload/v1638302582/flexbox/calf_vugznj.gif")
+exercise11.photo.attach(io: file, filename: "calve.gif", content_type: "image/gif")
 puts "saving"
 exercise11.save!
 puts "saved"
@@ -209,6 +231,8 @@ exercise12 = Exercise.new(
   muscle_group: "Groin",
   exercise_image: "https://im3.ezgif.com/tmp/ezgif-3-ee172268eb92.gif"
 )
+file = URI.open("https://res.cloudinary.com/da1wivhkn/image/upload/v1638302582/flexbox/groin_ddftmv.gif")
+exercise12.photo.attach(io: file, filename: "groin.gif", content_type: "image/gif")
 puts "saving"
 exercise12.save!
 puts "saved"
@@ -222,6 +246,8 @@ exercise13 = Exercise.new(
   muscle_group: "Triceps",
   exercise_image: "https://im3.ezgif.com/tmp/ezgif-3-e7e8d0e42edb.gif"
 )
+file = URI.open("https://res.cloudinary.com/da1wivhkn/image/upload/v1638302582/flexbox/arms_bgnhij.gif")
+exercise13.photo.attach(io: file, filename: "arm.gif", content_type: "image/gif")
 puts "saving"
 exercise13.save!
 puts "saved"
@@ -235,6 +261,8 @@ exercise14 = Exercise.new(
   muscle_group: "Neck",
   exercise_image: "https://im3.ezgif.com/tmp/ezgif-3-15d57c67c942.gif"
 )
+file = URI.open("https://res.cloudinary.com/da1wivhkn/image/upload/v1638302583/flexbox/neck_xbxdhb.gif")
+exercise14.photo.attach(io: file, filename: "neck.gif", content_type: "image/gif")
 puts "saving"
 exercise14.save!
 puts "saved"
