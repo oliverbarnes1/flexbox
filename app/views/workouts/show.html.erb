@@ -55,7 +55,12 @@
   <h2 class="ws-heading" data-workouttitle-target="heading"></h2>
   <div class="ws-exercises" data-action="keyup@window->workouttitle#nextExercise">
 
-      <% @workout_exercises = WorkoutExercise.where(workout_id: @workout.id ).to_a %>
+
+
+    <% @workout_exercises = WorkoutExercise.where(workout_id: @workout.id ).to_a %>
+      <% if @workout_exercises.length == 0 %>
+        <div class="ws-excercise-card-ph"><h3><strong>No exercises added to this workout!</strong></h3></div>
+      <%end%>
       <% @workout_exercises.each do |workout_exercise| %>
         <% exercise = Exercise.find(workout_exercise.exercise_id) %>
         <div class="ws-excercise-card" data-workouttitle-target="exercises" data-time="<%= workout_exercise.exercise_duration %>" data-reps="<%= workout_exercise.reps %>">
@@ -70,7 +75,6 @@
           </div>
           <div class ="ws-few-content-right" data-workouttitle-target="emoji">
               <strong class="emoji"><%= exercise.difficulty %></strong>
-
           </div>
         </div>
       <% end %>

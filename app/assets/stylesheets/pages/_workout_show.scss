@@ -59,15 +59,30 @@
   border-radius: 7px;
   margin-bottom: 14px;
   background: white;
-  border: 1px solid rgb(235,235,235);
+  border: 1px solid rgb(221, 221, 221);
   width: 65vw;
   display: flex;
   justify-content: space-between;
   transition-duration: 0.5s;
   height:80px;
   align-items: center;
-  box-shadow: $flexbox-shadow
+  box-shadow: $flexbox-shadow;
 }
+
+.ws-excercise-card-ph {
+  border-radius: 7px;
+  margin-bottom: 14px;
+  background: white;
+  border: 1px solid rgb(221, 221, 221);
+  width: 65vw;
+  display: flex;
+  justify-content: center;
+  transition-duration: 0.5s;
+  height:80px;
+  align-items: center;
+  box-shadow: $flexbox-shadow;
+}
+
 
 // JavaScript CSS classes -----------------
 
@@ -113,10 +128,12 @@
 .active h3 {
   font-size: 50px;
   transition-duration: 0.3s;
+  margin-bottom: 0;
 }
 
 h3 {
   transition-duration: 0.3s;
+  margin-bottom: 0;
 }
 
 .ws-workout-reps-time-display {
