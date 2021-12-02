@@ -7,18 +7,41 @@
   <div class="nw-form-container">
     <h2>Workout details</h2>
     <%= simple_form_for @workout, url: workouts_path, html: { class: "nw-form"} do |f|%>
-      <%= f.input :name, label: "Name of workout (15 Characters Max)", :input_html => { class: 'field' } %>
-      <%= f.input :photo, as: :file %>
-      <%= f.input :category, collection: ["warmup", "weights", "arobic", "cardio"], label: "Category", :input_html => { class: 'field' } %>
-      <%= f.input :sport, label: "Sport", :input_html => { class: 'field' } %>
-      <%= f.input :difficulty, label: "Difficulty", collection: ["😴", "😀", "🥵", "🤮", "💀"], label: "Difficulty", :input_html => { class: 'field' } %>
-      <%= f.input :workout_duration, label: "Workout duration", :input_html => { class: 'field' } %>
-      <%= f.input :equipment, label: "equipment", :input_html => { class: 'field' } %>
-      <%= f.input :muscle_group, label: "Muscle Group", :input_html => { class: 'field' } %>
-      <%= f.input :description, label: "Description", :input_html => { class: 'field' } %>
-      <%# <%= f.input :photo, as: :file %>
-      <%= link_to "Cancel", workouts_path, class:"button-secondary" %>
+      <div class="form-row">
+        <div class="col">
+          <%= f.input :name, placeholder: "Name of workout (15 Characters Max)", :input_html => { class: 'field' }, label: false %>
+        </div>
+      </div>
+      <%= f.input :description, placeholder: "Description", :input_html => { class: 'field' }, label: false  %>
+      <div class="form-row">
+        <div class="col">
+          <%= f.input :sport, placeholder: "Sport", :input_html => { class: 'field' } , label: false %>
+        </div>
+        <div class="col">
+          <%= f.input :equipment, placeholder: "Equipment", :input_html => { class: 'field' }, label: false  %>
+        </div>
+      </div>
+       <div class="form-row">
+        <div class="col">
+          <%= f.input :category, collection: ["warmup", "weights", "arobic", "cardio"], as: :radio_buttons %>
+        </div>
+        <div class="col">
+          <%= f.input :difficulty, collection: ["😴", "😀", "🥵", "🤮", "💀"], as: :radio_buttons %>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <%= f.input :workout_duration, placeholder: "Workout duration (seconds)", :input_html => { class: 'field' }, label: false  %>
+        </div>
+        <div class="col">
+          <%= f.input :muscle_group, placeholder: "Muscle Group", :input_html => { class: 'field' }, label: false  %>
+        </div>
+      </div>
+      <%= f.input :photo, as: :file, label: "Add a workout photo" %>
+
       <%= f.button :submit, "Save workout details",  class: "button-primary"  %>
+      <br>
+      <%= link_to "Cancel", workouts_path,  class: "button-cancel" %>
     <% end %>
   </div>
 
