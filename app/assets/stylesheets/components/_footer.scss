@@ -26,10 +26,15 @@
   transition-duration: 0.3s;
 }
 
+.footer-item-contact {
+  text-align: left;
+  transition-duration: 0.3s;
+  width: 155px;
+}
+
 .copy {
   text-align: center;
   transition-duration: 0.3s;
-  margin-right: -30px;
 }
 
 .copy i {
@@ -56,14 +61,7 @@
   width: 155px;
 }
 
-.sm-bar > img {
-  width: 40px;
-  height: 40px;
-  object-fit: cover;
-  margin-right: 10px;
-}
 
 .sm-bar i {
   font-size: 40px;
-  margin-left: 30px;
 }
