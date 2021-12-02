@@ -64,7 +64,7 @@
         </div>
         <% end %>
       <% else %>
-        <% @favorite_workouts.last(4).each do |fav| %>
+        <% @favorite_workouts.last(3).each do |fav| %>
           <% @workouts.each do |workout| %>
             <% if workout.id == fav.favoritable.id %>
               <div class="dashboard-link-container">
