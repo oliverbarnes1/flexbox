@@ -164,7 +164,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #94A8B3;
+  background-color: $flexbox-secondary;
   color: black;
   // margin-top: -5px;
   // margin-bottom: 15px;
@@ -177,8 +177,14 @@
   padding-right: 10px;
 }
 
-.card-add-new-workout-top:hover {
+.card-add-new-workout-top-1:hover {
   background-color: $flexbox-orange-hover;
+  box-shadow: $flexbox-shadow-hover;
+  transition: background-color 0.5s, box-shadow 0.5s;
+}
+
+.card-add-new-workout-top:hover {
+  background-color: $flexbox-secondary-hover;
   box-shadow: $flexbox-shadow-hover;
   transition: background-color 0.5s, box-shadow 0.5s;
 }
