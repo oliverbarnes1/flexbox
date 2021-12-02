@@ -18,8 +18,11 @@
                 </div>
               </div>
             <% end %>
-
-            <%= cl_image_tag(workout.photo.key) %>
+            <% if workout.photo.attached? %>
+              <%= cl_image_tag(workout.photo.key) %>
+            <% else %>
+              <%= image_tag("https://post.healthline.com/wp-content/uploads/2020/02/man-exercising-plank-push-up-1200x628-facebook.jpg") %>
+            <% end %>
             <%= link_to workout_path(workout) do %>
 
               <div class="workout-card-text">
