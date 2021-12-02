@@ -39,17 +39,20 @@
       <%= render 'new_we_form', workout: @workout %>
       </div>
     <div class="button-secondary" id="add-we-button">
-        <i class="fas fa-plus"> Add an exercise</i>
+        <i class="fas fa-plus"></i>
       </div>
   </div>
 </div>
 
-<%= link_to "Back", workouts_path, class:"button-secondary"%>
+<%= link_to "Back", workout_path(@workout), class:"button-secondary"%>
 
 <script>
 document.getElementById("add-we-button").addEventListener("click", () => {
 document.getElementById("new-we-form").style.display="block";
+document.getElementById("add-we-button").classList.add("delete-we-form");
 })
+
+
 document.getElementById("edit-we").addEventListener("click", (e) => {
 console.log(e.currentTarget);
 // document.getElementById("edit_we_form").style.display="block";

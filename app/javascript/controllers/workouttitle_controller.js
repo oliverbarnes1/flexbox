@@ -65,10 +65,13 @@ export default class extends Controller {
           exercise.classList.add("active")
           if (exercise.dataset.time) {
             let time = exercise.dataset.time
-            exercise.insertAdjacentHTML("beforeend", `<div class=\"workout-reps-time ws-workout-reps-time-display\"><p class=\"exercise-info\"></p></div>`)
+            exercise.insertAdjacentHTML("beforeend", `<div class=\"workout-reps-time ws-workout-reps-time-display\"><p class=\"exercise-info t\"></p></div>`)
+          }
+          else if (muscles.dataset.reps) {
+            exercise.insertAdjacentHTML("beforeend", `<div class=\"workout-reps-time ws-workout-reps-time-display\"><p class=\"exercise-info\">${exercise.dataset.reps} reps</p></div>`)
           }
           else {
-            exercise.insertAdjacentHTML("beforeend", `<div class=\"workout-reps-time ws-workout-reps-time-display\"><p class=\"exercise-info\">${exercise.dataset.reps} reps</p></div>`)
+            exercise.insertAdjacentHTML("beforeend", `<div class=\"workout-reps-time ws-workout-reps-time-display\"><p class=\"exercise-info\"></p></div>`)
           }
             setTimeout(function () {
             let info = document.querySelector('.workout-reps-time')
@@ -78,6 +81,19 @@ export default class extends Controller {
               picture.classList.remove("ws-details-disappear")
               let opacity = document.querySelector(".exercise-info")
               opacity.classList.add("info-add")
+              if (exercise.dataset.time) {
+                let timer = exercise.dataset.time
+                let duration = document.querySelector('.t')
+                duration.innerHTML = (timer == 1) ? `${timer} second<br> remaining` : `${timer} seconds<br> remaining`
+                let x = setInterval(function () {
+                  duration.innerHTML = (timer == 1) ? `${timer} second<br> remaining` : `${timer} seconds<br> remaining`
+                  timer -= 1
+                  if (timer == -1) {
+                    clearInterval(x)
+                    duration.innerHTML = "press any key<br> to continue"
+                  }
+                }, 1000);
+              }
             }, 200)
           }, 400)
         }, 500)
@@ -112,10 +128,13 @@ export default class extends Controller {
               muscles.nextElementSibling.classList.add("active")
               if (muscles.dataset.time) {
                 let time = muscles.dataset.time
-                muscles.nextElementSibling.insertAdjacentHTML("beforeend", `<div class=\"workout-reps-time ws-workout-reps-time-display\"><p class=\"exercise-info\"></p></div>`)
+                muscles.nextElementSibling.insertAdjacentHTML("beforeend", `<div class=\"workout-reps-time ws-workout-reps-time-display\"><p class=\"exercise-info t\"></p></div>`)
+              }
+              else if (muscles.dataset.reps) {
+                muscles.nextElementSibling.insertAdjacentHTML("beforeend", `<div class=\"workout-reps-time ws-workout-reps-time-display\"><p class=\"exercise-info\">${muscles.dataset.reps} reps</p></div>`)
               }
               else {
-                muscles.nextElementSibling.insertAdjacentHTML("beforeend", `<div class=\"workout-reps-time ws-workout-reps-time-display\"><p class=\"exercise-info\">${muscles.dataset.reps} reps</p></div>`)
+                exercise.insertAdjacentHTML("beforeend", `<div class=\"workout-reps-time ws-workout-reps-time-display\"><p class=\"exercise-info\"></p></div>`)
               }
               setTimeout(function () {
                 let addinfo = document.querySelector('.workout-reps-time')
@@ -127,7 +146,7 @@ export default class extends Controller {
                   picture.classList.remove("ws-details-disappear")
                   if (muscles.dataset.time) {
                     let timer = muscles.dataset.time
-                    let duration = document.querySelector('.exercise-info')
+                    let duration = document.querySelector('t')
                     duration.innerHTML = (timer == 1) ? `${timer} second<br> remaining` : `${timer} seconds<br> remaining`
                     let x = setInterval(function () {
                       duration.innerHTML = (timer == 1) ? `${timer} second<br> remaining` : `${timer} seconds<br> remaining`
@@ -136,7 +155,7 @@ export default class extends Controller {
                         clearInterval(x)
                         duration.innerHTML = "press any key<br> to continue"
                       }
-                    }, 50);
+                    }, 1000);
                   }
                 }, 200)
               }, 400)
