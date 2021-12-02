@@ -71,7 +71,7 @@
   height: 50px;
   text-decoration: none;
   font-size: 72px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: $flexbox-shadow;
   border-radius: 4px;
   font-size: 50px;
   transition-duration: 0.5s;
@@ -79,6 +79,7 @@
 
 .add-workout-button:hover {
   background-color: #cf6348 !important;
+  box-shadow: $flexbox-shadow-hover;
   transition-duration: 0.5s;
 }
 
@@ -193,9 +194,15 @@
   font-size: 50px;
   margin: 25px 0 35px 0;
   opacity: 0;
-  transition: opacity 0.5s;
   align-self: center;
   font-size: 30px;
+  transition: background-color 0.5s, box-shadow 0.5s;
+}
+
+.complete-workout-button:hover {
+  background-color: #cf6348 !important;
+  box-shadow: $flexbox-shadow-hover;
+  transition: background-color 0.5s, box-shadow 0.5s;
 }
 
 .cwb-displaynone {
