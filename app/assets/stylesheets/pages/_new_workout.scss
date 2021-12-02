@@ -1,7 +1,7 @@
 
 .nw-container {
   width: 50vw;
-  margin-top: 24px;
+  margin-top: 28px;
   align-items: center;
   text-align: center;
   background-color: white;
@@ -28,4 +28,52 @@
   display: flex;
   justify-content: space-between;
   padding: 20px;
+}
+
+.form-check {
+  display: inline;
+}
+
+.workout_photo{
+  display: flex;
+  justify-content: space-evenly;
+    .optional{
+      margin-right: 10px;
+    }
+}
+
+.nw-form-container h2{
+  padding-bottom: 20px;
+}
+
+.col-form-label {
+  color: #6d757d;
+}
+
+.col {
+  .workout_category {
+    // border: 1px solid #d1d6dd;
+    // border-radius: 10px;
+    padding-bottom: 20px;
+  }
+}
+
+.file {
+  .optional {
+    color: #6d757d;
+    margin-top: 15px;
+  }
+}
+
+.collection_radio_buttons {
+  color: #6d757d;
+ padding-right: 10px;
+}
+
+.form-group {
+  .workout_photo{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+  }
 }
