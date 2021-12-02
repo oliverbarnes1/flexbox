@@ -23,12 +23,17 @@ padding-top: 10px;
 
 .workout-card-info-index {
   border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: $flexbox-shadow;
   background-color: white;
   width: 350px;
   height: 300px;
   transition-duration: 0.5s;
   position: relative;
+}
+
+.workout-card-info-index:hover {
+  transition-duration: 0.5s;
+  box-shadow: $flexbox-shadow-hover;
 }
 
 
@@ -111,6 +116,7 @@ padding-top: 10px;
   right: 4px;
   width: 50px;
   height: 50px;
+  z-index: 1;
   }
 
 .favourite-icon {
