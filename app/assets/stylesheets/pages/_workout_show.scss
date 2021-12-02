@@ -173,6 +173,7 @@ h3 {
 .cwb-button-visible {
   opacity: 1 !important;
   transition: opacity 1s;
+  z-index: 1;
 }
 
 //-------------------------------
