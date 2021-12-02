@@ -12,6 +12,12 @@
   margin: 16px 16px;
 }
 
+.button-primary:hover {
+  box-shadow: $flexbox-shadow-hover;
+  background-color: $flexbox-orange-hover;
+  transition: background-color 0.5s, box-shadow 0.5s;
+}
+
 .button-secondary {
   border: none;
   color: #293241;
