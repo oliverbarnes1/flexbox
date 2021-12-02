@@ -44,6 +44,7 @@
 //   bottom: 0px;
 // }
 
+
 .co-cards {
   border-radius: 7px;
   margin-bottom: 14px;
@@ -66,7 +67,6 @@
 }
 
 .co-date p {
-
   margin-right: 30px;
   text-align: center;
   margin-bottom: auto;
@@ -75,10 +75,13 @@
 }
 
 .co-name {
-  padding-right: 350px;
+  display: flex;
+  flex-direction: flex-start;
+  width: 20vw;
 }
 
 .co-name h1 {
   font-weight: 400;
   font-size: 25px;
+  margin: 0;
 }
