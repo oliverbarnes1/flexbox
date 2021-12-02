@@ -1,45 +1,84 @@
-.completed-workout-card-index-div {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
-}
+// .completed-workout-card-index-div {
+//   display: grid;
+//   grid-template-columns: 1fr 1fr 1fr;
+//   grid-gap: 16px;
+// }
 
-.completed-workout-card-info-index > img {
-  width: 100%;
-  object-fit: cover;
-  border-radius: 10px 10px 0px 0px;
-  height: 50%;
-}
+// .completed-workout-card-info-index > img {
+//   width: 100%;
+//   object-fit: cover;
+//   border-radius: 10px 10px 0px 0px;
+//   height: 50%;
+// }
 
-.completed-workout-card-info-index {
-  border-radius: 10px;
-  box-shadow: $flexbox-shadow;
-  background-color: white;
-  width: 350px;
-  height: 300px;
+// .completed-workout-card-info-index {
+//   border-radius: 10px;
+//   box-shadow: $flexbox-shadow;
+//   background-color: white;
+//   width: 350px;
+//   height: 300px;
+//   transition-duration: 0.5s;
+//   position: relative;
+// }
+
+// .completed-workout-name {
+// font-size: 30px;
+// width: 100%;
+// margin-left: 10px
+// }
+
+// .completed-workout-date {
+// font-size: 20px;
+// width: 100%;
+// margin-left: 10px
+// }
+
+// .completed-workout-card-emoji {
+//   position: absolute;
+//   right: 15px;
+//   bottom: 5px;
+// }
+// .completed-workout-card-category {
+//   position: absolute;
+//   left: 15px;
+//   bottom: 0px;
+// }
+
+.co-cards {
+  border-radius: 7px;
+  margin-bottom: 14px;
+  background: white;
+  border: 1px solid rgb(235,235,235);
+  width: 65vw;
+  display: flex;
+  justify-content: space-between;
   transition-duration: 0.5s;
-  position: relative;
+  height:80px;
+  align-items: center;
+  box-shadow: $flexbox-shadow
 }
 
-.completed-workout-name {
-font-size: 30px;
-width: 100%;
-margin-left: 10px
+.co-image img {
+  height: 78px;
+  object-fit: cover;
+  border-radius: 6px 0px 0px 6px;
+  margin: 1px 0;
 }
 
-.completed-workout-date {
-font-size: 20px;
-width: 100%;
-margin-left: 10px
+.co-date p {
+
+  margin-right: 30px;
+  text-align: center;
+  margin-bottom: auto;
+  margin-top: auto;
+  font-size: 20px;
 }
 
-.completed-workout-card-emoji {
-  position: absolute;
-  right: 15px;
-  bottom: 5px;
+.co-name {
+  padding-right: 350px;
 }
-.completed-workout-card-category {
-  position: absolute;
-  left: 15px;
-  bottom: 0px;
+
+.co-name h1 {
+  font-weight: 400;
+  font-size: 25px;
 }
