@@ -21,9 +21,20 @@
   transition-duration: 0.3s
 }
 
-.footer-item {
-  text-align: center;
+.footer-items {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  list-style-type: none;
+  padding: 0;
+  font-weight: 300;
+  transition-duration: 0.3s
+}
+
+.footer-item-contact {
+  text-align: left;
   transition-duration: 0.3s;
+  width: 155px;
 }
 
 .footer-item-contact {
