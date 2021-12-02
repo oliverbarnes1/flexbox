@@ -180,6 +180,11 @@
   padding-right: 10px;
 }
 
+.card-add-new-workout-top h4 {
+  padding: 0;
+  margin: 0;
+}
+
 .lc-right-div {
   display: flex;
   flex-direction: column;
@@ -336,4 +341,33 @@
 .dashboard-link-container {
   height: 300px;
   width: calc((85vw - 160px) / 3)
+}
+
+//////
+
+.no-recent-workouts-grid {
+
+  border-radius: 10px;
+  box-shadow: $flexbox-shadow;
+  transition-duration: 0.5s;
+  width: calc(53.5vw - 100px);
+  height: 50px;
+}
+
+.no-recent-workouts-grid:hover {
+  background-color: $flexbox-white-hover;
+  box-shadow: $flexbox-shadow-hover;
+  transition-duration: 0.5s;
+}
+
+.no-recent-workout-list-card-right {
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-recents {
+  padding: 0;
+  margin: 0;
 }

@@ -2,12 +2,22 @@
   <h1 style="margin: 24px 0px;">My Workout History:</h1>
 </div>
 
+  <% if @completed_workouts.length == 0 %>
+    <%= link_to workouts_path do %>
+      <div class="ws-excercise-card-ph"><h3><strong>You haven't completed any yet!</strong></h3></div>
+    <% end %>
+  <%end%>
+
   <div class="co-cards-container">
       <% @completed_workouts.each do |completed_workout|%>
         <div class="co-cards">
             <div class="co-image">
               <% workout = Workout.find(completed_workout.workout_id) %>
-              <%= cl_image_tag(workout.photo.key) %>
+                <% if workout.photo.attached? %>
+                  <%= cl_image_tag(workout.photo.key) %>
+                <% else %>
+                  <%= image_tag("https://post.healthline.com/wp-content/uploads/2020/02/man-exercising-plank-push-up-1200x628-facebook.jpg") %>
+                <% end %>
             </div>
             <div class="co-name">
               <h1 class=""><%= workout.name %></h1>

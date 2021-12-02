@@ -22,7 +22,7 @@
             <div class="card-add-new-workout-top">
               <h4>+</h4>
             </div>
-          <%end%>
+          <% end %>
         </div>
       </div>
     </div>
@@ -30,15 +30,28 @@
       <div class="nw-text-h1">
         <h5>RECENT WORKOUTS</h5>
       </div>
+      <% if @completed_workouts.length == 0 %>
+      <%= link_to workouts_path do %>
+        <div class="no-recent-workouts-grid">
+          <div class="no-recent-workout-list-card-right">
+            <h4 class="no-recents"> You have no recent workouts </h4>
+          </div>
+        </div>
+      <% end %>
+      <% end %>
       <div class="completed-cards-container">
         <% @completed_workouts.last(3).each do |completed_workout| %>
+          <% workout = Workout.find(completed_workout.workout_id) %>
           <%= link_to completed_workouts_path do %>
             <div class="recent-workouts-grid">
               <div class="recent-workout-list-card-left">
-                <img src='https://static.onecms.io/wp-content/uploads/sites/35/2020/04/13/GettyImages-1175207081-2000.jpg'>
+                <% if workout.photo.attached? %>
+                  <%= cl_image_tag(workout.photo.key) %>
+                <% else %>
+                  <%= image_tag("https://post.healthline.com/wp-content/uploads/2020/02/man-exercising-plank-push-up-1200x628-facebook.jpg") %>
+                <% end %>
               </div>
                 <div class="recent-workout-list-card-right">
-                  <% workout = Workout.find(completed_workout.workout_id) %>
                   <p class="dashboard-completed"><%= workout.name %></p>
                   <h3 class="dashboard-emoji"><%= workout.difficulty %></h3>
                 </div>
@@ -50,15 +63,10 @@
   </div>
 <div class="dash-content-div-bottom">
   <div class="home-container-bottom">
-
     <div class="nw-text-h1">
       <h4>FAVOURITE WORKOUTS</h4>
     </div>
-
-
     <div class="fav-workouts-grid-down" >
-
-
       <% if @favorite_workouts.length == 0 %>
         <%= link_to workouts_path do %>
           <div class="card-no-workouts-down">
@@ -72,7 +80,11 @@
               <div class="dashboard-link-container">
                 <%= link_to workout_path(workout) do %>
                   <div class="workout-card">
-                    <%= cl_image_tag(workout.photo.key) %>
+                    <% if workout.photo.attached? %>
+                      <%= cl_image_tag(workout.photo.key) %>
+                    <% else %>
+                      <%= image_tag("https://post.healthline.com/wp-content/uploads/2020/02/man-exercising-plank-push-up-1200x628-facebook.jpg") %>
+                    <% end %>
                     <div class="workout-card-info">
                       <div>
                         <h1 class="workout-name"><%= workout.name %></h1>
@@ -89,15 +101,6 @@
           <% end %>
         <% end %>
       <% end %>
-
-
-
-
-
-
-
-
-
       <% unless @favourite_workouts == nil%>
         <%= link_to workouts_path do %>
           <div class="card-all-workouts-down">
