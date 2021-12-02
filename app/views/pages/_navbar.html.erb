@@ -22,12 +22,10 @@
   </ul>
   <div class ="navbar-items-right">
     <% if user_signed_in? %>
-      <div>
-        <%# <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
-        <%= link_to destroy_user_session_path, method: :delete do %>
-          <p class="button-primary">Log Out</p>
-        <% end %>
-      </div>
+      <%# <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+      <%= link_to destroy_user_session_path, method: :delete do %>
+        <p class="button-primary">Log Out</p>
+      <% end %>
       <img src="https://st2.depositphotos.com/1006318/5909/v/950/depositphotos_59095055-stock-illustration-profile-icon-male-avatar.jpg" class="avatar-bordered">
     <% else %>
       <div class="navbar-item">
