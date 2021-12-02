@@ -24,7 +24,7 @@ export default class extends Controller {
     .then(response => response.json())
     .then((data) => {
       console.log(data);
-      this.itemsTarget.insertAdjacentHTML("afterbegin", data.inserted_item);
+      this.itemsTarget.insertAdjacentHTML("afterend", data.inserted_item);
     });
     document.getElementById("new-we-form").reset();
   }
