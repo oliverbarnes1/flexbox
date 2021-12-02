@@ -67,7 +67,7 @@ export default class extends Controller {
             let time = exercise.dataset.time
             exercise.insertAdjacentHTML("beforeend", `<div class=\"workout-reps-time ws-workout-reps-time-display\"><p class=\"exercise-info t\"></p></div>`)
           }
-          else if (muscles.dataset.reps) {
+          else if (exercise.dataset.reps) {
             exercise.insertAdjacentHTML("beforeend", `<div class=\"workout-reps-time ws-workout-reps-time-display\"><p class=\"exercise-info\">${exercise.dataset.reps} reps</p></div>`)
           }
           else {
@@ -134,7 +134,7 @@ export default class extends Controller {
                 muscles.nextElementSibling.insertAdjacentHTML("beforeend", `<div class=\"workout-reps-time ws-workout-reps-time-display\"><p class=\"exercise-info\">${muscles.dataset.reps} reps</p></div>`)
               }
               else {
-                exercise.insertAdjacentHTML("beforeend", `<div class=\"workout-reps-time ws-workout-reps-time-display\"><p class=\"exercise-info\"></p></div>`)
+                muscles.insertAdjacentHTML("beforeend", `<div class=\"workout-reps-time ws-workout-reps-time-display\"><p class=\"exercise-info\"></p></div>`)
               }
               setTimeout(function () {
                 let addinfo = document.querySelector('.workout-reps-time')
