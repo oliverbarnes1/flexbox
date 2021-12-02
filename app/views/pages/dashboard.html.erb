@@ -60,11 +60,10 @@
 
 
       <% if @favorite_workouts.length == 0 %>
-       <%= link_to workouts_path do %>
-        <div class="card-no-workouts-down">
-          <h4 class="favourites-btn">No Favourites 😢 <br> Add some? </h4>
-
-        </div>
+        <%= link_to workouts_path do %>
+          <div class="card-no-workouts-down">
+            <h4 class="favourites-btn">No Favourites 😢 <br> Add some? </h4>
+          </div>
         <% end %>
       <% else %>
         <% @favorite_workouts.last(3).each do |fav| %>
