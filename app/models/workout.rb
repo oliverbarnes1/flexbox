@@ -4,4 +4,7 @@ class Workout < ApplicationRecord
   belongs_to :user
   has_one_attached :photo
   acts_as_favoritable
+
+  CATEGORY = ["Warmup", "Weights", "Cardio"]
+  DIFFICULTY = ["1😴1", "2😀2", "3🥵3", "4🤮4", "5💀5"]
 end
