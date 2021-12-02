@@ -7,16 +7,25 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 WorkoutExercise.destroy_all
+CompletedWorkout.destroy_all
 Workout.destroy_all
 User.destroy_all
 Exercise.destroy_all
 
 user1 = User.new(
-  email: "Bolt@gmail.com",
+  email: "Jurgen@flexbox.fit",
   password: "123123"
 )
 puts "saving"
 user1.save!
+puts "saved"
+
+user2 = User.new(
+  email: "Moe@flexbox.fit",
+  password: "123123"
+)
+puts "saving"
+user2.save!
 puts "saved"
 
 ##############################################################

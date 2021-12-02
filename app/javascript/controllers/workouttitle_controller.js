@@ -185,8 +185,8 @@ export default class extends Controller {
               console.log(cwbutton)
               setTimeout(function () {
                 cwbutton.classList.add('cwb-button-visible')
-              }, 1)
-            }, 1)
+              }, 100)
+            }, 50)
           }, 500)
         }
       }
