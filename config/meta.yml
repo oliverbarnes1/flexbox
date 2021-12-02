@@ -1,0 +1,5 @@
+meta_product_name: "Flexbox"
+meta_title: "Flexbox - Create your perfect workout routine, Whatever your sport."
+meta_description: "Flexbox is  an innovative workout app"
+meta_image: "logo1.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards

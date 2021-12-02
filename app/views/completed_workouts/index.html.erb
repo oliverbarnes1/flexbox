@@ -1,20 +1,21 @@
-<div class=>
+<div class="">
   <h1 style="margin: 24px 0px;">My Workout History:</h1>
+</div>
 
-  <div class="completed-workout-card-index-div">
-
-    <% @completed_workouts.each do |completed_workout|%>
-        <div class="completed-workout-card-info-index">
-            <%= image_tag("https://static.onecms.io/wp-content/uploads/sites/35/2020/04/13/GettyImages-1175207081-2000.jpg") %>
-            <div class="workout-card-text">
+  <div class="co-cards-container">
+      <% @completed_workouts.each do |completed_workout|%>
+        <div class="co-cards">
+            <div class="co-image">
               <% workout = Workout.find(completed_workout.workout_id) %>
-              <h1 class="completed-workout-name"><%= workout.name %></h1>
-              <p class="completed-workout-date">Completed at: <strong><%= completed_workout.created_at.strftime("%b %e, %l:%M %p") %></strong></p>
-              <p class="completed-workout-card-category"><em><%= workout.category %></em></p>
-              <h3 class="completed-workout-card-emoji"><%= workout.difficulty %></h3>
+              <%= cl_image_tag(workout.photo.key) %>
             </div>
+            <div class="co-name">
+              <h1 class=""><%= workout.name %></h1>
+            </div>
+          <div class ="co-date">
+            <p class="">Completed on: <strong><%= completed_workout.created_at.strftime("%b %e, %l:%M %p") %></strong></p>
+          </div>
         </div>
-    <% end %>
-
-  </div>
+      <% end %>
+</div>
 </div>
