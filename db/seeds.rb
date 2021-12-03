@@ -131,7 +131,7 @@ exercise5 = Exercise.new(
   name: "Plank",
   category: "Workout",
   sport: "Workout",
-  difficulty: "5💀5",
+  difficulty: "💀",
   description: "is is a strength exercise that involves maintaining a position similar to a push-up for the maximum possible time",
   muscle_group: "Abs",
   exercise_image: "https://im3.ezgif.com/tmp/ezgif-3-46fb1d165284.gif"
