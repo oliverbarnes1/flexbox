@@ -36,7 +36,7 @@
           </div>
 
           <div class="ws-icons-right">
-            <div class="ws-item"><%= @workout.difficulty != "" ? @workout.difficulty : "N/A" %></div>
+            <div class="ws-item"><%= @workout.difficulty != "" ? @workout.difficulty.slice!(1) : "N/A" %></div>
             <div class="ws-item"><%= @workout.workout_duration != "" ? @workout.workout_duration : "N/A" %></div>
             <div class="ws-item"><%= @workout.equipment != "" ? @workout.equipment : "N/A" %></div>
           </div>

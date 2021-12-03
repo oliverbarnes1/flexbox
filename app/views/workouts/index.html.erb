@@ -29,7 +29,7 @@
                 <h1 class="workout-name"><%= workout.name %></h1>
                 <p class="workout-card-sport"><em>Sport:</em> <%= workout.sport %></p>
                 <p class="workout-card-category"><em><%= workout.category %></em></p>
-                <h3 class="workout-card-emoji"><%= workout.difficulty %></h3>
+                <h3 class="workout-card-emoji" ><%= workout.difficulty.slice!(1) %></h3>
                 <p class="workout-card-time"><strong>Time:</strong> <%= workout.workout_duration %> mins</p>
                 <%= link_to workout_path(workout), method: :delete do %>
                   <div class="deleteboi"><i class="far fa-trash-alt" style="margin: 10px;"></i></div>

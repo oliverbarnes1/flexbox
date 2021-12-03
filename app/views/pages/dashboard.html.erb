@@ -53,7 +53,7 @@
               </div>
                 <div class="recent-workout-list-card-right">
                   <p class="dashboard-completed"><%= workout.name %></p>
-                  <h3 class="dashboard-emoji"><%= workout.difficulty %></h3>
+                  <h3 class="dashboard-emoji"><%= workout.difficulty.slice!(1) %></h3>
                 </div>
             </div>
           <% end %>
@@ -90,7 +90,7 @@
                         <h1 class="workout-name"><%= workout.name %></h1>
                         <p class="workout-card-sport"><em>Sport:</em> <%= workout.sport %></p>
                         <p class="workout-card-category"><em><%= workout.category %></em></p>
-                        <h3 class="workout-card-emoji"><%= workout.difficulty %></h3>
+                        <h3 class="workout-card-emoji"><%= workout.difficulty.slice!(1) %></h3>
                         <p class="workout-card-time"><strong>Time:</strong> <%= workout.workout_duration %> mins</p>
                       </div>
                     </div>
