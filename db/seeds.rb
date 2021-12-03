@@ -71,7 +71,7 @@ exercise = Exercise.new(
   name: "Push-up",
   category: "Workout",
   sport: "Workout",
-  difficulty: "🤮",
+  difficulty: "4🤮4",
   description: "A push-up is a common calisthenics exercise beginning from the prone position.",
   muscle_group: "Chest, shoulders, abs and triceps"
 )
@@ -85,7 +85,7 @@ exercise2 = Exercise.new(
   name: "Squat",
   category: "Workout",
   sport: "Workout",
-  difficulty: "🥵",
+  difficulty: "3🥵3",
   muscle_group: "Hamstrings, buttocks and quadriceps",
   description: "A squat is a strength exercise in which the trainee lowers their hips from a standing position and then stands back up",
   exercise_image: "https://im3.ezgif.com/tmp/ezgif-3-2c42ec3f99cf.gif"
@@ -100,7 +100,7 @@ exercise3 = Exercise.new(
   name: "Lunge",
   category: "Workout",
   sport: "Workout",
-  difficulty: "😀",
+  difficulty: "2😀2",
   description: "A lunge can refer to any position of the human body where one leg is positioned forward with knee bent and foot flat on the ground while the other leg is positioned behind",
   muscle_group: "Abs, quadriceps, hamstrings and calves",
   exercise_image: "https://im3.ezgif.com/tmp/ezgif-3-f7244ae93b4c.gif"
@@ -116,7 +116,7 @@ exercise4 = Exercise.new(
   name: "Russian twist",
   category: "Workout",
   sport: "Workout",
-  difficulty: "🥵",
+  difficulty: "3🥵3",
   description: "The Russian twist is a simple abdominal exercise for working the core, shoulders, and hips.",
   muscle_group: "Abs",
   exercise_image: "https://im3.ezgif.com/tmp/ezgif-3-290567db0bfd.gif"
@@ -131,7 +131,7 @@ exercise5 = Exercise.new(
   name: "Plank",
   category: "Workout",
   sport: "Workout",
-  difficulty: "💀",
+  difficulty: "5💀5",
   description: "is is a strength exercise that involves maintaining a position similar to a push-up for the maximum possible time",
   muscle_group: "Abs",
   exercise_image: "https://im3.ezgif.com/tmp/ezgif-3-46fb1d165284.gif"
@@ -146,7 +146,7 @@ exercise6 = Exercise.new(
   name: "Sit-up",
   category: "Workout",
   sport: "Workout",
-  difficulty: "🥵",
+  difficulty: "3🥵3",
   description: "The sit-up is an abdominal endurance training exercise to strengthen, tighten and tone the abdominal muscles",
   muscle_group: "Abs and back",
   exercise_image: "https://im3.ezgif.com/tmp/ezgif-3-ae4c609a1ccf.gif"
@@ -161,7 +161,7 @@ exercise7 = Exercise.new(
   name: "Running",
   category: "Workout ",
   sport: "Workout",
-  difficulty: "😴",
+  difficulty: "1😴1",
   description: "10K!!!! DO IT NOW",
   muscle_group: "Legs",
   exercise_image: "https://im3.ezgif.com/tmp/ezgif-3-2f54be4576c6.gif"
@@ -176,7 +176,7 @@ exercise8 = Exercise.new(
   name: "Mountain climber",
   category: "Workout",
   sport: "Workout",
-  difficulty: "😀",
+  difficulty: "2😀2",
   description: "Mountain climbers is an explosive bodyweight exercise which engages multiple muscle groups at once helping to improve your balance, agility, coordination, strength, flexibility and blood circulation",
   muscle_group: "Abs, lower back, hamstrings and glutes",
   exercise_image: "https://im3.ezgif.com/tmp/ezgif-3-a248716c18fd.gif"
@@ -194,7 +194,7 @@ exercise9 = Exercise.new(
   name: "Quad stretch",
   category: "Warmup",
   sport: "Warmup",
-  difficulty: "🥵",
+  difficulty: "3🥵3",
   description: "This simple stretch exercise is great for fixing your muscles, anytime, anywhere",
   muscle_group: "Quads",
   exercise_image: "https://im3.ezgif.com/tmp/ezgif-3-34b8092a09bc.gif"
@@ -209,7 +209,7 @@ exercise10 = Exercise.new(
   name: "Hamstring stretch",
   category: "Warmup",
   sport: "Warmup",
-  difficulty: "😴",
+  difficulty: "1😴1",
   description: "Stretching the hamstrings while standing may provide a deeper stretch, so they must be performed with caution and using correct posture,",
   muscle_group: "Hamstring",
   exercise_image: "https://im3.ezgif.com/tmp/ezgif-3-c0ae1e4bbcc7.gif"
@@ -224,7 +224,7 @@ exercise11 = Exercise.new(
   name: "Calve Stretch",
   category: "Warmup",
   sport: "Warmup",
-  difficulty: "😴",
+  difficulty: "1😴1",
   description: "This can help lengthen the muscle fiber and possibly lessen the pain you’re experiencing",
   muscle_group: "Calve",
   exercise_image: "https://im3.ezgif.com/tmp/ezgif-3-27c2d235c570.gif"
@@ -239,7 +239,7 @@ exercise12 = Exercise.new(
   name: "Groin Stretch",
   category: "Warmup",
   sport: "Warmup",
-  difficulty: "😀",
+  difficulty: "2😀2",
   description: "Ideal for after a workout to cool down",
   muscle_group: "Groin",
   exercise_image: "https://im3.ezgif.com/tmp/ezgif-3-ee172268eb92.gif"
@@ -254,7 +254,7 @@ exercise13 = Exercise.new(
   name: "Arm Stretch",
   category: "Warmup",
   sport: "Warmup",
-  difficulty: "😀",
+  difficulty: "2😀2",
   description: "Cross-Body Shoulder Stretch",
   muscle_group: "Triceps",
   exercise_image: "https://im3.ezgif.com/tmp/ezgif-3-e7e8d0e42edb.gif"
@@ -269,7 +269,7 @@ exercise14 = Exercise.new(
   name: "Neck Stretch",
   category: "Warmup",
   sport: "Warmup",
-  difficulty: "😴",
+  difficulty: "1😴1",
   description: "A basic exercise that is important for stretching the chest and shoulder muscles is the corner stretch",
   muscle_group: "Neck",
   exercise_image: "https://im3.ezgif.com/tmp/ezgif-3-15d57c67c942.gif"
