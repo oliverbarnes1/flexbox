@@ -37,12 +37,6 @@
 
   <div class="we-exercises">
     <h2>Exercises</h2>
-
-
-
-
-
-
     <% @workout_exercises = WorkoutExercise.where(workout_id: @workout.id ).to_a %>
     <div data-insert-in-list-target="items" data-controller="insert-updated-exercise">
       <% @workout_exercises.each do |workout_exercise| %>
