@@ -7,9 +7,25 @@
     <h2>Workout details</h2>
     <%= simple_form_for @workout, url: workout_path(@workout.id), html: { class: "nw-form"} do |f|%>
       <%= f.input :name, label: "Name of workout (15 Characters Max)", :input_html => { class: 'field' } %>
-      <%= f.input :category, collection: ["warmup", "weights", "arobic", "cardio"], label: "Category", :input_html => { class: 'field' } %>
+      <%= f.input :category,
+                      as: :radio_buttons,
+                      collection_wrapper_tag: 'div',
+                      collection_wrapper_class: 'category-wrapper',
+                      item_wrapper_class: 'category-item',
+                      input_html: {class: 'category-selector'},
+                      collection: Workout::CATEGORY,
+                      collection_wrapper_tag: 'div',
+                      collection_wrapper_class: 'category-wrapper'%>
       <%= f.input :sport, label: "Sport", :input_html => { class: 'field' } %>
-      <%= f.input :difficulty, label: "Difficulty", collection: ["😴", "😀", "🥵", "🤮", "💀"], label: "Difficulty", :input_html => { class: 'field' } %>
+      <%= f.input :difficulty,
+                      as: :radio_buttons,
+                      collection_wrapper_tag: 'div',
+                      collection_wrapper_class: 'category-wrapper',
+                      item_wrapper_class: 'category-item',
+                      input_html: {class: 'category-selector'},
+                      collection: Workout::DIFFICULTY,
+                      collection_wrapper_tag: 'div',
+                      collection_wrapper_class: 'category-wrapper'%>
       <%= f.input :workout_duration, label: "Workout duration", :input_html => { class: 'field' } %>
       <%= f.input :equipment, label: "equipment", :input_html => { class: 'field' } %>
       <%= f.input :muscle_group, label: "Muscle Group", :input_html => { class: 'field' } %>
@@ -21,12 +37,6 @@
 
   <div class="we-exercises">
     <h2>Exercises</h2>
-
-
-
-
-
-
     <% @workout_exercises = WorkoutExercise.where(workout_id: @workout.id ).to_a %>
     <div data-insert-in-list-target="items" data-controller="insert-updated-exercise">
       <% @workout_exercises.each do |workout_exercise| %>

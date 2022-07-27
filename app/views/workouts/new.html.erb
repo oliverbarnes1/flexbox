@@ -23,15 +23,31 @@
       </div>
        <div class="form-row">
         <div class="col">
-          <%= f.input :category, collection: ["warmup", "weights", "arobic", "cardio"], as: :radio_buttons %>
+          <%= f.input :category,
+                      as: :radio_buttons,
+                      collection_wrapper_tag: 'div',
+                      collection_wrapper_class: 'category-wrapper',
+                      item_wrapper_class: 'category-item',
+                      input_html: {class: 'category-selector'},
+                      collection: Workout::CATEGORY,
+                      collection_wrapper_tag: 'div',
+                      collection_wrapper_class: 'category-wrapper'%>
         </div>
         <div class="col">
-          <%= f.input :difficulty, collection: ["😴", "😀", "🥵", "🤮", "💀"], as: :radio_buttons %>
+          <%= f.input :difficulty,
+                      as: :radio_buttons,
+                      collection_wrapper_tag: 'div',
+                      collection_wrapper_class: 'category-wrapper',
+                      item_wrapper_class: 'category-item',
+                      input_html: {class: 'category-selector'},
+                      collection: Workout::DIFFICULTY,
+                      collection_wrapper_tag: 'div',
+                      collection_wrapper_class: 'category-wrapper'%>
         </div>
       </div>
       <div class="form-row">
         <div class="col">
-          <%= f.input :workout_duration, placeholder: "Workout duration (seconds)", :input_html => { class: 'field' }, label: false  %>
+          <%= f.input :workout_duration, placeholder: "Workout duration (mins)", :input_html => { class: 'field' }, label: false  %>
         </div>
         <div class="col">
           <%= f.input :muscle_group, placeholder: "Muscle Group", :input_html => { class: 'field' }, label: false  %>
